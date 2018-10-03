@@ -1,7 +1,9 @@
 <template>
   <div class="row justify-content-around">
     <div v-for="(category, i) in categories" :key="i" class="col-3 m-3">
-      <Card :name="category.name" :info="category.info" />
+      <Card :name="category.name" :info="category.info"> 
+        <router-link to="/checkout" class="btn btn-outline-danger" @click.native="$store.commit('changeBox', category.name)">Kies deze doos</router-link>
+      </Card>
     </div>
   </div>
 </template>

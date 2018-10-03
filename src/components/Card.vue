@@ -4,7 +4,7 @@
     <div class="card-body">
       <h5 class="card-title">{{ name }}</h5>
       <p class="card-text">{{ info }}</p>
-      <router-link to="/checkout" class="btn btn-outline-danger">Kies deze doos</router-link>
+      <slot></slot>
     </div>
   </div>
 </template>
