@@ -1,18 +1,23 @@
 <template>
-  <div>
-    <button v-for="(category, i) in categories" :key="i" class="btn btn-danger d-block m-3 px-5">
-      {{ category.name }}
-    </button>
+  <div class="row justify-content-around">
+    <div v-for="(category, i) in categories" :key="i" class="col-3 m-3">
+      <Card :name="category.name" :info="category.info" />
+    </div>
   </div>
 </template>
 
 <script>
+import Card from "@/components/Card";
 export default {
+  components: {
+    Card
+  },
   data () {
     return {
       categories: [
         {
-          name: 'A'
+          name: 'A',
+          info: 'Dit is een mooie doos'
         },
         {
           name: 'B'
