@@ -2,7 +2,7 @@
   <div>
     <h1>Choose price</h1>
     <!-- Image of the box you chose -->
-    <!-- <img src="" alt=""> -->
+    <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info"></Card>
     <form>
       <div class="form-group">
         <label class="display-2">€ {{ price }}</label>
@@ -15,10 +15,13 @@
 </template>
 
 <script>
+import Card from "@/components/Card";
 import PayModal from "@/components/PayModal";
+
 export default {
   components: {
-    PayModal
+    PayModal,
+    Card
   },
   data() {
     return {
