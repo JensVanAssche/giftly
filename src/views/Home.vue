@@ -5,7 +5,9 @@
     <Slider />
 
     <!-- CTA Button to choose your box -->
-    <button>Choose your Box</button>
+    <router-link to="/categories">
+      <button class="btn btn-info">Choose your Box</button>
+    </router-link>
 
   </div>
 </template>

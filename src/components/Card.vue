@@ -1,10 +1,10 @@
 <template>
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://via.placeholder.com/180x100" alt="Card image cap">
+    <img class="card-img-top" src="https://davpack.s3.amazonaws.com/h/alt/l/double-wall-boxes_3.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{ name }}</h5>
       <p class="card-text">{{ info }}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <router-link to="/checkout" class="btn btn-outline-danger">Kies deze doos</router-link>
     </div>
   </div>
 </template>
