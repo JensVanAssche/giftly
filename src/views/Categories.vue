@@ -7,7 +7,7 @@
           </router-link>
           <button type="button" class="btn btn-outline-primary" data-toggle="modal" :data-target="`#categoryModal${i}`">Info</button>
         </div>
-        <InfoModal :i="i" :name="category.name" :detailinfo="category.detailinfo" />
+        <InfoModal :i="i" :category="category" />
       </Card>
   </div>
 </template>

@@ -3,16 +3,18 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ name }}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{ category.name }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        {{ detailinfo }}
+        {{ category.detailinfo }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Kies deze doos</button>
+        <router-link to="/checkout" class="btn btn-danger" @click.native="$store.commit('changeBox', category)" data-dismiss="modal">
+            Kies deze doos
+          </router-link>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -23,8 +25,7 @@
 <script>
 export default {
   props: {
-    name: String,
-    detailinfo: String,
+    category: Object,
     i: Number
   }
 }
