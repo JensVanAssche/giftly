@@ -6,11 +6,14 @@
     <!-- Navbar on the top -->
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/categories">Categories</router-link>
+      <router-link to="/categories">Categories</router-link> |
+      <router-link to="/checkout">Checkout</router-link>
     </div>
 
     <!-- Loads the current page -->
-    <router-view />
+    <div class="container">
+      <router-view />
+    </div>
   </div>
 </template>
 
