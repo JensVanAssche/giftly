@@ -2,21 +2,42 @@
   <div id="app">
 
     <!-- Navbar on the top -->
-    <div id="nav">
-      <!-- Giftly Logo left corner-->
-      <router-link to="/">
-        <!-- <img class="nav-logo" alt="Giftly logo" src="/img/giftly_black.svg"> -->
-        GIFTLY
-      </router-link>
 
-      <div class="float-right">
-        <router-link to="/categories">Categories</router-link>
-        <router-link to="/faq">FAQ</router-link>
-        <router-link to="/about">About</router-link>
-        <router-link v-if="$store.state.loginName == null" to="/login">Login</router-link>
-        <router-link v-else to="/" @click.native="$store.commit('changeLogin', null)">{{ $store.state.loginName }}</router-link>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <router-link to="/" class="navbar-brand">
+        <img class="nav-logo" alt="Giftly logo" src="/img/Logo_MLP.png">
+      </router-link>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <router-link to="/categories" class="nav-link">
+              Categories
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/faq" class="nav-link">
+              FAQ
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/about" class="nav-link">
+              About
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link v-if="$store.state.loginName == null" to="/login" class="nav-link">
+              Login
+            </router-link>
+            <router-link v-else to="/" @click.native="$store.commit('changeLogin', null)">
+              {{ $store.state.loginName }}
+            </router-link>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
 
     <!-- Loads the current page -->
     <div class="container">
@@ -29,6 +50,10 @@
 <style lang="scss">
   @import './assets/css/custom';
   @import '~bootstrap/scss/bootstrap';
+
+  body {
+    overflow-y: scroll;
+  }
 
   #nav {
     padding: 20px;
