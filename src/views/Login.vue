@@ -17,31 +17,31 @@
 
 <script>
 	export default {
-	  data () {
-	    return {
-	      loginName: '',
-	  	}
+		data() {
+			return {
+				loginName: '',
+			}
 	}
 }
 </script>
 
 <style lang="scss" scoped>
-	.login {
-		h2 {
-			margin-bottom: 40px;
-		}
-		.loginfields {
-			border: 1px #aaa solid;
-			border-radius: 5px;
-			padding: 20px;
+.login {
+  h2 {
+    margin-bottom: 40px;
+  }
+  .loginfields {
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    padding: 20px;
 
-			input {
-				padding: 5px 10px;
-				border-radius: 5px;
-				border: 1px #aaa solid;
-				width: 100%;
-				margin-bottom: 20px;
-			}
-		}
-	}
+    input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px #aaa solid;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
 </style>
