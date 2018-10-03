@@ -1,26 +1,25 @@
 <template>
   <div class="home">
-    <!-- Giftly Logo -->
-    <img alt="Vue logo" src="../assets/logo.png">
 
     <!-- Slider with boxes -->
-    <div class="slider">
+    <Slider />
 
-    </div>
-    <button>Choose</button>
+    <!-- CTA Button to choose your box -->
+    <button>Choose your Box</button>
+
   </div>
 </template>
 
 <script>
-
+import Slider from "@/components/HomeSlider";
 export default {
   name: 'home',
   components: {
+    Slider
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 </style>
 
