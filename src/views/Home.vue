@@ -1,18 +1,21 @@
 <template>
   <div class="home">
+    <!-- Giftly Logo -->
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Giftly"/>
+
+    <!-- Slider with boxes -->
+    <div class="slider">
+
+    </div>
+    <button>Choose</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
   }
 }
 </script>
