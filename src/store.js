@@ -7,10 +7,14 @@ export default new Vuex.Store({
   state: {
     currentBox: null,
     boxOptions: [],
+    loginName: null,
   },
   mutations: {
     changeBox(state, box) {
       state.currentBox = box;
+    },
+    changeLogin(state, login) {
+      state.loginName = login;
     },
   },
   actions: {},

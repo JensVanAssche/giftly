@@ -5,6 +5,7 @@ import Categories from './views/Categories.vue';
 import Checkout from './views/Checkout.vue';
 import FAQ from './views/FAQ.vue';
 import About from './views/About.vue';
+import Login from './views/Login.vue';
 
 Vue.use(Router);
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About,
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
     },
   ],
 });
