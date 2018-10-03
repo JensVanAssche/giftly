@@ -1,9 +1,9 @@
 <template>
-  <ul>
-    <li v-for="(category, i) in categories" :key="i">
+  <div>
+    <button v-for="(category, i) in categories" :key="i" class="btn btn-danger d-block m-3 px-5">
       {{ category.name }}
-    </li>
-  </ul>
+    </button>
+  </div>
 </template>
 
 <script>
@@ -16,6 +16,15 @@ export default {
         },
         {
           name: 'B'
+        },
+        {
+          name: 'C'
+        },
+        {
+          name: 'D'
+        },
+        {
+          name: 'E'
         }
       ]
     }
