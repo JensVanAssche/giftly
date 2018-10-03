@@ -2,7 +2,6 @@
   <div id="app">
 
     <!-- Navbar on the top -->
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <router-link to="/" class="navbar-brand">
         <img class="nav-logo" alt="Giftly logo" src="/img/Logo_MLP.png">
@@ -12,7 +11,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <router-link to="/categories" class="nav-link">
               Categories
             </router-link>
@@ -20,11 +19,6 @@
           <li class="nav-item">
             <router-link to="/faq" class="nav-link">
               FAQ
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/about" class="nav-link">
-              About
             </router-link>
           </li>
           <li class="nav-item">
