@@ -4,8 +4,8 @@
         <router-link to="/checkout" class="btn btn-outline-danger" @click.native="$store.commit('changeBox', category)">
           Kies deze doos
         </router-link>
-        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Info</button>
-        <InfoModal :key="i" :name="category.name" :detailinfo="category.detailinfo" />
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" :data-target="`#categoryModal${i}`">Info</button>
+        <InfoModal :i="i" :name="category.name" :detailinfo="category.detailinfo" />
       </Card>
   </div>
 </template>
