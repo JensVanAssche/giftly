@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <!-- Giftly Logo left corner-->
-    <!-- <img alt="Giftly logo" src="./assets/logo.png"> -->
 
     <!-- Navbar on the top -->
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <!-- Giftly Logo left corner-->
+      <router-link to="/">
+        <!-- <img alt="Giftly logo" src="./assets/logo.png"> -->
+        Giftly
+      </router-link> |
       <router-link to="/categories">Categories</router-link> |
       <router-link to="/checkout">Checkout</router-link>
     </div>
@@ -14,6 +16,7 @@
     <div class="container">
       <router-view />
     </div>
+
   </div>
 </template>
 
