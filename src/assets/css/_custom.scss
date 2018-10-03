@@ -1,0 +1,129 @@
+.sliders{
+	position: relative;
+	height: 100%;
+	width: 100%;
+  	top: 0;
+  	left: 0;
+}
+.backbox{
+	position: relative;
+	height: auto;
+	width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index:4;
+	
+}
+.slide1{
+	position: absolute;
+	top: 33%;
+	left: 40%;
+	height: auto;
+	width: 15%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 1;
+
+	animation-name: slide1;
+    animation-duration: 10s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+	
+}
+.slide2{
+	position: absolute;
+	top: 33%;
+	left: 75%;
+	height: auto;
+	width: 25%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index:0;
+	opacity: 0;
+
+	animation-name: slide2;
+    animation-duration: 10s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+
+	
+}
+.slide3{
+	position: absolute;
+	top: 33%;
+	left: 75%;
+	height: auto;
+	width: 25%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index:0;
+	opacity: 0;
+	
+
+	animation-name: slide3;
+    animation-duration: 10s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+	
+}
+.slide4{
+	position: absolute;
+	top: 33%;
+	left: 75%;
+	height: auto;
+	width: 25%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index:0;
+	opacity: 0;
+	
+
+	animation-name: slide4;
+    animation-duration: 10s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+	
+}
+
+@keyframes slide1{
+	0%{left:40%; opactiy:1;}
+	15%{opacity:1;}
+	25%{left: 0%; opacity:0;}
+	75%{left: 75%; opacity:0;}
+	100%{left:40%; opactiy:1;}
+}
+@keyframes slide2{
+	0%{left: 75%; opacity:0;}
+	25%{left:38%; opacity:1;}
+	40%{opacity:1;}
+	50%{left: 0%; opacity:0}
+	100%{left:75%; opacity:0}
+
+}
+@keyframes slide3{
+	0%{left: 75%; opacity:0;}
+	25%{left: 75%; opacity:0;}
+	50%{left:38%; opacity:1;}
+	65%{opacity:1;}
+	75%{left: 0%; opacity:0}
+	100%{left:75%; opacity:0}
+
+	
+}
+@keyframes slide4{
+	0%{left: 75%; opacity:0;}
+	50%{left: 75%; opacity:0;}
+	75%{left:38%; opacity:1;}
+	90%{opacity:1;}
+	99%{left: 0%; opacity:0}
+	100%{left:75%; opacity:0}
+	
+}
+
+
+
