@@ -20,24 +20,32 @@ export default {
     return {
       categories: [
         {
-          name: 'A',
-          info: 'Dit is een mooie doos'
+          name: 'Random',
+          info: 'For those that don't know what to get at all!'
         },
         {
-          name: 'B',
-          info: 'Dit is een mooiere doos'
+          name: 'Interests',
+          info: 'Know what they like? Get them one of these!'
         },
         {
-          name: 'C',
-          info: 'Dit is een nog mooiere doos'
+          name: 'Exotic',
+          info: 'Want to give them a piece of another country?'
         },
         {
-          name: 'D',          
-          info: 'Dit is de mooiste doos'
+          name: 'Charity',          
+          info: 'For the person with the golden heart!'
         },
         {
-          name: 'E',
-          info: 'Dit is de allermooiste doos'
+          name: 'Local',
+          info: 'Support local artisans with these handmade gifts!'
+        },
+        {
+          name: 'Experience',          
+          info: 'Have them experience adventure!'
+        },
+        {
+          name: 'Holliday',
+          info: 'No better way to spread holliday cheer!'
         }
       ]
     }
