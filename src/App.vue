@@ -25,7 +25,7 @@
             <router-link v-if="$store.state.loginName == null" to="/login" class="nav-link">
               Login
             </router-link>
-            <router-link v-else to="/" @click.native="$store.commit('changeLogin', null)">
+            <router-link v-else to="/" @click.native="$store.commit('changeLogin', null)" class="nav-link">
               {{ $store.state.loginName }}
             </router-link>
           </li>
@@ -42,22 +42,22 @@
 </template>
 
 <style lang="scss">
-  @import './assets/css/custom';
-  @import '~bootstrap/scss/bootstrap';
+@import "./assets/css/custom";
+@import "~bootstrap/scss/bootstrap";
 
-  body {
-    overflow-y: scroll;
+body {
+  overflow-y: scroll;
+}
+
+#nav {
+  padding: 20px;
+
+  a {
+    margin: 0 10px;
   }
+}
 
-  #nav {
-    padding: 20px;
-
-    a {
-      margin: 0 10px;
-    }
-  }
-
-  .nav-logo {
-    width: 100px;
-  }
+.nav-logo {
+  width: 100px;
+}
 </style>
