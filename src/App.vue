@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- Giftly Logo left corner-->
-    <img alt="Vue logo" src="./assets/logo.png">
+    <!-- <img alt="Giftly logo" src="./assets/logo.png"> -->
 
     <!-- Navbar on the top -->
     <div id="nav">
