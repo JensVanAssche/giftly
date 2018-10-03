@@ -44,8 +44,8 @@ export default {
           info: 'Have them experience adventure!'
         },
         {
-          name: 'Holliday',
-          info: 'No better way to spread holliday cheer!'
+          name: 'Holiday',
+          info: 'No better way to spread holiday cheer!'
         }
       ]
     }
