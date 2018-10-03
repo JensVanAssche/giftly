@@ -13,7 +13,8 @@
         <router-link to="/categories">Categories</router-link>
         <router-link to="/faq">FAQ</router-link>
         <router-link to="/about">About</router-link>
-        <router-link to="/login">Login</router-link>
+        <router-link v-if="$store.state.loginName == null" to="/login">Login</router-link>
+        <router-link v-else to="/login">{{ $store.state.loginName }}</router-link>
       </div>
     </div>
 
