@@ -4,15 +4,20 @@
         <router-link to="/checkout" class="btn btn-outline-danger" @click.native="$store.commit('changeBox', category)">
           Kies deze doos
         </router-link>
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Info</button>
+        <InfoModal :key="i" :name="category.name" :detailinfo="category.detailinfo" />
       </Card>
   </div>
 </template>
 
 <script>
 import Card from "@/components/Card";
+import InfoModal from "@/components/InfoModal";
+
 export default {
   components: {
-    Card
+    Card,
+    InfoModal
   },
   data () {
     return {
