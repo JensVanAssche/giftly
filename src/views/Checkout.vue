@@ -2,7 +2,7 @@
   <div>
     <h1>Choose price</h1>
     <!-- Image of the box you chose -->
-    <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info"></Card>
+    <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-3"></Card>
     <form>
       <div class="form-group">
         <label class="display-2">€ {{ price }}</label>
