@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <div class="home-logo d-flex justify-content-center">
+      <img src="/img/giftly.svg" class="w-100">
+    </div>
 
     <!-- Slider with boxes -->
     <Slider />
@@ -19,9 +22,11 @@ export default {
   components: {
     Slider
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
+  .home-logo {
+    height: 250px;
+  }
 </style>
-

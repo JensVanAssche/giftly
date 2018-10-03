@@ -21,7 +21,7 @@ export default {
       categories: [
         {
           name: 'Random',
-          info: 'For those that don't know what to get at all!'
+          info: "For those that don't know what to get at all!"
         },
         {
           name: 'Interests',
