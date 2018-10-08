@@ -33,13 +33,26 @@
       </div>
     </nav>
 
+    
     <!-- Loads the current page -->
     <div class="container">
+      <!-- Display alerts -->
+      <Alert />
       <router-view />
     </div>
 
   </div>
 </template>
+
+<script>
+import Alert from "@/components/Alert";
+export default {
+  components: {
+    Alert
+  }
+}
+</script>
+
 
 <style lang="scss">
 @import "assets/scss/fonts";
@@ -50,5 +63,4 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
 </style>

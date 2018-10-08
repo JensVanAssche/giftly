@@ -9,6 +9,10 @@ export default new Vuex.Store({
     boxOptions: [],
     loginName: null,
     price: 70,
+    alert: {
+      header: null,
+      message: null,
+    },
   },
   mutations: {
     changeBox(state, box) {
@@ -20,6 +24,28 @@ export default new Vuex.Store({
     updatePrice(state, price) {
       state.price = price;
     },
+    showAlert(state, payload) {
+      state.alert.header = payload.header;
+      state.alert.message = payload.message;
+    },
+    hideAlert(state) {
+      state.alert.header = null;
+      state.alert.message = null;
+    },
   },
-  actions: {},
+  actions: {
+    hideAlert({ commit }) {
+      setTimeout(() => {
+        commit("hideAlert");
+      }, 1000);
+    },
+  },
+  getters: {
+    showAlert: state => {
+      if (state.alert.header == null && state.alert.message == null) {
+        return false;
+      }
+      return true;
+    },
+  },
 });
