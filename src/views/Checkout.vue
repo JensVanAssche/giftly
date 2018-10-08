@@ -23,9 +23,14 @@ export default {
     PayModal,
     Card
   },
-  data() {
-    return {
-      price: 70
+  computed: {
+    price: {
+      get () {
+        return this.$store.state.price
+      },
+      set (value) {
+        this.$store.commit('updatePrice', value)
+      }
     }
   }
 }

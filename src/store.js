@@ -8,6 +8,7 @@ export default new Vuex.Store({
     currentBox: null,
     boxOptions: [],
     loginName: null,
+    price: 70,
   },
   mutations: {
     changeBox(state, box) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     changeLogin(state, login) {
       state.loginName = login;
+    },
+    updatePrice(state, price) {
+      state.price = price;
     },
   },
   actions: {},
