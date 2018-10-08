@@ -4,7 +4,7 @@
     <!-- Navbar on the top -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <router-link to="/" class="navbar-brand">
-        <img class="nav-logo" alt="Giftly logo" src="/img/Logo_MLP.png">
+        <p class="logo m-0">Giftly</p>
       </router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,22 +42,13 @@
 </template>
 
 <style lang="scss">
-@import "./assets/css/custom";
+@import "assets/scss/fonts";
+@import "assets/scss/custom";
 @import "~bootstrap/scss/bootstrap";
 
 body {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-#nav {
-  padding: 20px;
-
-  a {
-    margin: 0 10px;
-  }
-}
-
-.nav-logo {
-  width: 100px;
-}
 </style>
