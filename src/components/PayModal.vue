@@ -57,9 +57,19 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Pay</button>
+        <button type="button" class="btn btn-primary" @click="showAlert" data-dismiss="modal">Pay</button>
       </div>
     </div>
   </div>
 </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    showAlert () {
+      this.$store.commit('showAlert', { header: 'Thank you.', message: 'Thanks for buying from us. We\'ve sent you an e-mail with further instructions! Be sure to pass along the word if you liked the gift.' })
+    }
+  }
+}
+</script>
