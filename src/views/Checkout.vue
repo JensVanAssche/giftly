@@ -2,8 +2,7 @@
   <div class="checkout container">
     <h1 class="page-title">Betalen</h1>
     <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <form>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -51,10 +50,10 @@
         </form>
         <button type="button" class="btn btn-red mb-2" @click="showAlert" data-dismiss="modal">Betalen</button>
       </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-4">
+      <div class="col-md-3"></div>
+      <div class="col-md-3">
         <h2>Jouw bestelling:</h2>
-        <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-xl-6"></Card>
+        <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info"></Card>
         <h3>Totaal prijs: €{{ price }}</h3>
       </div>
     </div>

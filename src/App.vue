@@ -50,6 +50,11 @@ require('vue2-animate/dist/vue2-animate.min.css');
 export default {
   components: {
     Alert
+  },
+  methods: {
+    showAlert () {
+      this.$store.commit('showAlert', { type: 'success', message: 'U bent succesvol uitgelogd.' })
+    }
   }
 }
 </script>
