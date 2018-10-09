@@ -1,6 +1,6 @@
 <template>
   <div class="categories">
-    <h1>Categorieën</h1>
+    <h1 class="page-title">Categorieën</h1>
     <div class="row justify-content-around">
       <div v-for="(category, i) in categories" :key="i" class="col-md-4 col-lg-3">
         <Card :key="i" :name="category.name" :info="category.info"> 
