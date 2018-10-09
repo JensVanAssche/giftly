@@ -2,13 +2,12 @@
   <div class="categories">
     <h1>Categorieën</h1>
     <div class="row justify-content-around">
-      <Card v-for="(category, i) in categories" :key="i" class="col-md-4 col-lg-3 m-3" :name="category.name" :info="category.info"> 
+      <Card v-for="(category, i) in categories" :key="i" :name="category.name" :info="category.info"> 
         <div class="d-flex justify-content-between">
-          <router-link to="/checkout" class="btn" @click.native="$store.commit('changeBox', category)">
-            Ik wil deze!
-          </router-link>
+          <button type="button" class="btn" data-toggle="modal" :data-target="`#checkoutModal${i}`" @click.native="$store.commit('changeBox', category)">Ik wil deze</button>
           <button type="button" class="btn" data-toggle="modal" :data-target="`#categoryModal${i}`">Meer info</button>
         </div>
+        <CheckoutModal :i="i" :category="category" />
         <InfoModal :i="i" :category="category" />
       </Card>
     </div>
@@ -18,11 +17,13 @@
 <script>
 import Card from "@/components/Card";
 import InfoModal from "@/components/InfoModal";
+import CheckoutModal from "@/components/CheckoutModal";
 
 export default {
   components: {
     Card,
-    InfoModal
+    InfoModal,
+    CheckoutModal
   },
   data () {
     return {

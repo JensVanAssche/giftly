@@ -31,7 +31,7 @@
     </div>
 
     <!-- Loads the current page -->
-    <div class="container">
+    <div class="container-fluid">
       <!-- Display alerts -->
       <Alert />
       <router-view />

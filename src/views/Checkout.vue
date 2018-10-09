@@ -14,7 +14,7 @@
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Buy</button>
       <PayModal />
     </template>
-    <router-link v-else to="/categories" class="btn btn-primary">Choose a box to get started</router-link>
+    <router-link v-else to="/categories" class="btn btn-primary">Kies eerst een doos</router-link>
   </div>
 </template>
 

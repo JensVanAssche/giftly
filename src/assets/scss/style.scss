@@ -53,22 +53,13 @@ body {
   height: 100vh;
 
   .home-left {
+    //background-image: url("../public/img/moodboard.png");
     background-color: $background-color;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     z-index: 2;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 1000px;
-      right: 100%;
-      background-color: $background-color;
-    }
 
     h1 {
       font-family: $logo-font;
@@ -177,4 +168,45 @@ body {
 .alert {
   z-index: 5;
   margin: 0 !important;
+}
+
+
+
+
+
+
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0%, 0, 0);
+}
+
+.modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal.right .modal-body {
+  padding: 15px 15px 80px;
+}
+
+.modal.right.fade .modal-dialog {
+  right: 0px;
+  transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+  right: 0;
+}
+
+.modal-content {
+  border-radius: 0;
+  border: none;
+}
+
+.modal-header {
+  border-bottom-color: #EEEEEE;
+  background-color: #FAFAFA;
 }
