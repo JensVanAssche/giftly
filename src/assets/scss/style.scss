@@ -2,6 +2,18 @@
 @import "fonts";
 @import "~bootstrap/scss/bootstrap";
 
+#app {
+  min-height: 100vh;
+}
+footer {
+  background-color: $footer-color;
+  p.footer-text {
+    color: $footer-text-color;
+    text-align: center;
+    font-family: $logo-font;
+    font-size: $footer-text-size;
+  }
+}
 .btn-red {
   background-color: #FF5964;
   color: #fff;

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="d-flex flex-column">
 
     <!-- Navbar on the top -->
     <div class="header">
@@ -29,13 +29,17 @@
         </ul>
       </nav>
     </div>
-
     <!-- Loads the current page -->
     <div class="container-fluid">
       <!-- Display alerts -->
       <Alert />
       <router-view />
     </div>
+    <div class="flex-grow-1"></div>
+    <footer>
+      <p class="footer-text m-0">Giftly</p>
+    </footer>
+
   </div>
 </template>
 
