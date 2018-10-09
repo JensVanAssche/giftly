@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <div class="row">
-      <div class="col home-left">
+      <div class="col-md-6 home-left">
         <h1>Giftly</h1>
       </div>
-      <div class="col home-right">
+      <div class="col-md-6 home-right">
         <h2>Over Ons</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget</p>
 
@@ -19,10 +19,6 @@
         </div>
       </div>
     </div>
-
-
-    
-
   </div>
 </template>
 
