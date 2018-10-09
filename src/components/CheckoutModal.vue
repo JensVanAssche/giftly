@@ -19,7 +19,6 @@
               <button class="btn">Nu kopen</button>
             </router-link>
             <button type="button" class="btn" data-dismiss="modal" aria-label="Close">Annuleren</button>
-            <PayModal />
           </template>
         </div>
       </div>
@@ -29,7 +28,6 @@
 
 <script>
 import Card from "@/components/Card";
-import PayModal from "@/components/PayModal";
 
 export default {
   props: {
@@ -37,7 +35,6 @@ export default {
     i: Number
   },
   components: {
-    PayModal,
     Card
   },
   computed: {

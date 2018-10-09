@@ -8,10 +8,10 @@ body {
 }
 
 .header {
-  background-color: $font-color;
+  background-color: #35a7ff;
   padding: 0 20px;
-  position: fixed;
   width: 100vw;
+  height: 9vh;
   z-index: 1;
 
   a {
@@ -50,26 +50,28 @@ body {
 }
 
 .home {
-  height: 100vh;
+  height: 89vh;
 
   .home-left {
-    //background-image: url("../public/img/moodboard.png");
-    background-color: $background-color;
+    background-image: url("../public/img/moodboard.png");
+    filter: grayscale(25%);
+    //background-color: $background-color;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    z-index: 2;
+    height: 89vh;
+    z-index: 0;
 
     h1 {
       font-family: $logo-font;
-      color: $font-color;
-      font-size: 12em;
+      color: #fff;
+      font-size: 15em;
+      text-shadow: 5px 5px 5px #000;
     }
   }
 
   .home-right {
-    padding: 120px 40px;
+    padding: 40px;
 
     h2 {
       font-family: $logo-font;
@@ -98,8 +100,6 @@ body {
 }
 
 .categories {
-  padding-top: 100px;
-
   h1 {
     font-family: $logo-font;
     color: $font-color;
@@ -122,9 +122,11 @@ body {
   }
 }
 
-.faq {
-  padding-top: 100px;
+.modal.fade.right {
+  .btn { margin-right: 10px;}
+}
 
+.faq {
   h1 {
     font-family: $logo-font;
     color: $font-color;
@@ -134,8 +136,6 @@ body {
 }
 
 .login {
-  padding-top: 100px;
-
   h1 {
     font-family: $logo-font;
     color: $font-color;
@@ -159,8 +159,6 @@ body {
 }
 
 .checkout {
-  padding-top: 100px;
-
   h1 {
     font-family: $logo-font;
     color: $font-color;
