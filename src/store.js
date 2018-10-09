@@ -14,6 +14,7 @@ export default new Vuex.Store({
       message: null,
       type: "success",
     },
+    boxSelectChoice: null,
   },
   mutations: {
     changeBox(state, box) {
@@ -35,6 +36,9 @@ export default new Vuex.Store({
       state.alert.message = null;
       state.alert.type = "success";
     },
+    updateBoxSelectChoice(state, select) {
+      state.boxSelectChoice = select;
+    }
   },
   actions: {
     hideAlert({ commit }) {
