@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Checkout: {{ category.name }}</h4>
+          <h4 class="modal-title">Kies je prijs!</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
@@ -15,7 +15,9 @@
                 <input type="range" class="form-control-range" id="formControlRange" v-model="price">
               </div>
             </form>
-            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">Nu kopen</button>
+            <router-link to="/checkout" data-dismiss="modal">
+              <button class="btn">Nu kopen</button>
+            </router-link>
             <button type="button" class="btn" data-dismiss="modal" aria-label="Close">Annuleren</button>
             <PayModal />
           </template>
