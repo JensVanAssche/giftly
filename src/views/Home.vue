@@ -5,7 +5,7 @@
         <h1>Giftly</h1>
       </div>
       <div class="col home-right">
-        <h2>About Us</h2>
+        <h2>Over Ons</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget</p>
 
         <div class="slider">
@@ -14,7 +14,7 @@
 
           <!-- CTA Button to choose your box -->
           <router-link to="/categories">
-            <button class="btn">Choose Your Box</button>
+            <button class="btn">Show me!</button>
           </router-link>
         </div>
       </div>

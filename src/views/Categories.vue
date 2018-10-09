@@ -1,13 +1,13 @@
 <template>
   <div class="categories">
-    <h1>Categories</h1>
+    <h1>Categorieën</h1>
     <div class="row justify-content-around">
       <Card v-for="(category, i) in categories" :key="i" class="col-md-4 col-lg-3 m-3" :name="category.name" :info="category.info"> 
         <div class="d-flex justify-content-between">
-          <router-link to="/checkout" class="btn btn-info" @click.native="$store.commit('changeBox', category)">
-            Kies deze doos
+          <router-link to="/checkout" class="btn" @click.native="$store.commit('changeBox', category)">
+            Ik wil deze!
           </router-link>
-          <button type="button" class="btn" data-toggle="modal" :data-target="`#categoryModal${i}`">Info</button>
+          <button type="button" class="btn" data-toggle="modal" :data-target="`#categoryModal${i}`">Meer info</button>
         </div>
         <InfoModal :i="i" :category="category" />
       </Card>

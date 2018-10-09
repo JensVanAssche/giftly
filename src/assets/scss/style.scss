@@ -115,4 +115,66 @@ body {
     font-size: 5em;
     text-align: center;
   }
+
+  .btn {
+    background-color: $background-color;
+    color: #000;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+
+.faq {
+  padding-top: 100px;
+
+  h1 {
+    font-family: $logo-font;
+    color: $font-color;
+    font-size: 5em;
+    text-align: center;
+  }
+}
+
+.login {
+  padding-top: 100px;
+
+  h1 {
+    font-family: $logo-font;
+    color: $font-color;
+    font-size: 3em;
+    text-align: center;
+  }
+
+  .loginfields {
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    padding: 20px;
+
+    input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px #aaa solid;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.checkout {
+  padding-top: 100px;
+
+  h1 {
+    font-family: $logo-font;
+    color: $font-color;
+    font-size: 5em;
+    text-align: center;
+  }
+}
+
+.alert {
+  z-index: 5;
+  margin: 0 !important;
 }

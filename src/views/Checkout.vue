@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="checkout">
     <h1>Choose price</h1>
     <!-- Image of the box you chose -->
     

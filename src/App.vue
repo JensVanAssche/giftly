@@ -10,17 +10,17 @@
         <ul class="nav-list">
           <li class="nav-list-item">
             <router-link to="/categories" class="nav-link">
-              Categories
+              Categorieën
             </router-link>
           </li>
           <li class="nav-list-item">
             <router-link to="/faq" class="nav-link">
-              FAQ
+              Veelgestelde Vragen
             </router-link>
           </li>
           <li class="nav-list-item">
             <router-link v-if="$store.state.loginName == null" to="/login" class="nav-link">
-              Login
+              Inloggen
             </router-link>
             <router-link v-else to="/" @click.native="$store.commit('changeLogin', null)" class="nav-link">
               {{ $store.state.loginName }}

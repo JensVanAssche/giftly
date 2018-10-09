@@ -12,10 +12,10 @@
         {{ category.detailinfo }}
       </div>
       <div class="modal-footer">
-        <router-link to="/checkout" class="btn btn-danger" @click.native="$store.commit('changeBox', category)" data-dismiss="modal">
-            Kies deze doos
+        <router-link to="/checkout" class="btn" @click.native="$store.commit('changeBox', category)" data-dismiss="modal">
+            Ik wil deze!
           </router-link>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn" data-dismiss="modal">Terug</button>
       </div>
     </div>
   </div>
