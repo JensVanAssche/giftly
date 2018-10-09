@@ -6,7 +6,7 @@
   min-height: 100vh;
 }
 footer {
-  background-color: $footer-color;
+  background-color: $dark-blue;
   p.footer-text {
     color: $footer-text-color;
     text-align: center;
@@ -15,7 +15,7 @@ footer {
   }
 }
 .btn-red {
-  background-color: #FF5964;
+  background-color: $bright-pink;
   color: #fff;
 
   &:hover {
@@ -24,7 +24,7 @@ footer {
 }
 
 .btn-blue {
-  background-color: #38618C;
+  background-color: $dark-blue;
   color: #fff;
 
   &:hover {
@@ -34,7 +34,7 @@ footer {
 
 .page-title {
   font-family: $logo-font;
-  color: $font-color;
+  color: $dark-blue;
   font-size: 5em;
   text-align: center;
 }
@@ -45,7 +45,7 @@ body {
 }
 
 .header {
-  background-color: #35a7ff;
+  background-color: $light-blue;
   padding: 0 20px;
   width: 100vw;
   margin-bottom: 20px;
@@ -69,7 +69,6 @@ body {
 
   .nav-list {
     margin: 0;
-    padding: 0;
     list-style-type: none;
     overflow: auto;
     float: right;
