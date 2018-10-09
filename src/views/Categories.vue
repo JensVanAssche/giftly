@@ -1,14 +1,17 @@
 <template>
-  <div class="row justify-content-around">
+  <div class="categories">
+    <h1>Categories</h1>
+    <div class="row justify-content-around">
       <Card v-for="(category, i) in categories" :key="i" class="col-md-4 col-lg-3 m-3" :name="category.name" :info="category.info"> 
         <div class="d-flex justify-content-between">
-          <router-link to="/checkout" class="btn btn-outline-danger" @click.native="$store.commit('changeBox', category)">
+          <router-link to="/checkout" class="btn btn-info" @click.native="$store.commit('changeBox', category)">
             Kies deze doos
           </router-link>
-          <button type="button" class="btn btn-outline-primary" data-toggle="modal" :data-target="`#categoryModal${i}`">Info</button>
+          <button type="button" class="btn" data-toggle="modal" :data-target="`#categoryModal${i}`">Info</button>
         </div>
         <InfoModal :i="i" :category="category" />
       </Card>
+    </div>
   </div>
 </template>
 

@@ -1,16 +1,27 @@
 <template>
   <div class="home">
-    <div class="home-logo d-flex justify-content-center">
-      <img src="/img/giftly.svg" class="w-100">
+    <div class="row">
+      <div class="col home-left">
+        <h1>Giftly</h1>
+      </div>
+      <div class="col home-right">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget</p>
+
+        <div class="slider">
+          <!-- Slider with boxes -->
+          <Slider />
+
+          <!-- CTA Button to choose your box -->
+          <router-link to="/categories">
+            <button class="btn">Choose Your Box</button>
+          </router-link>
+        </div>
+      </div>
     </div>
 
-    <!-- Slider with boxes -->
-    <Slider />
 
-    <!-- CTA Button to choose your box -->
-    <router-link to="/categories">
-      <button class="btn btn-info">Choose your Box</button>
-    </router-link>
+    
 
   </div>
 </template>
@@ -26,7 +37,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .home-logo {
-    height: 250px;
-  }
 </style>
