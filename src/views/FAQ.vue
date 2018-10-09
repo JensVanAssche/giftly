@@ -18,8 +18,8 @@ export default {
     return {
       faq: [
       {
-        question: 'huh',
-        answer: 'yes'
+        question: 'Waar zijn de vragen?',
+        answer: 'Ze komen eraan na onze user testing!'
       }
     ]
     }
