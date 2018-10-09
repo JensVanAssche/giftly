@@ -61,8 +61,8 @@ export default {
           detailinfo: "Wil je dat je giftee plezier heeft in plaats van ze een artikel te geven? Zoek niet verder! Wij bieden meerdere ervaringspakketten voor uw giftee om van te genieten! Variërend van bergbeklimmen tot een ontspannende spa-dag!"
         },
         {
-          name: 'Feestdag',
-          info: 'Geen betere manier om geluk te verspreiden!',
+          name: 'Feestdag: Halloween Editie',
+          info: 'Geen betere manier om geluk te verspreiden! Gevult met halloween gerelateerde goodies!',
           detailinfo: "Is het Halloween en moet je een cadeau meenemen naar dat spookachtig feestje? Is het kerstmis en ben je een neef vergeten die je nog nooit eerder hebt gezien? Zoek niet verder dan onze feestdozen!"
         }
       ]
