@@ -1,5 +1,5 @@
 <template>
-  <div class="faq">
+  <div class="faq container">
     <h1 class="page-title">Veelgestelde vragen</h1>
     <ul>
       <li v-for="(item, i) in faq" :key="i">

@@ -1,9 +1,9 @@
 <template>
-  <div class="categories">
+  <div class="categories container">
     <h1 class="page-title">Categorieën</h1>
     <div class="row justify-content-around">
-      <div v-for="(category, i) in categories" :key="i" class="col-md-4 col-lg-3">
-        <Card :key="i" :name="category.name" :info="category.info"> 
+      <div v-for="(category, i) in categories" :key="i" class="col-12 col-md-6 col-lg-4">
+        <Card :key="i" :name="category.name" :info="category.info">
           <div class="d-flex justify-content-between">
             <button type="button" class="btn btn-red" data-toggle="modal" :data-target="`#checkoutModal${i}`" @click="$store.commit('changeBox', category)">Ik wil deze</button>
             <button type="button" class="btn btn-blue" data-toggle="modal" :data-target="`#categoryModal${i}`">Meer info</button>

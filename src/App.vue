@@ -30,11 +30,11 @@
       </nav>
     </div>
     <!-- Loads the current page -->
-    <div class="container-fluid">
+    <main>
       <!-- Display alerts -->
       <Alert />
       <router-view />
-    </div>
+    </main>
     <div class="flex-grow-1"></div>
     <footer>
       <p class="footer-text m-0">Giftly</p>

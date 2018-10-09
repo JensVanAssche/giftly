@@ -1,5 +1,5 @@
 <template>
-  <div class="checkout">
+  <div class="checkout container">
     <h1 class="page-title">Betalen</h1>
     <div class="row">
       <div class="col-md-2"></div>
