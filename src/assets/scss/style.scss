@@ -74,8 +74,6 @@ body {
 }
 
 .home {
-  height: 89vh;
-
   .home-left {
     background-image: url("../public/img/heroimage1.png");
     filter: grayscale(25%);
@@ -86,6 +84,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: -20px;
+    height: 100vh;
 
     h1 {
       font-family: $logo-font;
