@@ -2,7 +2,10 @@
   <div class="checkout">
     <h1>Betalen</h1>
     <div class="row">
-      <div class="col-4">
+      <div class="col-md-4 offset-md-4 order-md-2">
+        <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-xl-6"></Card>
+      </div>
+      <div class="col-md-4">
         <form>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -48,13 +51,7 @@
             </div>
           </div>
         </form>
-        <button type="button" class="btn" @click="showAlert" data-dismiss="modal">Betalen</button>
-      </div>
-      <div class="col-4">
-        
-      </div>
-      <div class="col-4">
-        <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-6"></Card>
+        <button type="button" class="btn mb-2" @click="showAlert" data-dismiss="modal">Betalen</button>
       </div>
     </div>
   </div>
