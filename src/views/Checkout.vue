@@ -2,24 +2,22 @@
   <div class="checkout">
     <h1>Betalen</h1>
     <div class="row">
-      <div class="col-md-4 offset-md-4 order-md-2">
-        <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-xl-6"></Card>
-      </div>
+      <div class="col-md-2"></div>
       <div class="col-md-4">
         <form>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">E-mail</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail4" placeholder="E-mail">
             </div>
             <div class="form-group col-md-6">
               <label for="inputPassword4">Wachtwoord</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Wachtwoord">
             </div>
           </div>
           <div class="form-group">
             <label for="inputAddress">Adres</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <input type="text" class="form-control" id="inputAddress" placeholder="Straatnaam & nummer">
           </div>
           <div class="form-group">
             <label for="inputAddress2">Adres 2</label>
@@ -52,6 +50,12 @@
           </div>
         </form>
         <button type="button" class="btn btn-red mb-2" @click="showAlert" data-dismiss="modal">Betalen</button>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        <h2>Jouw bestelling:</h2>
+        <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-xl-6"></Card>
+        <h3>Totaal prijs: €{{ price }}</h3>
       </div>
     </div>
   </div>

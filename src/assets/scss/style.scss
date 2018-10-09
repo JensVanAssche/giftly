@@ -79,7 +79,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 89vh;
+    margin-top: -20px;
 
     h1 {
       font-family: $logo-font;
@@ -90,7 +90,7 @@ body {
   }
 
   .home-right {
-    padding: 40px;
+    padding: 10px 40px;
 
     h2 {
       font-family: $logo-font;
@@ -116,6 +116,7 @@ body {
     font-family: $logo-font;
     color: $font-color;
     font-size: 5em;
+    text-align: center;
   }
 
   .card {
@@ -136,6 +137,7 @@ body {
     font-family: $logo-font;
     color: $font-color;
     font-size: 5em;
+    text-align: center;
   }
 }
 
@@ -168,7 +170,10 @@ body {
     font-family: $logo-font;
     color: $font-color;
     font-size: 5em;
+    text-align: center;
   }
+
+  h3 { margin-top: 20px; }
 }
 
 .alert {
