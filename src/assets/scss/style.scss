@@ -176,5 +176,9 @@ body {
 
 .alert {
   z-index: 5;
-  margin: 0 !important;
+  margin: 0 auto !important;
+  position: absolute;
+  top: 0;
+  width: 60%;
+  left: 20%;
 }
