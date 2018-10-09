@@ -16,9 +16,9 @@
               </div>
             </form>
             <router-link to="/checkout" data-dismiss="modal">
-              <button class="btn">Nu kopen</button>
+              <button class="btn btn-red">Nu kopen</button>
             </router-link>
-            <button type="button" class="btn" data-dismiss="modal" aria-label="Close">Annuleren</button>
+            <button type="button" class="btn btn-blue" data-dismiss="modal" aria-label="Close">Annuleren</button>
           </template>
         </div>
       </div>

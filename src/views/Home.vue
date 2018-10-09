@@ -14,7 +14,7 @@
 
           <!-- CTA Button to choose your box -->
           <router-link to="/categories">
-            <button class="btn">Toon mij meer!</button>
+            <button class="btn btn-red">Toon mij meer!</button>
           </router-link>
         </div>
       </div>
