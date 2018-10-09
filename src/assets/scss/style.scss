@@ -11,8 +11,6 @@ body {
   background-color: #35a7ff;
   padding: 0 20px;
   width: 100vw;
-  height: 9vh;
-  z-index: 1;
 
   a {
     color: #fff;
@@ -60,7 +58,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 89vh;
-    z-index: 0;
 
     h1 {
       font-family: $logo-font;
