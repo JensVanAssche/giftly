@@ -51,7 +51,7 @@
             </div>
           </div>
         </form>
-        <button type="button" class="btn mb-2" @click="showAlert" data-dismiss="modal">Betalen</button>
+        <button type="button" class="btn btn-red mb-2" @click="showAlert" data-dismiss="modal">Betalen</button>
       </div>
     </div>
   </div>

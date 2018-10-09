@@ -5,8 +5,8 @@
       <div v-for="(category, i) in categories" :key="i" class="col-md-4 col-lg-3">
         <Card :key="i" :name="category.name" :info="category.info"> 
           <div class="d-flex justify-content-between">
-            <button type="button" class="btn" data-toggle="modal" :data-target="`#checkoutModal${i}`" @click="$store.commit('changeBox', category)">Ik wil deze</button>
-            <button type="button" class="btn" data-toggle="modal" :data-target="`#categoryModal${i}`">Meer info</button>
+            <button type="button" class="btn btn-red" data-toggle="modal" :data-target="`#checkoutModal${i}`" @click="$store.commit('changeBox', category)">Ik wil deze</button>
+            <button type="button" class="btn btn-blue" data-toggle="modal" :data-target="`#categoryModal${i}`">Meer info</button>
           </div>
           <CheckoutModal :i="i" :category="category" />
           <InfoModal :i="i" :category="category" />

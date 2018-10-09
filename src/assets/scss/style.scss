@@ -2,6 +2,25 @@
 @import "fonts";
 @import "~bootstrap/scss/bootstrap";
 
+.btn-red {
+  background-color: #FF5964;
+  color: #fff;
+
+  &:hover {
+    background-color: #000;
+  }
+}
+
+.btn-blue {
+  background-color: #38618C;
+  color: #fff;
+
+  &:hover {
+    background-color: #000;
+  }
+}
+
+
 body {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -11,6 +30,7 @@ body {
   background-color: #35a7ff;
   padding: 0 20px;
   width: 100vw;
+  margin-bottom: 20px;
 
   a {
     color: #fff;
@@ -51,8 +71,10 @@ body {
   height: 89vh;
 
   .home-left {
-    background-image: url("../public/img/moodboard.png");
+    background-image: url("../public/img/heroimage1.png");
     filter: grayscale(25%);
+    background-size: cover;
+    background-position: center;
     //background-color: $background-color;
     display: flex;
     justify-content: center;
@@ -85,13 +107,6 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      .btn {
-        &:hover {
-          background-color: #000;
-          color: #fff;
-        }
-      }
     }
   }
 }
@@ -101,25 +116,18 @@ body {
     font-family: $logo-font;
     color: $font-color;
     font-size: 5em;
-    text-align: center;
   }
 
   .card {
     margin-bottom: 40px;
   }
-
-  .btn {
-    background-color: $background-color;
-    color: #000;
-
-    &:hover {
-      background-color: #000;
-      color: #fff;
-    }
-  }
 }
 
 .modal.fade.right {
+  h4 {
+    font-family: $logo-font;
+    font-size: 3em;
+  }
   .btn { margin-right: 10px;}
 }
 
@@ -128,7 +136,6 @@ body {
     font-family: $logo-font;
     color: $font-color;
     font-size: 5em;
-    text-align: center;
   }
 }
 
@@ -138,6 +145,7 @@ body {
     color: $font-color;
     font-size: 3em;
     text-align: center;
+    margin-bottom: 30px;
   }
 
   .loginfields {
@@ -160,7 +168,6 @@ body {
     font-family: $logo-font;
     color: $font-color;
     font-size: 5em;
-    text-align: center;
   }
 }
 
