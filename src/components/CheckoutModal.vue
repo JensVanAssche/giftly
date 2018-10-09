@@ -7,20 +7,18 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-          <p>Kies prijs</p>
-
           <template v-if="$store.state.currentBox">
-            <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-3"></Card>
+            <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-6"></Card>
             <form>
               <div class="form-group">
                 <label class="display-2">€ {{ price }}</label>
                 <input type="range" class="form-control-range" id="formControlRange" v-model="price">
               </div>
             </form>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Buy</button>
+            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">Nu kopen</button>
+            <button type="button" class="btn" data-dismiss="modal" aria-label="Close">Annuleren</button>
             <PayModal />
           </template>
-          
         </div>
       </div>
     </div>

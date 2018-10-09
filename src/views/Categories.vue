@@ -4,7 +4,7 @@
     <div class="row justify-content-around">
       <Card v-for="(category, i) in categories" :key="i" :name="category.name" :info="category.info"> 
         <div class="d-flex justify-content-between">
-          <button type="button" class="btn" data-toggle="modal" :data-target="`#checkoutModal${i}`" @click.native="$store.commit('changeBox', category)">Ik wil deze</button>
+          <button type="button" class="btn" data-toggle="modal" :data-target="`#checkoutModal${i}`" @click="$store.commit('changeBox', category)">Ik wil deze</button>
           <button type="button" class="btn" data-toggle="modal" :data-target="`#categoryModal${i}`">Meer info</button>
         </div>
         <CheckoutModal :i="i" :category="category" />
