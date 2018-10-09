@@ -7,20 +7,20 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">E-mail</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="E-mail">
+              <input type="email" class="form-control" id="inputEmail4">
             </div>
             <div class="form-group col-md-6">
               <label for="inputPassword4">Wachtwoord</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Wachtwoord">
+              <input type="password" class="form-control" id="inputPassword4">
             </div>
           </div>
           <div class="form-group">
             <label for="inputAddress">Adres</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Straatnaam & nummer">
+            <input type="text" class="form-control" id="inputAddress">
           </div>
           <div class="form-group">
             <label for="inputAddress2">Adres 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            <input type="text" class="form-control" id="inputAddress2">
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
