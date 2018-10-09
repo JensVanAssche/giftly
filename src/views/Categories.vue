@@ -2,7 +2,7 @@
   <div class="categories">
     <h1>Categorieën</h1>
     <div class="row justify-content-around">
-      <div v-for="(category, i) in categories" class="col-3">
+      <div v-for="(category, i) in categories" :key="i" class="col-3">
         <Card :key="i" :name="category.name" :info="category.info"> 
           <div class="d-flex justify-content-between">
             <button type="button" class="btn" data-toggle="modal" :data-target="`#checkoutModal${i}`" @click="$store.commit('changeBox', category)">Ik wil deze</button>
