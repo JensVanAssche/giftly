@@ -1,0 +1,26 @@
+@import "variables";
+@import "fonts";
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.logo {
+  font-family: $logo-font;
+  font-size: $logo-font-size;
+  color: $font-color;
+  &:hover {
+    color: darken($font-color, 10);
+    //color: lighten($font-color, 10);
+  }
+
+}
+.header {
+  background-color: white;
+}
+.nav-list {
+  margin: 0;
+  padding: 0;
+}
