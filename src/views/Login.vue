@@ -1,7 +1,8 @@
 <template>
 	<div class="login container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
 				<h1 class="page-title">Inloggen met je Gifty account</h1>
 				<div class="loginfields">
 					<input type="text" name="name" placeholder="Naam" v-model="loginName">
@@ -10,6 +11,7 @@
 					<router-link v-else to="/" class="btn btn-red" @click.native="$store.commit('changeLogin', loginName)">Inloggen</router-link>
 				</div>
 			</div>
+			<div class="col-md-2"></div>
 		</div>
 	</div>
 </template>
