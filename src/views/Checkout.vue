@@ -2,15 +2,19 @@
   <div>
     <h1>Choose price</h1>
     <!-- Image of the box you chose -->
-    <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-3"></Card>
-    <form>
-      <div class="form-group">
-        <label class="display-2">€ {{ price }}</label>
-        <input type="range" class="form-control-range" id="formControlRange" v-model="price">
-      </div>
-    </form>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Buy</button>
-    <PayModal />
+    
+    <template v-if="$store.state.currentBox">
+      <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-3"></Card>
+      <form>
+        <div class="form-group">
+          <label class="display-2">€ {{ price }}</label>
+          <input type="range" class="form-control-range" id="formControlRange" v-model="price">
+        </div>
+      </form>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Buy</button>
+      <PayModal />
+    </template>
+    <router-link v-else to="/categories" class="btn btn-primary">Choose a box to get started</router-link>
   </div>
 </template>
 
@@ -23,9 +27,14 @@ export default {
     PayModal,
     Card
   },
-  data() {
-    return {
-      price: 70
+  computed: {
+    price: {
+      get () {
+        return this.$store.state.price
+      },
+      set (value) {
+        this.$store.commit('updatePrice', value)
+      }
     }
   }
 }
