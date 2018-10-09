@@ -41,6 +41,8 @@
 
 <script>
 import Alert from "@/components/Alert";
+require('vue2-animate/dist/vue2-animate.min.css');
+
 export default {
   components: {
     Alert
