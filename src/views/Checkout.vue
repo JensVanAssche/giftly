@@ -1,6 +1,6 @@
 <template>
   <div class="checkout">
-    <h1>Betalen</h1>
+    <h1 class="page-title">Betalen</h1>
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-4">
