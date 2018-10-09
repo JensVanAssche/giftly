@@ -31,39 +31,39 @@ export default {
     return {
       categories: [
         {
-          name: 'Random',
-          info: 'For those that don\'t know what to get at all!',
-          detailinfo: "A gift when you're completely clueless! Depending on your pricerange we will try to make your gift one that'll have something in it that everyone can enjoy! We'll go around collecting all sorts of cool stuff for your giftee to enjoy!"
+          name: 'Willekeurig',
+          info: 'Voor zij die niet weten wat te geven!',
+          detailinfo: "Iets voor wanneer je het echt niet weet! Afhankelijk van jouw prijsklasse zullen we je cadeautje maken zodat het voor iedereen wat past! We gaan eventjes in ons magazijn om alle soorten leuks te verzamelen!"
         },
         {
-          name: 'Interests',
-          info: 'Know what they like? Get them one of these!',
-          detailinfo: "If you go further you'll be asked to give us an idea on what your giftee's preferences in life are! Do they like football? We'll get them stuff related to that! Or maybe they're a gamer, we'll make sure the contents are something they'd enjoy!"
+          name: 'Interesses',
+          info: 'Weet je wat ze leuk vinden? Pak dan de deze!',
+          detailinfo: "Als je deze doos wilt kopen zal je hierna mogen kiezen wat je giftee leuk vindt in het leven! Houden ze van footbal? Dan zorgen we voor iets in die aard! Of misschien zijn ze een gamer? Wat het ook is we zorgen ervoor dat het cadaeutje iets voor hen gaat zijn!"      
+          },
+        {
+          name: 'Exotisch',
+          info: 'Wil je iets vanuit een ander land geven?',
+          detailinfo: "In deze dozen is er altijd iets speciaal! Je zal van talloze landen kunnen kiezen om zo het wat meer te personalizeren! Zo kan je ook een beetje dieper gaan, misschien zijn ze snoepers, of verzamelaars van beeldjes!"
         },
         {
-          name: 'Exotic',
-          info: 'Want to give them a piece of another country?',
-          detailinfo: "In these boxes there's always something special in them! You'll be able to select one of our countries of origin and what sort of gift you'd like it to be (think delicious candy or lovely memorabilia!)."
+          name: 'Liefdadigheid',          
+          info: 'Voor zij met een gouden hart!',
+          detailinfo: "Uw geschenk zal gevuld worden met allerlij hardverwarmende goederen die goede doelen ondersteunen! Er is zelfs een optie om aan een goed doel van jou keuze te geven in je giftee's naam!"
         },
         {
-          name: 'Charity',          
-          info: 'For the person with the golden heart!',
-          detailinfo: "Your gift will be filled with heartwarming goods that support good causes! There's even an option to give to a charity of your choice and sending the proof of it in your giftee's name!"
+          name: 'Lokaal',
+          info: 'Steun lokale handwerkers met deze handgemaakte geschenken!',
+          detailinfo: "We hebben contact gelegd met meerdere artisinale kunstenaars en handwerkers! Zo maken zij voor ons en u geweldige en leuke dingen om weg te geven! Op deze manier kunt u uw lokale winkels ondersteunen en ontdekken wat zij bieden!"
         },
         {
-          name: 'Local',
-          info: 'Support local artisans with these handmade gifts!',
-          detailinfo: "We've made contact with several artisans, employing them to create lovely things for you and us to give to those we love! This way you can support your local shops and explore what they offer!"
+          name: 'Ervaring',          
+          info: 'Laat ze avontuur beleven!',
+          detailinfo: "Wil je dat je giftee plezier heeft in plaats van ze een artikel te geven? Zoek niet verder! Wij bieden meerdere ervaringspakketten voor uw giftee om van te genieten! Variërend van bergbeklimmen tot een ontspannende spa-dag!"
         },
         {
-          name: 'Experience',          
-          info: 'Have them experience adventure!',
-          detailinfo: "Would you like your giftee to have some fun rather than give them an item? Look no further! We offer multiple experience packs for your giftee to enjoy! Ranging from mountain climbing to a relaxing spa day!"
-        },
-        {
-          name: 'Holiday',
-          info: 'No better way to spread holiday cheer!',
-          detailinfo: "Is it Halloween and you need to bring a gift to that spooky party? Is it Christmas and you totally forgot about a cousin you've never seen before? Well look no further than our holiday boxes!"
+          name: 'Feestdag',
+          info: 'Geen betere manier om geluk te verspreiden!',
+          detailinfo: "Is het Halloween en moet je een cadeau meenemen naar dat spookachtig feestje? Is het kerstmis en ben je een neef vergeten die je nog nooit eerder hebt gezien? Zoek niet verder dan onze feestdozen!"
         }
       ]
     }
