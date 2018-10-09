@@ -68,7 +68,7 @@
 export default {
   methods: {
     showAlert () {
-      this.$store.commit('showAlert', { header: 'Thank you.', message: 'Thanks for buying from us. We\'ve sent you an e-mail with further instructions! Be sure to pass along the word if you liked the gift.' })
+      this.$store.commit('showAlert', { type: 'success', header: 'Bedankt.', message: 'Bedankt om bij ons te kopen. Je zal binnenkort een e-mail ontvangen met verdere instructies! Nog veel plezier met het cadeau.' })
     }
   }
 }

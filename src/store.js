@@ -12,6 +12,7 @@ export default new Vuex.Store({
     alert: {
       header: null,
       message: null,
+      type: "success",
     },
   },
   mutations: {
@@ -24,13 +25,15 @@ export default new Vuex.Store({
     updatePrice(state, price) {
       state.price = price;
     },
-    showAlert(state, payload) {
-      state.alert.header = payload.header;
-      state.alert.message = payload.message;
+    showAlert(state, { header, message, type }) {
+      state.alert.header = header;
+      state.alert.message = message;
+      state.alert.type = type;
     },
     hideAlert(state) {
       state.alert.header = null;
       state.alert.message = null;
+      state.alert.type = "success";
     },
   },
   actions: {

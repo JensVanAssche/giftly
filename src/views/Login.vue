@@ -7,7 +7,8 @@
 				<div class="loginfields">
 					<input type="text" name="name" placeholder="Naam" v-model="loginName">
 					<input type="password" name="password" placeholder="Wachtwoord">
-					<router-link to="/" class="btn btn-outline-success" @click.native="$store.commit('changeLogin', loginName)">Inloggen</router-link>
+					<button v-if="!loginName" class="btn btn-outline-success" @click="showAlert">Inloggen</button>
+					<router-link v-else to="/" class="btn btn-outline-success" @click.native="$store.commit('changeLogin', loginName)">Inloggen</router-link>
 				</div>
 			</div>
 			<div class="col-3"></div>
@@ -21,7 +22,12 @@ export default {
 		return {
 			loginName: '',
 		}
-	}
+	},
+	methods: {
+    showAlert () {
+      this.$store.commit('showAlert', { type: 'danger', message: 'Gelieve een naam in te vullen.' })
+    }
+  }
 }
 </script>
 
