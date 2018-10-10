@@ -1,6 +1,7 @@
 @import "variables";
 @import "fonts";
 @import "utils";
+@import "overwrite";
 @import "~bootstrap/scss/bootstrap";
 
 body {
@@ -29,6 +30,12 @@ body {
     @include media-breakpoint-down(md) { 
       font-size: $hero-text-size-mobile;
     }
+  }
+}
+
+nav {
+  a {
+    font-size: 1.2em;
   }
 }
 
