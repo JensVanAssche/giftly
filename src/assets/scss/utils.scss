@@ -24,7 +24,9 @@
     font-size: 3em;
   }
 
-  .btn { margin-right: 10px;}
+  .btn {
+    margin-right: 10px;
+  }
 }
 .alert {
   z-index: 5;
@@ -35,12 +37,12 @@
   position: fixed;
   margin: auto;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   transform: translate3d(0%, 0, 0);
 }
 
 .modal.right .modal-content {
-  height: 100%;
+  min-height: 100%;
   overflow-y: auto;
 }
 
@@ -63,6 +65,6 @@
 }
 
 .modal-header {
-  border-bottom-color: #EEEEEE;
-  background-color: #FAFAFA;
+  border-bottom-color: #eeeeee;
+  background-color: #fafafa;
 }
