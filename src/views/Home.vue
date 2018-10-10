@@ -36,4 +36,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.btn{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
