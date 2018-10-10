@@ -1,6 +1,7 @@
 @import "variables";
 @import "fonts";
 @import "utils";
+@import "overwrite";
 @import "~bootstrap/scss/bootstrap";
 
 body {
@@ -32,6 +33,12 @@ body {
   }
 }
 
+nav {
+  a {
+    font-size: 1.2em;
+  }
+}
+
 footer {
   background-color: $dark-blue;
 
@@ -42,7 +49,6 @@ footer {
     font-size: $footer-text-size;
   }
 }
-
 
 .page-title {
   font-family: $logo-font;
@@ -55,12 +61,7 @@ footer {
     font-size: $logo-font-size;
     transition: 0.5s;
     font-family: $logo-font;
-    &:hover {
-      //color: darken($font-color, 10);
-      //color: lighten($font-color, 10);
-      transform: scale(1.4, 1.4);
-      transition: 0.5s;
-    }
+    line-height: 1rem;
 }
 
 .categories {

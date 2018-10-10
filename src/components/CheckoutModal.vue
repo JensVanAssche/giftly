@@ -9,7 +9,7 @@
         <div class="modal-body">
           <template v-if="$store.state.currentBox">
             <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col"></Card>
-            <form v-if="category.name == 'Interesses'">
+            <form v-if="category.name == 'Interesses'" class="mb-4">
               <label>Kies interesse:</label>
               <br />
               <select v-model="boxSelectChoice" class="form-control">
@@ -26,7 +26,7 @@
                 <option value="Fitness">Fitness</option>
               </select>
             </form>
-            <form v-if="category.name == 'Exotisch'">
+            <form v-if="category.name == 'Exotisch'" class="mb-4">
               <label>Kies werelddeel:</label>
               <br />
               <select v-model="boxSelectChoice" class="form-control">
@@ -39,7 +39,7 @@
                 <option value="Australië">Australië</option>
               </select>
             </form>
-            <form v-if="category.name == 'Liefdadigheid'">
+            <form v-if="category.name == 'Liefdadigheid'" class="mb-4">
               <label>Kies goed doel:</label>
               <br />
               <select v-model="boxSelectChoice" class="form-control">
