@@ -61,12 +61,7 @@ footer {
     font-size: $logo-font-size;
     transition: 0.5s;
     font-family: $logo-font;
-    &:hover {
-      //color: darken($font-color, 10);
-      //color: lighten($font-color, 10);
-      transform: scale(1.4, 1.4);
-      transition: 0.5s;
-    }
+    line-height: 1rem;
 }
 
 .categories {
