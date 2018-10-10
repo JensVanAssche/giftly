@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<h1 class="page-title">Inloggen met je Gifty account</h1>
+				<h1 class="page-title">Inloggen met je Giftly account</h1>
 				<div class="loginfields">
 					<input type="text" name="name" placeholder="Naam" v-model="loginName">
 					<input type="password" name="password" placeholder="Wachtwoord">
