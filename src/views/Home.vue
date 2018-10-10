@@ -5,7 +5,7 @@
         <div class="text-wrapper d-flex justify-content-center align-items-center">
           <span class="hero-text">Giftly</span>
         </div>
-        <img src="img/heroimage1.png" class="heroimage">
+        <img src="../assets/img/heroimage1.png" class="heroimage">
       </div>
       <div class="col-12 col-md-6 p-5">
         <h2 class="page-title">Over ons</h2>
