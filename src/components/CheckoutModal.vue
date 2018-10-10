@@ -3,16 +3,16 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Kies je prijs!</h4>
+          <h4 class="modal-title">Details</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
           <template v-if="$store.state.currentBox">
-            <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col-6"></Card>
+            <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col"></Card>
             <form v-if="category.name == 'Interesses'">
               <label>Kies interesse:</label>
               <br />
-              <select v-model="boxSelectChoice">
+              <select v-model="boxSelectChoice" class="form-control">
                 <option value=""></option>
                 <option value="Boeken">Boeken</option>
                 <option value="Films">Films</option>
@@ -29,7 +29,7 @@
             <form v-if="category.name == 'Exotisch'">
               <label>Kies werelddeel:</label>
               <br />
-              <select>
+              <select v-model="boxSelectChoice" class="form-control">
                 <option value=""></option>
                 <option value="Europa">Europa</option>
                 <option value="Noord-Amerika">Noord-Amerika</option>
@@ -42,7 +42,7 @@
             <form v-if="category.name == 'Liefdadigheid'">
               <label>Kies goed doel:</label>
               <br />
-              <select>
+              <select v-model="boxSelectChoice" class="form-control">
                 <option value=""></option>
                 <option value="Artsen Zonder Grenzen">Artsen Zonder Grenzen</option>
                 <option value="Kom Op Tegen Kanker">Kom Op Tegen Kanker</option>
@@ -54,8 +54,9 @@
             </form>
             <form>
               <div class="form-group">
-                <label class="display-2">€ {{ price }}</label>
-                <input type="range" class="form-control-range" id="formControlRange" v-model="price">
+                <label>Kies uw prijs:</label>
+                <label class="display-2 d-block">€ {{ price }}</label>
+                <input type="range" class="form-control-range" id="formControlRange" v-model="price" min="10" step="5">
               </div>
             </form>
             <router-link to="/checkout" data-dismiss="modal" @click.native="$store.commit('updateBoxSelectChoice', boxSelectChoice)">
