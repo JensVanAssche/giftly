@@ -43,6 +43,10 @@
 }
 
 .modal.right .modal-body {
+  min-height: 100vh;
+}
+
+.modal.right .modal-body {
   padding: 15px 15px;
 }
 
@@ -58,7 +62,6 @@
 .modal-content {
   border-radius: 0;
   border: none;
-  min-height: 100vh;
 }
 
 .modal-header {
