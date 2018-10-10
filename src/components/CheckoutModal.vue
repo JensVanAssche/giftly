@@ -24,6 +24,7 @@
                 <option value="Reizen">Reizen</option>
                 <option value="Sport">Sport</option>
                 <option value="Fitness">Fitness</option>
+                <option value="Mode">Mode</option>
               </select>
             </form>
             <form v-if="category.name == 'Exotisch'" class="mb-4">
