@@ -22,9 +22,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
-  min-height: 400px;
-}
 img {
   max-width: 150px;
   height: auto;

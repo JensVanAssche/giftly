@@ -3,7 +3,7 @@
     <h1 class="page-title">Categorieën</h1>
     <div class="row justify-content-around">
       <div v-for="(category, i) in categories" :key="i" class="col-12 col-md-6 col-lg-3">
-        <Card :key="i" :name="category.name" :info="category.info" :boxImg="category.img">
+        <Card :key="i" :name="category.name" :info="category.info" :boxImg="category.img" class="card">
           <div class="d-flex justify-content-between">
             <button type="button" class="btn btn-red" data-toggle="modal" :data-target="`#checkoutModal${i}`" @click="$store.commit('changeBox', category)">Ik wil deze</button>
             <button type="button" class="btn btn-blue" data-toggle="modal" :data-target="`#categoryModal${i}`">Meer info</button>
@@ -77,3 +77,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.card {
+  min-height: 400px;
+}
+</style>
