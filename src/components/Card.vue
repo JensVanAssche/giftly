@@ -4,9 +4,13 @@
     <img v-else-if="boxImg" class="card-img-top py-2" :src="`/img/boxes/${boxImg}`" alt="Card image cap">
     <img v-else class="card-img-top p-1" src="../assets/img/presentBox.png" alt="Card image cap">
     <div class="card-body d-flex flex-column justify-content-between">
-      <h5 class="card-title">{{ name }}</h5>
-      <p class="card-text">{{ info }}</p>
-      <slot></slot>
+      <div>
+        <h5 class="card-title">{{ name }}</h5>
+        <p class="card-text">{{ info }}</p>
+      </div>
+      <div>
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
