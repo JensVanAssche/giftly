@@ -7,16 +7,16 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">E-mail</label>
-              <input type="email" class="form-control" id="inputEmail4">
+              <input type="email" class="form-control" id="inputEmail4" value="info@giftly.com">
             </div>
             <div class="form-group col-md-6">
               <label for="inputPassword4">Wachtwoord</label>
-              <input type="password" class="form-control" id="inputPassword4">
+              <input type="password" class="form-control" id="inputPassword4" value="wachtwoord">
             </div>
           </div>
           <div class="form-group">
             <label for="inputAddress">Adres</label>
-            <input type="text" class="form-control" id="inputAddress">
+            <input type="text" class="form-control" id="inputAddress" value="Salesianenlaan 92">
           </div>
           <div class="form-group">
             <label for="inputAddress2">Adres 2</label>
@@ -25,7 +25,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputCity">Stad</label>
-              <input type="text" class="form-control" id="inputCity">
+              <input type="text" class="form-control" id="inputCity" value="Hoboken">
             </div>
             <div class="form-group col-md-4">
               <label for="inputState">Gemeente</label>
@@ -36,7 +36,7 @@
             </div>
             <div class="form-group col-md-2">
               <label for="inputZip">Postcode</label>
-              <input type="text" class="form-control" id="inputZip">
+              <input type="text" class="form-control" id="inputZip" value="2660">
             </div>
           </div>
           <div class="form-group">
