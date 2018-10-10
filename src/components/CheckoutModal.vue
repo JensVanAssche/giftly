@@ -29,7 +29,7 @@
             <form v-if="category.name == 'Exotisch'">
               <label>Kies werelddeel:</label>
               <br />
-              <select>
+              <select v-model="boxSelectChoice">
                 <option value=""></option>
                 <option value="Europa">Europa</option>
                 <option value="Noord-Amerika">Noord-Amerika</option>
@@ -42,7 +42,7 @@
             <form v-if="category.name == 'Liefdadigheid'">
               <label>Kies goed doel:</label>
               <br />
-              <select>
+              <select v-model="boxSelectChoice">
                 <option value=""></option>
                 <option value="Artsen Zonder Grenzen">Artsen Zonder Grenzen</option>
                 <option value="Kom Op Tegen Kanker">Kom Op Tegen Kanker</option>
