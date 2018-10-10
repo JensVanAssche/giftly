@@ -8,7 +8,7 @@ export default new Vuex.Store({
     currentBox: null,
     boxOptions: [],
     loginName: null,
-    price: 70,
+    price: 25,
     alert: {
       header: null,
       message: null,
