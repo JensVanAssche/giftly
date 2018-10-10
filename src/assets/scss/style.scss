@@ -1,9 +1,35 @@
 @import "variables";
 @import "fonts";
+@import "utils";
 @import "~bootstrap/scss/bootstrap";
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
 #app {
   min-height: 100vh;
+}
+
+.heroimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.text-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  .hero-text {
+    font-size: $hero-text-size;
+    color: $hero-text-color;
+    font-family: $logo-font;  
+    text-shadow: 2px 2px 5px black;
+    @include media-breakpoint-down(md) { 
+      font-size: $hero-text-size-mobile;
+    }
+  }
 }
 
 footer {
@@ -17,23 +43,6 @@ footer {
   }
 }
 
-.btn-red {
-  background-color: $bright-pink;
-  color: #fff;
-
-  &:hover {
-    background-color: #000;
-  }
-}
-
-.btn-blue {
-  background-color: $dark-blue;
-  color: #fff;
-
-  &:hover {
-    background-color: #000;
-  }
-}
 
 .page-title {
   font-family: $logo-font;
@@ -42,111 +51,22 @@ footer {
   text-align: center;
 }
 
-body {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-.header {
-  background-color: $light-blue;
-  padding: 0 20px;
-  width: 100vw;
-  margin-bottom: 20px;
-
-  a {
-    color: #fff;
-    font-family: $logo-font;
-  }
-
-  .header-logo {
+.header-logo {
     font-size: $logo-font-size;
     transition: 0.5s;
-
+    font-family: $logo-font;
     &:hover {
       //color: darken($font-color, 10);
       //color: lighten($font-color, 10);
       transform: scale(1.4, 1.4);
       transition: 0.5s;
     }
-  }
-
-  .nav-list {
-    margin: 0;
-    list-style-type: none;
-    overflow: auto;
-    float: right;
-    padding: 10px 0;
-
-    li {
-      float: left;
-    }
-
-    a {
-      font-size: 1.8em;
-    }
-  }
-}
-
-.home {
-  .home-left {
-    background-image: url("../public/img/heroimage1.png");
-    filter: grayscale(25%);
-    background-size: cover;
-    background-position: center;
-    //background-color: $background-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -20px;
-    height: 100vh;
-
-    h1 {
-      font-family: $logo-font;
-      color: #fff;
-      font-size: 15em;
-      text-shadow: 5px 5px 5px #000;
-    }
-  }
-
-  .home-right {
-    padding: 10px 40px;
-
-    h2 {
-      font-family: $logo-font;
-      color: $font-color;
-      font-size: 4em;
-    }
-
-    p {
-      color: $font-color;
-      font-size: 1.2em;
-    }
-
-    .slider {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
 }
 
 .categories {
   .card {
     margin-bottom: 40px;
   }
-}
-
-.modal.fade.right {
-  h4 {
-    font-family: $logo-font;
-    font-size: 3em;
-  }
-
-  .btn { margin-right: 10px;}
-}
-
-.faq {
-  
 }
 
 .login {
@@ -167,50 +87,4 @@ body {
 
 .checkout {
   h3, h4 { margin-top: 20px; }
-}
-
-.alert {
-  z-index: 5;
-  margin: 0 !important;
-}
-
-
-
-
-
-
-.modal.right .modal-dialog {
-  position: fixed;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  transform: translate3d(0%, 0, 0);
-}
-
-.modal.right .modal-content {
-  height: 100%;
-  overflow-y: auto;
-}
-
-.modal.right .modal-body {
-  padding: 15px 15px 80px;
-}
-
-.modal.right.fade .modal-dialog {
-  right: 0px;
-  transition: opacity 0.3s linear, right 0.3s ease-out;
-}
-
-.modal.right.fade.in .modal-dialog {
-  right: 0;
-}
-
-.modal-content {
-  border-radius: 0;
-  border: none;
-}
-
-.modal-header {
-  border-bottom-color: #EEEEEE;
-  background-color: #FAFAFA;
 }

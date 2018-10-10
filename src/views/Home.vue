@@ -1,11 +1,14 @@
 <template>
-  <div class="home">
-    <div class="row">
-      <div class="col-md-6 home-left">
-        <h1>Giftly</h1>
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-12 col-md-6 position-relative">
+        <div class="text-wrapper d-flex justify-content-center align-items-center">
+          <span class="hero-text">Giftly</span>
+        </div>
+        <img src="img/heroimage1.png" class="heroimage">
       </div>
-      <div class="col-md-6 home-right">
-        <h2>Over ons</h2>
+      <div class="col-12 col-md-6 p-5">
+        <h2 class="page-title">Over ons</h2>
         <p>Wij zijn Giftly! Giftly is een nieuwe service die de manier van pakjes kopen gaat veranderen! Je kent wel de momenten, vlak voor kerstmis of een verjaardag, je wil voor iemand een cadeau kopen maar hebt geen idee hebt hoe of wat, waar of wanneer. Die tijden van kopbreken zijn voorbij dankzij Giftly! Bij ons kan je geweldige cadeaus kopen waarvan je ontvanger noch jezelf weet wat erin zit, een dubbele verrassing dus! Cadeaus kunnen gekocht worden op basis van interesses, lokale of exotische afkomst of gewoon totaal willekeurig!</p>
 
         <div class="slider">
