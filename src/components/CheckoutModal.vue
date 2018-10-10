@@ -56,8 +56,9 @@
             <form>
               <div class="form-group">
                 <label>Kies uw prijs:</label>
-                <label class="display-2 d-block">€ {{ price }}</label>
-                <input type="range" class="form-control-range" id="formControlRange" v-model="price" min="10" step="5">
+                <p>€ <span class="display-2">{{ price }}</span></p>
+                <vueSlider v-model="value" ref="slider">
+                </vueSlider>
               </div>
             </form>
             <router-link to="/checkout" data-dismiss="modal" @click.native="$store.commit('updateBoxSelectChoice', boxSelectChoice)">
@@ -72,6 +73,7 @@
 </template>
 
 <script>
+import vueSlider from 'vue-slider-component';
 import Card from "@/components/Card";
 
 export default {
@@ -80,7 +82,8 @@ export default {
     i: Number
   },
   components: {
-    Card
+    Card,
+    vueSlider
   },
   computed: {
     price: {
@@ -95,6 +98,15 @@ export default {
   data() {
     return {
       boxSelectChoice: '',
+      sliderOptions: {
+        'height': 15,
+        'dotSize': 25,
+        'min': 10,
+        'max': 100,
+        'interval': 5,
+        'tooltip':"hover"
+      },
+      value: 10
     }
   }
 }
