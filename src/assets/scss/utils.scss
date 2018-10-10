@@ -37,13 +37,9 @@
   position: fixed;
   margin: auto;
   width: 100%;
-  min-height: 100%;
-  transform: translate3d(0%, 0, 0);
-}
-
-.modal.right .modal-content {
-  min-height: 100%;
   overflow-y: auto;
+  min-height: 100vh;
+  transform: translate3d(0%, 0, 0);
 }
 
 .modal.right .modal-body {
