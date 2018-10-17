@@ -8,6 +8,7 @@
     <div class="card-body d-flex flex-column justify-content-between">
       <div>
         <h5 class="card-title">{{ name }}</h5>
+        <p class="card-delivery">Levertijd: {{ deliveryTime }}</p>
         <p class="card-text">{{ info }}</p>
       </div>
       <div>
@@ -22,6 +23,7 @@ export default {
   props: {
     name: String,
     info: String,
+    deliveryTime: String,
     boxImg: String,
   }
 }

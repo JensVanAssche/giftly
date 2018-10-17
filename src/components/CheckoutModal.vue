@@ -8,7 +8,7 @@
         </div>
         <div class="modal-body">
           <template v-if="$store.state.currentBox">
-            <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" class="col"></Card>
+            <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" :deliveryTime="$store.state.currentBox.deliveryTime" class="col"></Card>
             <form v-if="category.name == 'Interesses'" class="mb-4">
               <label>Kies interesse:</label>
               <br />
