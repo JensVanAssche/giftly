@@ -55,6 +55,24 @@
               <input type="text" name="" class="form-control" id="nameRecepient">
             </div>
           </div>
+          <h5>Paketje aanpassen</h5>
+          <div class="form-group">
+            <label>Tekstje bij uw pakje: (laat leeg om geen tekstje toe te voegen)</label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Inpakpapier kiezen</label>
+            <div>
+              <input type="radio" name="wrappingpaper" value="-1" id="-1" class="mx-2">
+              <label for="-1">Geen inpakpapier</label>
+            </div>
+            <div>
+              <label class="wrappingpaperlabel" v-for="(value, key) in wrappingpaper">
+                <input type="radio" name="wrappingpaper" :value="key">
+                <img :src="value">
+              </label>
+            </div>
+          </div>
         </form>
         <button type="button" class="btn btn-red mb-2" @click="showAlert" data-dismiss="modal">Betalen</button>
       </div>
@@ -98,10 +116,36 @@ export default {
   data () {
     return {
       checked: false,
+      wrappingpaper: [
+        "https://cdn.bmstores.co.uk/images/hpcProductImage/imgFull/291874-kids-everyday-wrap-animals1.jpg",
+        "https://cdn.notonthehighstreet.com/system/product_images/images/001/238/763/original_recycled-red-chevron-white-wrapping-paper.jpg",
+        "https://cdn.notonthehighstreet.com/system/product_images/images/001/228/606/original_recycled-blue-chevron-wrapping-paper.jpg",
+        "https://www.rexlondon.com/sites/dotcom.pleasetest.co.uk/files/styles/uc_product_full/public/25024%20%28swatch%29.jpg",
+        "https://www.sassandbelle.co.uk/Images/Product/Default/xlarge/WRAP048.jpg",
+        "https://cdn.shopify.com/s/files/1/0794/1765/products/CarpenterHill_WrappingPaper_Astral_Reindeer_Pixel_Snowflake_large.png?v=1508785655",
+        "https://cdn.notonthehighstreet.com/system/product_images/images/001/228/605/original_recycled-white-star-brown-wrapping-paper.jpg",
+        "https://www.sassandbelle.co.uk/Images/Product/Default/xlarge/WRAP066.jpg"
+      ]
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+
+<style type="text/css" scoped>
+  .wrappingpaperlabel > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+  }
+  .wrappingpaperlabel > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+    width: 100px;
+  }
+  .wrappingpaperlabel > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    border:2px solid #f00;
+  }
+  .wrappingpaperlabel {
+    margin: 5px;
+  }
 </style>
