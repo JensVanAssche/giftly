@@ -41,10 +41,19 @@
             </div>
           </div>
           <h5>Levertijd</h5>
-          <div class="form-group">
-            <input type="checkbox" id="deliveryCheck" class="mx-2" v-model="checked">
-            <label for="deliveryCheck">Kies aangepaste levertijd</label>
-            <input v-if="checked == true" type="date" class="form-control" id="inputDate">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="checkbox" id="deliveryCheck" class="mx-2" v-model="checked">
+              <label for="deliveryCheck">Kies aangepaste levertijd</label>
+              <input v-if="checked == true" type="date" class="form-control" id="inputDate">
+            </div>
+          </div>
+          <div v-if="$store.state.currentBox.name == 'Liefdadigheid'">
+            <h5>Liefdadigheid opties</h5>
+            <div class="form-group">
+              <label for="nameRecepient">Naam v/d ontvanger</label>
+              <input type="text" name="" class="form-control" id="nameRecepient">
+            </div>
           </div>
         </form>
         <button type="button" class="btn btn-red mb-2" @click="showAlert" data-dismiss="modal">Betalen</button>

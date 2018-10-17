@@ -115,7 +115,7 @@ export default {
     }
   },
   methods: {
-    pushSelectOptions: function(event) {
+    pushSelectOptions: function() {
       this.$store.commit('updateBoxSelectChoice', this.boxSelectChoice);
       this.$store.commit('updateBoxSelectSex', this.boxSelectSex);
       this.$store.commit('updateBoxSelectAge', this.boxSelectAge);
