@@ -57,12 +57,6 @@
                 </vueSlider>
               </div>
             </form>
-            <form>
-              <div class="form-group">
-                <label>Tekstje bij uw pakje: (laat leeg om geen tekstje toe te voegen)</label>
-                <textarea class="form-control" rows="4"></textarea>
-              </div>
-            </form>
             <router-link to="/checkout" data-dismiss="modal" @click.native="pushSelectOptions">
               <button class="btn btn-red mt-2">Nu kopen</button>
             </router-link>
