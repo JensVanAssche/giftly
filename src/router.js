@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import store from "./store";
 import Home from './views/Home.vue';
 import Categories from './views/Categories.vue';
 import Checkout from './views/Checkout.vue';
@@ -8,7 +9,7 @@ import Login from './views/Login.vue';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -39,3 +40,9 @@ export default new Router({
     },
   ],
 });
+
+router.afterEach(() => {
+  store.commit('hideAlert');
+})
+
+export default router;
