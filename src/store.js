@@ -15,7 +15,7 @@ export default new Vuex.Store({
       type: "success",
     },
     boxSelectChoice: null,
-    shoppingCart: []
+    shoppingCart: localStorage.getItem('shoppingCart') || []
   },
   mutations: {
     changeBox(state, box) {
@@ -48,6 +48,7 @@ export default new Vuex.Store({
     },
     addToCart(state, box){
       state.shoppingCart = [box, ...state.shoppingCart];
+      localStorage.setItem('shoppingCart', state.shoppingCart);
     }
   },
   actions: {
