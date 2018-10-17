@@ -38,12 +38,11 @@
         </div>
       </nav>
     <!-- Loads the current page -->
-    <main>
+    <main class="flex-grow-1">
       <!-- Display alerts -->
       <Alert />
       <router-view />
     </main>
-    <div class="flex-grow-1"></div>
     <footer>
       <p class="footer-text m-0">Giftly</p>
     </footer>
