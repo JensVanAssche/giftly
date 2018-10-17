@@ -54,7 +54,9 @@
       <div class="col-md-3">
         <h2>Jouw bestelling:</h2>
         <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info"></Card>
-        <h4 v-if="$store.state.boxSelectChoice">Categorie: {{ $store.state.boxSelectChoice }}</h4>
+        <p v-if="$store.state.boxSelectChoice">Categorie: {{ $store.state.boxSelectChoice }}</p>
+        <p >Geslacht: {{ $store.state.boxSelectSex }}</p>
+        <p >Leeftijd: {{ $store.state.boxSelectAge }}</p>
         <h3>Totaal prijs: €{{ price }}</h3>
       </div>
     </div>

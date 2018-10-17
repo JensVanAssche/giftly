@@ -38,6 +38,12 @@ export default new Vuex.Store({
     },
     updateBoxSelectChoice(state, select) {
       state.boxSelectChoice = select;
+    },
+    updateBoxSelectSex(state, select) {
+      state.boxSelectSex = select;
+    },
+    updateBoxSelectAge(state, select) {
+      state.boxSelectAge = select;
     }
   },
   actions: {

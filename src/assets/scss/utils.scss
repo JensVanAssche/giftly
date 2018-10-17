@@ -42,11 +42,13 @@
   transform: translate3d(0%, 0, 0);
 }
 
-.modal.right .modal-body {
-  min-height: 100vh;
+.modal.right .modal-header h4 {
+  line-height: 3rem;
 }
 
 .modal.right .modal-body {
+  height: calc(100vh - 81px);
+  overflow-y: scroll;
   padding: 15px 15px;
 }
 
