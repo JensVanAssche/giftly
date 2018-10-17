@@ -7,6 +7,14 @@
 body {
   overflow-y: scroll;
   overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.home-wrapper {
+  min-height: calc(100vh - 60.8px - 72px);
+  @include media-breakpoint-down(md) {
+    min-height: calc(100vh - 56px - 72px);
+  }
 }
 
 #app {

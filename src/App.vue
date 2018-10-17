@@ -43,7 +43,6 @@
       <Alert />
       <router-view />
     </main>
-    <div class="flex-grow-1"></div>
     <footer>
       <p class="footer-text m-0">Giftly</p>
     </footer>
