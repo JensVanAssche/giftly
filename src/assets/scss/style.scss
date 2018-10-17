@@ -11,9 +11,9 @@ body {
 }
 
 .home-wrapper, main {
-  min-height: calc(100vh - 60.8px - 72px);
+  height: calc(100vh - 60.8px);
   @include media-breakpoint-down(md) {
-    min-height: calc(100vh - 56px - 72px);
+    height: calc(100vh - 56px);
   }
 }
 
@@ -30,13 +30,25 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  .hero-text {
-    font-size: $hero-text-size;
+  .hero-logo, .hero-slogan {
     color: $hero-text-color;
-    font-family: $logo-font;  
-    text-shadow: 2px 2px 5px black;
-    @include media-breakpoint-down(md) { 
+    font-family: $logo-font;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+  }
+  .hero-logo {
+    font-size: $hero-text-size;
+    line-height: $hero-text-line-height;
+    @include media-breakpoint-down(sm) {
       font-size: $hero-text-size-mobile;
+      line-height: $hero-text-line-height-mobile;
+    }
+  }
+  .hero-slogan {
+    font-size: $hero-slogan-text-size;
+    line-height: $hero-slogan-text-line-height;
+    @include media-breakpoint-down(sm) {
+      font-size: $hero-slogan-text-size-mobile;
+      line-height: $hero-slogan-text-line-height-mobile;
     }
   }
 }
@@ -45,17 +57,6 @@ nav {
   a {
     font-size: 1.2em;
     margin: 0 10px;
-  }
-}
-
-footer {
-  background-color: $dark-blue;
-
-  p.footer-text {
-    color: $footer-text-color;
-    text-align: center;
-    font-family: $logo-font;
-    font-size: $footer-text-size;
   }
 }
 
