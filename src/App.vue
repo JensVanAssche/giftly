@@ -38,7 +38,7 @@
         </div>
       </nav>
     <!-- Loads the current page -->
-    <main class="flex-grow-1">
+    <main>
       <!-- Display alerts -->
       <Alert />
       <router-view />
