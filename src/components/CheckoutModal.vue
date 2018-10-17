@@ -12,7 +12,7 @@
             <form v-if="category.name == 'Interesses'" class="mb-4">
               <label>Kies interesse:</label>
               <select v-model="boxSelectInterests" class="form-control">
-                <option v-for="option in interestsOptions" v-bind:value="option.value">
+                <option v-for="(option, i) in interestsOptions" v-bind:value="option.value" :key="`interests-${i}`">
                   {{ option.text }}
                 </option>
               </select>
@@ -20,7 +20,7 @@
             <form v-if="category.name == 'Exotisch'" class="mb-4">
               <label>Kies werelddeel:</label>
               <select v-model="boxSelectExotic" class="form-control">
-                <option v-for="option in exoticOptions" v-bind:value="option.value">
+                <option v-for="(option, i) in exoticOptions" v-bind:value="option.value" :key="`exotic-${i}`">
                   {{ option.text }}
                 </option>
               </select>
@@ -28,7 +28,7 @@
             <form v-if="category.name == 'Liefdadigheid'" class="mb-4">
               <label>Kies goed doel:</label>
               <select v-model="boxSelectCharity" class="form-control">
-                <option v-for="option in charityOptions" v-bind:value="option.value">
+                <option v-for="(option, i) in charityOptions" v-bind:value="option.value" :key="`charity-${i}`">
                   {{ option.text }}
                 </option>
               </select>
@@ -36,7 +36,7 @@
             <form class="mb-4">
               <label>Kies geslacht:</label>
               <select v-model="boxSelectSex" class="form-control">
-                <option v-for="option in sexOptions" v-bind:value="option.value">
+                <option v-for="(option, i) in sexOptions" v-bind:value="option.value" :key="`sex-${i}`">
                   {{ option.text }}
                 </option>
               </select>
@@ -44,7 +44,7 @@
             <form class="mb-4">
               <label>Kies leeftijd:</label>
               <select v-model="boxSelectAge" class="form-control">
-                <option v-for="option in ageOptions" v-bind:value="option.value">
+                <option v-for="(option, i) in ageOptions" v-bind:value="option.value" :key="`age-${i}`">
                   {{ option.text }}
                 </option>
               </select>
