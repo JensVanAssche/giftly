@@ -43,9 +43,6 @@
       <Alert />
       <router-view />
     </main>
-    <footer>
-      <p class="footer-text m-0">Giftly</p>
-    </footer>
 
   </div>
 </template>
