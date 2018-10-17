@@ -15,6 +15,7 @@ export default new Vuex.Store({
       type: "success",
     },
     boxSelectChoice: null,
+    shoppingCart: []
   },
   mutations: {
     changeBox(state, box) {
@@ -44,6 +45,9 @@ export default new Vuex.Store({
     },
     updateBoxSelectAge(state, select) {
       state.boxSelectAge = select;
+    },
+    addToCart(state, box){
+      state.shoppingCart = [box, ...state.shoppingCart];
     }
   },
   actions: {

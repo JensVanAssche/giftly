@@ -24,14 +24,28 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link v-if="$store.state.loginName == null" to="/login" class="nav-link">
+          <router-link v-if="!$store.state.loginName" to="/login" class="nav-link">
             Inloggen
           </router-link>
           <router-link v-else to="/" @click.native="$store.commit('changeLogin', null)" class="nav-link">
             {{ $store.state.loginName }}
           </router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/shoppingcart" class="nav-link">
+            <img src="../assets/img/shopping-cart.svg" alt="Shopping Cart Icon" class="navIcon">
+          </router-link>
+        </li>
       </ul>
     </div>
   </nav>
 </template>
+
+<style lang="scss" scoped>
+$iconSize: 30px;
+
+.navIcon {
+  width: $iconSize;
+  height: $iconSize;
+}
+</style>
