@@ -14,6 +14,7 @@
               <input type="password" class="form-control" id="inputPassword4" value="wachtwoord">
             </div>
           </div>
+          <h5>Leveradres</h5>
           <div class="form-group">
             <label for="inputAddress">Adres</label>
             <input type="text" class="form-control" id="inputAddress" value="Salesianenlaan 92">
@@ -39,13 +40,11 @@
               <input type="text" class="form-control" id="inputZip" value="2660">
             </div>
           </div>
+          <h5>Levertijd</h5>
           <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Mij onthouden
-              </label>
-            </div>
+            <input type="checkbox" id="deliveryCheck" class="mx-2" v-model="checked">
+            <label for="deliveryCheck">Kies aangepaste levertijd</label>
+            <input v-if="checked == true" type="date" class="form-control" id="inputDate">
           </div>
         </form>
         <button type="button" class="btn btn-red mb-2" @click="showAlert" data-dismiss="modal">Betalen</button>
@@ -85,6 +84,11 @@ export default {
   methods: {
     showAlert () {
       this.$store.commit('showAlert', { type: 'success', header: 'Bedankt.', message: 'Bedankt om bij ons te kopen. Je zal binnenkort een e-mail ontvangen met verdere instructies! Nog veel plezier met het cadeau.' })
+    }
+  },
+  data () {
+    return {
+      checked: false,
     }
   }
 }
