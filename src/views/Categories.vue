@@ -39,13 +39,13 @@ export default {
         {
           name: 'Interesses',
           info: 'Weet je wat ze leuk vinden? Pak dan de deze!',
-          detailinfo: "Als je deze doos wilt kopen zal je hierna mogen kiezen wat je giftee leuk vindt in het leven! Houden ze van footbal? Dan zorgen we voor iets in die aard! Of misschien zijn ze een gamer? Wat het ook is we zorgen ervoor dat het cadaeutje iets voor hen gaat zijn!",
+          detailinfo: "Als je deze doos wilt kopen zal je hierna mogen kiezen wat je giftee leuk vindt in het leven! Houden ze van voetbal? Dan zorgen we voor iets in die aard! Of misschien zijn ze een gamer? Wat het ook is we zorgen ervoor dat het cadeautje iets voor hen gaat zijn!",
           img: 'presentBox2.jpg'
           },
         {
           name: 'Exotisch',
           info: 'Wil je iets vanuit een ander land geven?',
-          detailinfo: "In deze dozen is er altijd iets speciaal! Je zal van talloze landen kunnen kiezen om zo het wat meer te personalizeren! Zo kan je ook een beetje dieper gaan, misschien zijn ze snoepers, of verzamelaars van beeldjes!",
+          detailinfo: "In deze dozen is er altijd iets speciaal! Je zal van talloze landen kunnen kiezen om zo het wat meer te personaliseren! Zo kan je ook een beetje dieper gaan, misschien zijn ze snoepers, of verzamelaars van beeldjes!",
           img: 'presentBox3.jpg'
         },
         {
@@ -68,8 +68,8 @@ export default {
         },
         {
           name: 'Feestdag: Halloween Editie',
-          info: 'Geen betere manier om geluk te verspreiden! Gevult met halloween gerelateerde goodies!',
-          detailinfo: "Is het Halloween en moet je een cadeau meenemen naar dat spookachtig feestje? Is het kerstmis en ben je een neef vergeten die je nog nooit eerder hebt gezien? Zoek niet verder dan onze feestdozen!",
+          info: 'Geen betere manier om geluk te verspreiden! Gevult met Halloween gerelateerde goodies!',
+          detailinfo: "Is het Halloween en moet je een cadeau meenemen naar dat spookachtig feestje? Is het kerstmis en ben je een neef vergeten die je nog nooit eerder hebt gezien? Zoek niet verder dan onze feest-dozen!",
           img: ''
         }
       ]
