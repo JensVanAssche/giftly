@@ -56,8 +56,8 @@
             <form>
               <div class="form-group">
                 <label>Kies uw prijs:</label>
-                <p>€ <span class="display-2">{{ price }}</span></p>
-                <vueSlider v-model="value" ref="slider">
+                <p>€ <span class="display-3">{{ price }}</span></p>
+                <vueSlider v-model="price" ref="slider" :real-time="true" v-bind="options">
                 </vueSlider>
               </div>
             </form>
@@ -98,15 +98,14 @@ export default {
   data() {
     return {
       boxSelectChoice: '',
-      sliderOptions: {
-        'height': 15,
+      options: {
+        'height': 12,
         'dotSize': 25,
         'min': 10,
         'max': 100,
         'interval': 5,
-        'tooltip':"hover"
-      },
-      value: 10
+        'tooltip': "none"
+      }
     }
   }
 }
