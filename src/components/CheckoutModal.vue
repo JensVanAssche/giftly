@@ -57,6 +57,12 @@
                 </vueSlider>
               </div>
             </form>
+            <form>
+              <div class="form-group">
+                <label>Tekstje bij uw pakje: (laat leeg om geen tekstje toe te voegen)</label>
+                <textarea class="form-control" rows="4"></textarea>
+              </div>
+            </form>
             <router-link to="/checkout" data-dismiss="modal" @click.native="pushSelectOptions">
               <button class="btn btn-red">Nu kopen</button>
             </router-link>
@@ -140,9 +146,9 @@ export default {
         { text: 'PETA', value: 'PETA' },
         { text: 'Unicef', value: 'Unicef' },
       ],
-      boxSelectAge: 'Maakt niet uit',
+      boxSelectAge: 'Alle leeftijden',
       ageOptions: [
-        { text: 'Maakt niet uit', value: 'Maakt niet uit' },
+        { text: 'Alle leeftijden', value: 'Alle leeftijden' },
         { text: '-12', value: '-12' },
         { text: '12-18', value: '12-18' },
         { text: '18-25', value: '18-25' },
@@ -150,9 +156,9 @@ export default {
         { text: '35-55', value: '35-55' },
         { text: '55+', value: '55+' },
       ],
-      boxSelectSex: 'Maakt niet uit',
+      boxSelectSex: 'Unisex',
       sexOptions: [
-        { text: 'Maakt niet uit', value: 'Maakt niet uit' },
+        { text: 'Unisex', value: 'Unisex' },
         { text: 'Man', value: 'Man' },
         { text: 'Vrouw', value: 'Vrouw' }
       ]
