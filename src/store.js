@@ -15,6 +15,7 @@ export default new Vuex.Store({
       message: null,
       type: "success",
     },
+    shoppingCart: []
   },
   mutations: {
     changeBox(state, box) {
@@ -38,6 +39,9 @@ export default new Vuex.Store({
     },
     changeBoxOptions(state, options) {
       state.currentBoxOptions = options;
+    },
+    addToCart(state, box) {
+      state.shoppingCart = [box, ...state.shoppingCart];
     }
   },
   actions: {

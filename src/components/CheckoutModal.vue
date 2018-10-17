@@ -58,9 +58,10 @@
               </div>
             </form>
             <router-link to="/checkout" data-dismiss="modal" @click.native="$store.commit('changeBoxOptions', boxSelect)">
-              <button class="btn btn-red">Nu kopen</button>
+              <button class="btn btn-red mt-2">Nu kopen</button>
             </router-link>
-            <button type="button" class="btn btn-blue" data-dismiss="modal" aria-label="Close">Annuleren</button>
+            <button type="button" class="btn btn-red mt-2" @click="addToCart" data-dismiss="modal">Toevoegen aan winkelmandje</button>
+            <button type="button" class="btn btn-blue mt-2" data-dismiss="modal" aria-label="Close">Annuleren</button>
           </template>
         </div>
       </div>
@@ -89,6 +90,17 @@ export default {
       set (value) {
         this.$store.commit('updatePrice', value)
       },
+    }
+  },
+  methods: {
+    showAlert() {
+      this.$store.commit('showAlert', { type: 'success', header: '', message: 'De item is toegevoegd aan je winkelmandje.' })
+    },
+    addToCart() {
+      const box = this.$store.state.currentBox;
+
+      this.$store.commit('addToCart', box)
+      this.showAlert();
     }
   },
   data() {

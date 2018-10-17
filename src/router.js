@@ -6,6 +6,7 @@ import Categories from './views/Categories.vue';
 import Checkout from './views/Checkout.vue';
 import FAQ from './views/FAQ.vue';
 import Login from './views/Login.vue';
+import ShoppingCart from './views/ShoppingCart.vue';
 
 Vue.use(Router);
 
@@ -37,6 +38,11 @@ const router = new Router({
       path: '/login',
       name: 'Login',
       component: Login,
+    },
+    {
+      path: '/shoppingcart',
+      name: 'ShoppingCart',
+      component: ShoppingCart,
     },
   ],
 });
