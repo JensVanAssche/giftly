@@ -74,15 +74,17 @@
             </div>
           </div>
         </form>
-        <button type="button" class="btn btn-red mb-2" @click="showAlert" data-dismiss="modal">Betalen</button>
+        <button type="button" class="btn btn-red mb-2" @click="showAlert" data-dismiss="modal">Nu Betalen</button>
       </div>
       <div class="col-md-3"></div>
       <div class="col-md-3">
         <h2>Jouw bestelling:</h2>
         <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" :deliveryTime="$store.state.currentBox.deliveryTime"></Card>
-        <p v-if="$store.state.boxSelectChoice">Categorie: {{ $store.state.boxSelectChoice }}</p>
-        <p v-if="$store.state.boxSelectSex">Geslacht: {{ $store.state.boxSelectSex }}</p>
-        <p v-if="$store.state.boxSelectAge">Leeftijd: {{ $store.state.boxSelectAge }}</p>
+        <p v-if="$store.state.currentBoxOptions.interests">Categorie: {{ $store.state.currentBoxOptions.interests }}</p>
+        <p v-if="$store.state.currentBoxOptions.exotic">Categorie: {{ $store.state.currentBoxOptions.exotic }}</p>
+        <p v-if="$store.state.currentBoxOptions.charity">Categorie: {{ $store.state.currentBoxOptions.charity }}</p>
+        <p v-if="$store.state.currentBoxOptions.sex">Geslacht: {{ $store.state.currentBoxOptions.sex }}</p>
+        <p v-if="$store.state.currentBoxOptions.age">Leeftijd: {{ $store.state.currentBoxOptions.age }}</p>
         <h3>Totaal prijs: €{{ price }}</h3>
       </div>
     </div>
