@@ -7,7 +7,7 @@
         </div>
         <img src="../assets/img/heroimage1.png" class="heroimage">
       </div>
-      <div class="col-12 col-md-6 p-5">
+      <div class="col-12 col-md-6 pt-3 px-5">
         <h2 class="page-title">Over ons</h2>
         <p>giftly omg so awsumm</p>
 
