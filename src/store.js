@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+const uuidv4 = require('uuid/v4');
 
 Vue.use(Vuex);
 
@@ -15,7 +16,7 @@ export default new Vuex.Store({
       message: null,
       type: "success",
     },
-    shoppingCart: localStorage.getItem('shoppingCart') || []
+    shoppingCart: localStorage.getItem('shoppingCart') ? JSON.parse(localStorage.getItem('shoppingCart')) : []
   },
   mutations: {
     changeBox(state, box) {
@@ -41,8 +42,15 @@ export default new Vuex.Store({
       state.currentBoxOptions = options;
     },
     addToCart(state, box) {
-      state.shoppingCart = [box, ...state.shoppingCart];
-      localStorage.setItem('shoppingCart', state.shoppingCart);
+      let uuid = uuidv4();
+      box = {uuid, ...box};
+      
+      state.shoppingCart.push(box);
+      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart));
+    },
+    clearCart(state) {
+      state.shoppingCart = [];
+      localStorage.removeItem('shoppingCart');
     }
   },
   actions: {
