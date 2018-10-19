@@ -2,9 +2,16 @@
   <div class="container">
     <h1 class="page-title">Shopping Cart</h1>
     <div class="row justify-content-around">
-      <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2">
-        <Card :key="i" :name="item.name" :boxImg="item.img" :deliveryTime="item.deliveryTime" class="card">
-        </Card>
+      <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
+        <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2">
+          <Card :key="i" :name="item.name" :boxImg="item.img" :deliveryTime="item.deliveryTime" class="card">
+          </Card>
+        </div>
+      </transition-group>
+      <div v-if="shoppingCart.length > 0" class="col-12 d-flex justify-content-center mt-4">
+        <button class="btn btn-primary btn-lg px-4" @click="pay()">
+          Clear Cart
+        </button>
       </div>
     </div>
   </div>
@@ -12,7 +19,7 @@
 
 <script>
 import Card from "@/components/Card";
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: 'ShoppingCart',
@@ -23,6 +30,22 @@ export default {
     ...mapState([
         'shoppingCart'
       ])
+  },
+  methods: {
+    ...mapMutations([
+      'clearCart', 
+      'showAlert'
+    ]),
+    pay() {
+      this.clearCart();
+      this.showAlert(
+        {
+          header: 'Cleared Cart',
+          type: 'success',
+          message: 'All products have been removed from your cart.'
+        }
+      )
+    }
   }
 }
 </script>
