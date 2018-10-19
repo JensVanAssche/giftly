@@ -8,5 +8,18 @@
   url('/fonts/my_happy_ending_-_ttf-webfont.svg#logo_font') format('svg');
   font-weight: normal;
   font-style: normal;
+}
 
+@font-face {
+  font-family: 'primary_font';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'primary_font';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }

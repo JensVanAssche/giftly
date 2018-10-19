@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     currentBox: null,
+    currentBoxOptions: null,
     boxOptions: [],
     loginName: null,
     price: 10,
@@ -14,7 +15,6 @@ export default new Vuex.Store({
       message: null,
       type: "success",
     },
-    boxSelectChoice: null,
     shoppingCart: localStorage.getItem('shoppingCart') || []
   },
   mutations: {
@@ -37,16 +37,10 @@ export default new Vuex.Store({
       state.alert.message = null;
       state.alert.type = "success";
     },
-    updateBoxSelectChoice(state, select) {
-      state.boxSelectChoice = select;
+    changeBoxOptions(state, options) {
+      state.currentBoxOptions = options;
     },
-    updateBoxSelectSex(state, select) {
-      state.boxSelectSex = select;
-    },
-    updateBoxSelectAge(state, select) {
-      state.boxSelectAge = select;
-    },
-    addToCart(state, box){
+    addToCart(state, box) {
       state.shoppingCart = [box, ...state.shoppingCart];
       localStorage.setItem('shoppingCart', state.shoppingCart);
     }

@@ -1,9 +1,9 @@
 <template>
   <div class="card shadow-sm justify-content-between">
-    <div class="img-box d-flex justify-content-center">
-      <img v-if="name == 'Feestdag: Halloween Editie'" class="card-img-top" src="/img/box_halloween.png" alt="Card image cap">
-      <img v-else-if="boxImg" class="card-img-top py-2" :src="`/img/boxes/${boxImg}`" alt="Card image cap">
-      <img v-else class="card-img-top p-1" src="../assets/img/presentBox.png" alt="Card image cap">
+    <div class="img-box">
+      <!--<img v-if="name == 'Feestdag: Halloween Editie'" class="card-img-top" src="/img/box_halloween.png" alt="Card image cap">-->
+      <img v-if="boxImg" class="card-img-top" :src="`/img/boxes/${boxImg}`" alt="Card image cap">
+      <img v-else class="card-img-top" src="../assets/img/presentBox.png" alt="Card image cap">
     </div>
     <div class="card-body d-flex flex-column justify-content-between">
       <div>
@@ -30,10 +30,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-img {
-  max-width: 150px;
-  height: auto;
-  max-height: 150px;
-}
 </style>
 

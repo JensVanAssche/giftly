@@ -11,7 +11,7 @@
             <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" :deliveryTime="$store.state.currentBox.deliveryTime" class="col"></Card>
             <form v-if="category.name == 'Interesses'" class="mb-4">
               <label>Kies interesse:</label>
-              <select v-model="boxSelectInterests" class="form-control">
+              <select v-model="boxSelect.interests" class="form-control">
                 <option v-for="(option, i) in interestsOptions" v-bind:value="option.value" :key="`interests-${i}`">
                   {{ option.text }}
                 </option>
@@ -19,7 +19,7 @@
             </form>
             <form v-if="category.name == 'Exotisch'" class="mb-4">
               <label>Kies werelddeel:</label>
-              <select v-model="boxSelectExotic" class="form-control">
+              <select v-model="boxSelect.exotic" class="form-control">
                 <option v-for="(option, i) in exoticOptions" v-bind:value="option.value" :key="`exotic-${i}`">
                   {{ option.text }}
                 </option>
@@ -27,7 +27,7 @@
             </form>
             <form v-if="category.name == 'Liefdadigheid'" class="mb-4">
               <label>Kies goed doel:</label>
-              <select v-model="boxSelectCharity" class="form-control">
+              <select v-model="boxSelect.charity" class="form-control">
                 <option v-for="(option, i) in charityOptions" v-bind:value="option.value" :key="`charity-${i}`">
                   {{ option.text }}
                 </option>
@@ -35,7 +35,7 @@
             </form>
             <form class="mb-4">
               <label>Kies geslacht:</label>
-              <select v-model="boxSelectSex" class="form-control">
+              <select v-model="boxSelect.sex" class="form-control">
                 <option v-for="(option, i) in sexOptions" v-bind:value="option.value" :key="`sex-${i}`">
                   {{ option.text }}
                 </option>
@@ -43,7 +43,7 @@
             </form>
             <form class="mb-4">
               <label>Kies leeftijd:</label>
-              <select v-model="boxSelectAge" class="form-control">
+              <select v-model="boxSelect.age" class="form-control">
                 <option v-for="(option, i) in ageOptions" v-bind:value="option.value" :key="`age-${i}`">
                   {{ option.text }}
                 </option>
@@ -57,7 +57,7 @@
                 </vueSlider>
               </div>
             </form>
-            <router-link to="/checkout" data-dismiss="modal" @click.native="pushSelectOptions">
+            <router-link to="/checkout" data-dismiss="modal" @click.native="$store.commit('changeBoxOptions', boxSelect)">
               <button class="btn btn-red mt-2">Nu kopen</button>
             </router-link>
             <button type="button" class="btn btn-red mt-2" @click="addToCart" data-dismiss="modal">Toevoegen aan winkelmandje</button>
@@ -93,11 +93,6 @@ export default {
     }
   },
   methods: {
-    pushSelectOptions: function() {
-      this.$store.commit('updateBoxSelectChoice', this.boxSelectChoice);
-      this.$store.commit('updateBoxSelectSex', this.boxSelectSex);
-      this.$store.commit('updateBoxSelectAge', this.boxSelectAge);
-    },
     showAlert() {
       this.$store.commit('showAlert', { type: 'success', header: '', message: 'De item is toegevoegd aan je winkelmandje.' })
     },
@@ -118,7 +113,13 @@ export default {
         'interval': 5,
         'tooltip': "none"
       },
-      boxSelectInterests: 'Boeken',
+      boxSelect: {
+          interests: 'Boeken',
+          exotic: 'Europa',
+          charity: 'Artsen Zonder Grenzen',
+          age: 'Alle leeftijden',
+          sex: 'Unisex'
+      },
       interestsOptions: [
         { text: 'Boeken', value: 'Boeken' },
         { text: 'Films', value: 'Films' },
@@ -132,7 +133,6 @@ export default {
         { text: 'Fitness', value: 'Fitness' },
         { text: 'Mode', value: 'Mode' },
       ],
-      boxSelectExotic: 'Europa',
       exoticOptions: [
         { text: 'Europa', value: 'Europa' },
         { text: 'Noord-Amerika', value: 'Noord-Amerika' },
@@ -141,7 +141,6 @@ export default {
         { text: 'Afrika', value: 'Afrika' },
         { text: 'Australië', value: 'Australië' },
       ],
-      boxSelectCharity: 'Artsen Zonder Grenzen',
       charityOptions: [
         { text: 'Artsen Zonder Grenzen', value: 'Artsen Zonder Grenzen' },
         { text: 'Kom Op Tegen Kanker', value: 'Kom Op Tegen Kanker' },
@@ -150,7 +149,6 @@ export default {
         { text: 'PETA', value: 'PETA' },
         { text: 'Unicef', value: 'Unicef' },
       ],
-      boxSelectAge: 'Alle leeftijden',
       ageOptions: [
         { text: 'Alle leeftijden', value: 'Alle leeftijden' },
         { text: '-12', value: '-12' },
@@ -160,7 +158,6 @@ export default {
         { text: '35-55', value: '35-55' },
         { text: '55+', value: '55+' },
       ],
-      boxSelectSex: 'Unisex',
       sexOptions: [
         { text: 'Unisex', value: 'Unisex' },
         { text: 'Man', value: 'Man' },
