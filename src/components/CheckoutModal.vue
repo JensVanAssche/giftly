@@ -72,6 +72,7 @@
 <script>
 import vueSlider from 'vue-slider-component';
 import Card from "@/components/Card";
+import { mapMutations } from "vuex";
 
 export default {
   props: {
@@ -93,14 +94,17 @@ export default {
     }
   },
   methods: {
-    showAlert() {
-      this.$store.commit('showAlert', { type: 'success', header: '', message: 'De item is toegevoegd aan je winkelmandje.' })
-    },
+    ...mapMutations([
+      'showAlert'
+    ]),
     addToCart() {
-      const box = this.$store.state.currentBox;
-
-      this.$store.commit('addToCart', box)
-      this.showAlert();
+      let box = this.$store.state.currentBox;
+      box = {
+        price: this.price,
+        ...box
+      };
+      this.$store.commit('addToCart', box);
+      this.showAlert({ type: 'success', header: '', message: 'De item is toegevoegd aan je winkelmandje.' });
     }
   },
   data() {
