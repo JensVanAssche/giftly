@@ -84,6 +84,7 @@
         <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
           <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 mt-2">
             <Card :key="i" :name="item.name" :boxImg="item.img" :deliveryTime="item.deliveryTime" class="card">
+              <h5 class="card-title">{{ item.name }}</h5>
             </Card>
           </div>
         </transition-group>

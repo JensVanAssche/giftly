@@ -6,14 +6,7 @@
       <img v-else class="card-img-top" src="../assets/img/presentBox.png" alt="Card image cap">
     </div>
     <div class="card-body d-flex flex-column justify-content-between">
-      <div>
-        <h5 class="card-title">{{ name }}</h5>
-        <p class="card-delivery">Levertijd: {{ deliveryTime }}</p>
-        <p class="card-text">{{ info }}</p>
-      </div>
-      <div>
-        <slot></slot>
-      </div>
+      <slot />
     </div>
   </div>
 </template>
