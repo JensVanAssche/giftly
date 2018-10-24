@@ -8,9 +8,12 @@
           </Card>
         </div>
       </transition-group>
-      <div v-if="shoppingCart.length > 0" class="col-12 d-flex justify-content-center mt-4">
+      <div v-if="shoppingCart.length > 0" class="col-12 d-flex justify-content-around mt-4">
+        <button class="btn btn-primary btn-lg px-4" @click="clear()">
+          Maak de winkelwagen leeg
+        </button>
         <button class="btn btn-primary btn-lg px-4" @click="pay()">
-          Clear Cart
+          Ga verder naar betalen
         </button>
       </div>
     </div>
@@ -36,7 +39,7 @@ export default {
       'clearCart', 
       'showAlert'
     ]),
-    pay() {
+    clear() {
       this.clearCart();
       this.showAlert(
         {
@@ -45,6 +48,9 @@ export default {
           message: 'All products have been removed from your cart.'
         }
       )
+    },
+    pay() {
+      this.$router.push('Checkout')
     }
   }
 }
