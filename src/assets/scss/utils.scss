@@ -1,23 +1,29 @@
-.bg-light-blue {
-  background-color: $light-blue;
+// Shadow
+.shadow-custom {
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
 }
+
+// Background colors
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+// Buttons
+
 .btn-red {
+  border: none;
+  border-radius: 3px;
   background-color: $bright-pink;
   color: #fff;
-
-  &:hover {
-    background-color: #000;
-  }
 }
-
 .btn-blue {
   background-color: $dark-blue;
   color: #fff;
-
-  &:hover {
-    background-color: #000;
-  }
 }
+
+// Modals
+
 .modal.fade.right {
   h4 {
     font-family: $logo-font;
