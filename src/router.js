@@ -21,27 +21,27 @@ const router = new Router({
     },
     {
       path: '/categories',
-      name: 'Categories',
+      name: 'categories',
       component: Categories,
     },
     {
       path: '/checkout',
-      name: 'Checkout',
+      name: 'checkout',
       component: Checkout,
     },
     {
       path: '/faq',
-      name: 'FAQ',
+      name: 'faq',
       component: FAQ,
     },
     {
       path: '/login',
-      name: 'Login',
+      name: 'login',
       component: Login,
     },
     {
       path: '/shoppingcart',
-      name: 'ShoppingCart',
+      name: 'shoppingcart',
       component: ShoppingCart,
     },
   ],
