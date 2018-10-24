@@ -1,12 +1,54 @@
 <template>
-  <div class="container-fluid p-0">
-    <div class="row no-gutters">
+  <div class="container-fluid">
+    <div class="row">
       <div class="col-12 position-relative home-wrapper">
-        <div class="text-wrapper d-flex flex-column justify-content-center align-items-center">
-          <h2 class="hero-logo">Giftly</h2>
-          <h2 class="hero-slogan">Full of Surprises</h2>
+        <div class="text-wrapper d-flex flex-column justify-content-center px-4 px-md-5">
+          <p class="hero-slogan m-0">Laat je verrassen</p>
+          <p class="hero-text m-0">Lorem ipsum dolor sit a moeder</p>
+          <div class="button-wrapper mt-4">
+            <button class="btn-red py-2 px-3 shadow-custom">
+              Verras me papi
+            </button>
+          </div>
         </div>
-        <img src="../assets/img/heroimage1.png" class="heroimage">
+        <img src="../assets/img/heroimage.jpg" class="heroimage">
+      </div>
+      <div class="col-12 px-4">
+        <h1 class="text-center my-4">Cadeau's geven is nog nooit zo simpel geweest!</h1>
+        <p class="text-center text-block mb-4">Je kent de momenten wel, vlak voor kerstmis of een verjaardag. Je wilt iemand verrassen met het perfecte cadeau, alleen heb je geen idee wat te geven.
+          Geen zorgen! Met Giftly kan je verrassingscadeau’s bestellen waar je ontvanger noch jezelf weet wat het cadeau is!</p>
+        <h3 class="text-center mb-4">
+          Giftly werkt in een aantal simpele stappen
+        </h3>
+        <div class="col-12 offset-sm-1 col-sm-9 offset-md-2 col-md-8">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <p>1. Kies je categorie</p>
+              <p>
+                Totaal willekeurig of
+                op basis van een interesse
+                of afkomst? Jij kiest!
+              </p>
+            </div>
+            <div class="col-12 col-md-4">
+              <p>2. Pas je pakje aan</p>
+              <p>
+                Prijs, leeftijdscategorie
+                en geslacht zijn vrij aan
+                te passen!
+              </p>
+            </div>
+            <div class="col-12 col-md-4">
+              <p>3. Jouw cadeau zoals jij
+                het wilt</p>
+              <p>
+                Alles aan het pakje
+                is aanpasbaar, buiten
+                de inhoud natuurlijk.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

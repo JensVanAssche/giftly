@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-light-blue ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3">
     <router-link to="/" class="navbar-brand header-logo">
       Giftly
     </router-link>
