@@ -15,12 +15,13 @@ body {
 h1, h2 {
   color: $bright-pink;
 }
-h3, h4 {
+h3, h4, h5 {
   color: gray;
 }
 
 .home-wrapper {
   height: 70vh;
+  width: 80%;
   margin: 0 auto;
 }
 
