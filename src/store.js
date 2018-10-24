@@ -67,5 +67,15 @@ export default new Vuex.Store({
       }
       return true;
     },
+    // Calculates the price of all boxes in the shoppingCart
+    totalPrice: state => {
+      let price = 0;
+
+      state.shoppingCart.map( box => {
+        price += box.price;
+      })
+
+      return price;
+    }
   },
 });
