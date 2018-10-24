@@ -48,12 +48,9 @@
             </div>
             <div class="col-12 col-md-4">
               <img src="/img/delivery-truck.svg" alt="" class="d-block w-50 h-auto my-5 mx-auto">
-              <h4>3. Jouw cadeau zoals jij
-                het wilt</h4>
+              <h4>3. Je cadeau wordt zo geleverd!</h4>
               <h5>
-                Alles aan het pakje
-                is aanpasbaar, buiten
-                de inhoud natuurlijk.
+                Jouw leuke verrassing komt eraan! Je kan het natuurlijk altijd online tracken! 
               </h5>
             </div>
           </div>
