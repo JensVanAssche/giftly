@@ -67,7 +67,7 @@
               <label for="-1">Geen inpakpapier</label>
             </div>
             <div>
-              <label class="wrappingpaperlabel" v-for="(value, key) in wrappingpaper">
+              <label class="wrappingpaperlabel" v-for="(value, key) in wrappingpaper" :key="key">
                 <input type="radio" name="wrappingpaper" :value="key">
                 <img :src="value">
               </label>
