@@ -48,13 +48,13 @@
               <input v-if="checked == true" type="date" class="form-control" id="inputDate">
             </div>
           </div>
-          <div v-if="$store.state.currentBox.name == 'Liefdadigheid'">
+          <!-- <div v-if="$store.state.currentBox.name == 'Liefdadigheid'">
             <h5>Liefdadigheid opties</h5>
             <div class="form-group">
               <label for="nameRecepient">Naam v/d ontvanger</label>
               <input type="text" name="" class="form-control" id="nameRecepient">
             </div>
-          </div>
+          </div> -->
           <h5>Paketje aanpassen</h5>
           <div class="form-group">
             <label>Tekstje bij uw pakje: (laat leeg om geen tekstje toe te voegen)</label>
@@ -67,25 +67,26 @@
               <label for="-1">Geen inpakpapier</label>
             </div>
             <div>
-              <label class="wrappingpaperlabel" v-for="(value, key) in wrappingpaper">
+              <label class="wrappingpaperlabel" v-for="(value, key) in wrappingpaper" :key="key">
                 <input type="radio" name="wrappingpaper" :value="key">
                 <img :src="value">
               </label>
             </div>
           </div>
         </form>
-        <button type="button" class="btn btn-red mb-2" @click="showAlert" data-dismiss="modal">Nu Betalen</button>
+        <button type="button" class="btn btn-red mb-2" @click="pay" data-dismiss="modal">Nu Betalen</button>
       </div>
       <div class="col-md-3"></div>
+      <!-- Current packages in the shopping cart  -->
       <div class="col-md-3">
         <h2>Jouw bestelling:</h2>
-        <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" :deliveryTime="$store.state.currentBox.deliveryTime"></Card>
-        <p v-if="$store.state.currentBoxOptions.interests">Categorie: {{ $store.state.currentBoxOptions.interests }}</p>
-        <p v-if="$store.state.currentBoxOptions.exotic">Categorie: {{ $store.state.currentBoxOptions.exotic }}</p>
-        <p v-if="$store.state.currentBoxOptions.charity">Categorie: {{ $store.state.currentBoxOptions.charity }}</p>
-        <p v-if="$store.state.currentBoxOptions.sex">Geslacht: {{ $store.state.currentBoxOptions.sex }}</p>
-        <p v-if="$store.state.currentBoxOptions.age">Leeftijd: {{ $store.state.currentBoxOptions.age }}</p>
-        <h3>Totaal prijs: €{{ price }}</h3>
+        <h3>Totaal: € {{ totalPrice }}</h3>
+        <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
+          <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 mt-2">
+            <Card :key="i" :name="item.name" :boxImg="item.img" :deliveryTime="item.deliveryTime" class="card">
+            </Card>
+          </div>
+        </transition-group>
       </div>
     </div>
   </div>
@@ -94,6 +95,7 @@
 <script>
 import Card from "@/components/Card";
 import PayModal from "@/components/PayModal";
+import { mapState, mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
@@ -101,18 +103,22 @@ export default {
     Card
   },
   computed: {
-    price: {
-      get () {
-        return this.$store.state.price
-      },
-      set (value) {
-        this.$store.commit('updatePrice', value)
-      }
-    }
+    ...mapState([
+        'shoppingCart'
+      ]),
+    ...mapGetters([
+      'totalPrice'
+    ])
   },
   methods: {
-    showAlert () {
-      this.$store.commit('showAlert', { type: 'success', header: 'Bedankt.', message: 'Bedankt om bij ons te kopen. Je zal binnenkort een e-mail ontvangen met verdere instructies! Nog veel plezier met het cadeau.' })
+    ...mapMutations([
+      'clearCart', 
+      'showAlert'
+    ]),
+    pay() {
+      this.clearCart();
+      this.$router.push({ name: 'home' })
+      this.showAlert({ type: 'success', header: 'Bedankt.', message: 'Bedankt om bij ons te kopen. Je zal binnenkort een e-mail ontvangen met verdere instructies! Nog veel plezier met het cadeau.' });
     }
   },
   data () {
@@ -135,19 +141,22 @@ export default {
 
 
 <style type="text/css" scoped>
-  .wrappingpaperlabel > input{ /* HIDE RADIO */
-    visibility: hidden; /* Makes input not-clickable */
-    position: absolute; /* Remove input from document flow */
-  }
-  .wrappingpaperlabel > input + img{ /* IMAGE STYLES */
-    cursor:pointer;
-    border:2px solid transparent;
-    width: 100px;
-  }
-  .wrappingpaperlabel > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
-    border:2px solid #f00;
-  }
-  .wrappingpaperlabel {
-    margin: 5px;
-  }
+.wrappingpaperlabel > input {
+  /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+.wrappingpaperlabel > input + img {
+  /* IMAGE STYLES */
+  cursor: pointer;
+  border: 2px solid transparent;
+  width: 100px;
+}
+.wrappingpaperlabel > input:checked + img {
+  /* (RADIO CHECKED) IMAGE STYLES */
+  border: 2px solid #f00;
+}
+.wrappingpaperlabel {
+  margin: 5px;
+}
 </style>
