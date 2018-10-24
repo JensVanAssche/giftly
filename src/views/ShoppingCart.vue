@@ -4,7 +4,9 @@
     <div class="row justify-content-around">
       <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
         <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2">
-          <Card :key="i" :name="item.name" :boxImg="item.img" :deliveryTime="item.deliveryTime" class="card">
+          <Card :key="i" :boxImg="item.img" class="card">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p>{{ item.deliveryTime }}</p>
           </Card>
         </div>
       </transition-group>
