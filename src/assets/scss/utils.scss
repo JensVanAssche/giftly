@@ -16,18 +16,33 @@
   border-radius: 3px;
   background-color: $bright-pink;
   color: #fff;
+  transition: 0.2s;
+  &:hover {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    transition: 0.2s;
+  }
 }
 .btn-blue {
   background-color: $dark-blue;
   color: #fff;
 }
 
+// Text
+
+.text-red {
+  color: $bright-pink;
+  &:hover {
+    color: $bright-pink;
+  }
+}
+
 // Modals
 
 .modal.fade.right {
   h4 {
-    font-family: $logo-font;
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .btn {
