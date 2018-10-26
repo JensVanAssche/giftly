@@ -33,7 +33,7 @@
         </li>
         <li class="nav-item">
           <router-link to="/shoppingcart" class="nav-link">
-            <img src="../assets/img/shopping-cart.svg" alt="Shopping Cart Icon" class="navIcon">
+            <i class="fas fa-shopping-cart"></i>
           </router-link>
         </li>
       </ul>

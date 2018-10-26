@@ -63,7 +63,7 @@
           <div class="form-group">
             <label>Inpakpapier kiezen</label>
             <div>
-              <input type="radio" name="wrappingpaper" value="-1" id="-1" class="mx-2">
+              <input type="radio" name="wrappingpaper" value="-1" id="-1" class="mx-2" checked>
               <label for="-1">Geen inpakpapier</label>
             </div>
             <div>

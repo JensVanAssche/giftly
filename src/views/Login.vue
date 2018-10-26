@@ -4,9 +4,9 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<h1 class="page-title">Inloggen met je Giftly account</h1>
-				<div class="loginfields">
-					<input type="text" name="name" placeholder="Naam" v-model="loginName">
-					<input type="password" name="password" placeholder="Wachtwoord">
+				<div class="card p-3 shadow-sm">
+					<input type="text" name="name" placeholder="Naam" v-model="loginName" class="form-control mb-3">
+					<input type="password" name="password" placeholder="Wachtwoord" class="form-control mb-3">
 					<button v-if="!loginName" class="btn btn-red" @click="showAlert">Inloggen</button>
 					<router-link v-else to="/" class="btn btn-red" @click.native="$store.commit('changeLogin', loginName)">Inloggen</router-link>
 				</div>
