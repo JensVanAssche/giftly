@@ -7,6 +7,7 @@ import Checkout from './views/Checkout.vue';
 import FAQ from './views/FAQ.vue';
 import Login from './views/Login.vue';
 import ShoppingCart from './views/ShoppingCart.vue';
+import PreCheckout from './views/PreCheckout.vue';
 
 Vue.use(Router);
 
@@ -43,6 +44,11 @@ const router = new Router({
       path: '/shoppingcart',
       name: 'shoppingcart',
       component: ShoppingCart,
+    },
+    {
+      path: '/precheckout',
+      name: 'precheckout',
+      component: PreCheckout,
     },
   ],
 });

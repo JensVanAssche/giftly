@@ -14,6 +14,7 @@
               </div>
               <p class="card-text">{{ category.info }}</p>
             </Card>
+            <p class="pb-3">Geschatte levertijd: {{ category.deliveryTime }}</p>
             <form v-if="category.name == 'Interesses'" class="mb-4">
               <label>Kies interesse:</label>
               <select v-model="boxSelect.interests" class="form-control">
@@ -64,7 +65,7 @@
             </form>
             <div class="row">
               <div class="col">
-                <router-link to="/checkout" data-dismiss="modal" @click.native="$store.commit('changeBoxOptions', boxSelect)">
+                <router-link to="/precheckout" data-dismiss="modal" @click.native="$store.commit('changeBoxOptions', boxSelect)">
                   <button class="btn btn-red mt-2">Nu kopen</button>
                 </router-link>
               </div>
@@ -114,7 +115,7 @@ export default {
         ...box
       };
       this.$store.commit('addToCart', box);
-      this.showAlert({ type: 'success', header: '', message: 'De item is toegevoegd aan je winkelmandje.' });
+      this.showAlert({ type: 'success', header: '', message: 'Het item is toegevoegd aan je winkelmandje.' });
     }
   },
   data() {

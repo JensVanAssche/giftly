@@ -1,23 +1,26 @@
 <template>
   <div class="container">
-    <h1 class="page-title">Shopping Cart</h1>
+    <h1 class="page-title">Winkelwagen</h1>
     <div class="row justify-content-around">
       <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
         <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2">
           <Card :key="i" :boxImg="item.img" class="card">
             <h5 class="card-title">{{ item.name }}</h5>
-            <p>{{ item.deliveryTime }}</p>
+            <p>€ {{ item.price }}</p>
+            <!-- <p>{{ item.deliveryTime }}</p> -->
           </Card>
         </div>
       </transition-group>
-      <div v-if="shoppingCart.length > 0" class="col-12 d-flex justify-content-around mt-4">
-        <button class="btn btn-primary btn-lg px-4" @click="clear()">
+      <div class="col-2"></div>
+      <div v-if="shoppingCart.length > 0" class="col-8 d-flex justify-content-around mt-4">
+        <button class="btn btn-red btn-lg px-4" @click="clear()">
           Maak de winkelwagen leeg
         </button>
-        <button class="btn btn-primary btn-lg px-4" @click="pay()">
+        <button class="btn btn-red btn-lg px-4" @click="pay()">
           Ga verder naar betalen
         </button>
       </div>
+      <div class="col-2"></div>
     </div>
   </div>
 </template>
@@ -44,15 +47,12 @@ export default {
     clear() {
       this.clearCart();
       this.showAlert(
-        {
-          header: 'Cleared Cart',
-          type: 'success',
-          message: 'All products have been removed from your cart.'
+        { type: 'success',  message: 'Alle producten zijn uit de winkelwagen verwijderd.'
         }
       )
     },
     pay() {
-      this.$router.push('Checkout')
+      this.$router.push('precheckout')
     }
   }
 }
