@@ -3,7 +3,7 @@
     <h1 class="page-title pb-4">Categorieën</h1>
     <div class="row justify-content-around">
       <div v-for="(category, i) in categories" :key="i" class="col-12 col-md-6">
-        <Card :key="i" :boxImg="category.img" class="card">
+        <Card :key="i" :boxImg="category.img">
           <!-- <p class="card-delivery">Levertijd: {{ category.deliveryTime }}</p> -->
           <div class="d-flex justify-content-between">
             <h3 class="card-title">{{ category.name }}</h3>
@@ -37,7 +37,7 @@ export default {
           name: 'Willekeurig',
           info: 'Voor zij die niet weten wat te geven!',
           detailinfo: "Iets voor wanneer je het echt niet weet! Afhankelijk van jouw prijsklasse zullen we je cadeautje maken zodat het voor iedereen wat past! We gaan eventjes in ons magazijn om alle soorten leuks te verzamelen!",
-          img: 'random.jpg',
+          img: 'random_1.png',
           deliveryTime: '2-3 dagen'
         },
         {

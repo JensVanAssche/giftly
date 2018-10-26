@@ -8,7 +8,12 @@
         </div>
         <div class="modal-body">
           <template v-if="$store.state.currentBox">
-            <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" :deliveryTime="$store.state.currentBox.deliveryTime" class="col"></Card>
+            <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" :boxImg="$store.state.currentBox.img">
+              <div class="d-flex justify-content-between">
+                <h3 class="card-title">{{ category.name }}</h3>
+              </div>
+              <p class="card-text">{{ category.info }}</p>
+            </Card>
             <form v-if="category.name == 'Interesses'" class="mb-4">
               <label>Kies interesse:</label>
               <select v-model="boxSelect.interests" class="form-control">
@@ -49,7 +54,7 @@
                 </option>
               </select>
             </form>
-            <form>
+            <form class="pb-4">
               <div class="form-group">
                 <label>Kies uw prijs:</label>
                 <p>€ <span class="display-3">{{ price }}</span></p>
@@ -57,11 +62,16 @@
                 </vueSlider>
               </div>
             </form>
-            <router-link to="/checkout" data-dismiss="modal" @click.native="$store.commit('changeBoxOptions', boxSelect)">
-              <button class="btn btn-red mt-2">Nu kopen</button>
-            </router-link>
-            <button type="button" class="btn btn-red mt-2" @click="addToCart" data-dismiss="modal">Toevoegen aan winkelmandje</button>
-            <button type="button" class="btn btn-blue mt-2" data-dismiss="modal" aria-label="Close">Annuleren</button>
+            <div class="row">
+              <div class="col">
+                <router-link to="/checkout" data-dismiss="modal" @click.native="$store.commit('changeBoxOptions', boxSelect)">
+                  <button class="btn btn-red mt-2">Nu kopen</button>
+                </router-link>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-red mt-2" @click="addToCart" data-dismiss="modal">Toevoegen aan winkelmandje</button>
+              </div>
+            </div>
           </template>
         </div>
       </div>
@@ -115,14 +125,17 @@ export default {
         'min': 10,
         'max': 100,
         'interval': 5,
-        'tooltip': "none"
+        'tooltip': "none",
+        'processStyle': {
+          "backgroundColor": "#ff5964"
+        }
       },
       boxSelect: {
           interests: 'Boeken',
           exotic: 'Europa',
           charity: 'Artsen Zonder Grenzen',
           age: 'Alle leeftijden',
-          sex: 'Unisex'
+          sex: 'Beide'
       },
       interestsOptions: [
         { text: 'Boeken', value: 'Boeken' },
@@ -163,7 +176,7 @@ export default {
         { text: '55+', value: '55+' },
       ],
       sexOptions: [
-        { text: 'Unisex', value: 'Unisex' },
+        { text: 'Beide', value: 'Beide' },
         { text: 'Man', value: 'Man' },
         { text: 'Vrouw', value: 'Vrouw' }
       ]
