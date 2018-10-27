@@ -74,9 +74,10 @@ h3, h4, h5, h6 {
 }
 
 nav {
-  a {
-    font-size: 1.2em;
+  .navbar-nav a {
+    font-size: 1.1em;
     margin: 0 10px;
+    font-weight: 100;
   }
 }
 
@@ -116,4 +117,10 @@ nav {
     font-size: 2.5em;
     color: grey;
   }
+}
+
+.profo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
