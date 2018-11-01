@@ -4,8 +4,10 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 import 'bootstrap';
+import VueCarousel from 'vue-carousel';
 
 Vue.config.productionTip = false;
+Vue.use(VueCarousel);
 
 new Vue({
   router,
