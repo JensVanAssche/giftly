@@ -4,27 +4,30 @@
     <div class="row">
       <div class="col-md-6">
         <form>
-          <h5>Persoonlijke gegevens</h5>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="firstname">Voornaam</label>
-              <input type="text" class="form-control" id="firstname" value="Jerrie">
+          <template v-if="!isLoggedIn">
+            <h5>Persoonlijke gegevens</h5>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="firstname">Voornaam</label>
+                <input type="text" class="form-control" id="firstname" value="Jerrie">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="lastname">Achternaam</label>
+                <input type="text" class="form-control" id="lastname" value="Pererrie">
+              </div>
             </div>
-            <div class="form-group col-md-6">
-              <label for="lastname">Achternaam</label>
-              <input type="text" class="form-control" id="lastname" value="Pererrie">
+            <div class="form-row pb-4">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">E-mail</label>
+                <input type="email" class="form-control" id="inputEmail4" value="info@giftly.com">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="phonenumber">Telefoonnummer</label>
+                <input type="text" class="form-control" id="phonenumber" value="0470998575">
+              </div>
             </div>
-          </div>
-          <div class="form-row pb-4">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">E-mail</label>
-              <input type="email" class="form-control" id="inputEmail4" value="info@giftly.com">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="phonenumber">Telefoonnummer</label>
-              <input type="text" class="form-control" id="phonenumber" value="0470998575">
-            </div>
-          </div>
+          </template>
+          
           <h5>Leveradres</h5>
           <div class="form-group">
             <label for="inputAddress">Adres</label>
@@ -112,10 +115,11 @@ export default {
   },
   computed: {
     ...mapState([
-        'shoppingCart'
+        'shoppingCart',
       ]),
     ...mapGetters([
-      'totalPrice'
+      'totalPrice',
+      'isLoggedIn',
     ])
   },
   methods: {
