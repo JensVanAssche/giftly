@@ -13,7 +13,7 @@
       </transition-group>
       <div class="col-2"></div>
       <div v-if="shoppingCart.length > 0" class="col-8 d-flex justify-content-around mt-4">
-        <button class="btn btn-red btn-lg px-4" @click="clear()">
+        <button class="btn btn-warning btn-lg px-4" @click="clear()">
           Maak de winkelwagen leeg
         </button>
         <button class="btn btn-red btn-lg px-4" @click="pay()">
