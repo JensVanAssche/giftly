@@ -33,6 +33,7 @@
         </li>
         <li class="nav-item">
           <router-link to="/shoppingcart" class="nav-link">
+            <span class="font-weight-normal mr-1">{{ $store.getters.totalItemsInCart }}</span>
             <i class="fas fa-shopping-cart"></i>
           </router-link>
         </li>

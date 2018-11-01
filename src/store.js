@@ -76,6 +76,9 @@ export default new Vuex.Store({
       })
 
       return price;
-    }
+    },
+    totalItemsInCart: state => {
+      return state.shoppingCart.length;
+    },
   },
 });
