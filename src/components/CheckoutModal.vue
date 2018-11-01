@@ -65,9 +65,7 @@
             </form>
             <div class="row">
               <div class="col">
-                <router-link to="/precheckout" data-dismiss="modal" @click.native="$store.commit('changeBoxOptions', boxSelect)">
-                  <button class="btn btn-red mt-2">Nu kopen</button>
-                </router-link>
+                <button type="button" class="btn btn-red mt-2" @click="pay" data-dismiss="modal">Nu kopen</button>
               </div>
               <div class="col">
                 <button type="button" class="btn btn-red mt-2" @click="addToCart" data-dismiss="modal">Toevoegen aan winkelmandje</button>
@@ -116,6 +114,10 @@ export default {
       };
       this.$store.commit('addToCart', box);
       this.showAlert({ type: 'success', header: '', message: 'Het item is toegevoegd aan je winkelmandje.' });
+    },
+    pay() {
+      this.addToCart();
+      this.$router.push(this.$store.getters.precheckoutOrCheckout);
     }
   },
   data() {

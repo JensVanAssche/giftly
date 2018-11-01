@@ -1,5 +1,6 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
+
 const uuidv4 = require('uuid/v4');
 
 Vue.use(Vuex);
@@ -14,9 +15,11 @@ export default new Vuex.Store({
     alert: {
       header: null,
       message: null,
-      type: "success",
+      type: 'success',
     },
-    shoppingCart: localStorage.getItem('shoppingCart') ? JSON.parse(localStorage.getItem('shoppingCart')) : []
+    shoppingCart: localStorage.getItem('shoppingCart')
+      ? JSON.parse(localStorage.getItem('shoppingCart'))
+      : [],
   },
   mutations: {
     changeBox(state, box) {
@@ -36,27 +39,27 @@ export default new Vuex.Store({
     hideAlert(state) {
       state.alert.header = null;
       state.alert.message = null;
-      state.alert.type = "success";
+      state.alert.type = 'success';
     },
     changeBoxOptions(state, options) {
       state.currentBoxOptions = options;
     },
     addToCart(state, box) {
       let uuid = uuidv4();
-      box = {uuid, ...box};
-      
+      box = { uuid, ...box };
+
       state.shoppingCart.push(box);
       localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart));
     },
     clearCart(state) {
       state.shoppingCart = [];
       localStorage.removeItem('shoppingCart');
-    }
+    },
   },
   actions: {
     hideAlert({ commit }) {
       setTimeout(() => {
-        commit("hideAlert");
+        commit('hideAlert');
       }, 1000);
     },
   },
@@ -71,9 +74,9 @@ export default new Vuex.Store({
     totalPrice: state => {
       let price = 0;
 
-      state.shoppingCart.map( box => {
+      state.shoppingCart.map(box => {
         price += box.price;
-      })
+      });
 
       return price;
     },
@@ -82,6 +85,9 @@ export default new Vuex.Store({
     },
     isLoggedIn: state => {
       return state.loginName ? true : false;
-    }
+    },
+    precheckoutOrCheckout: (state, getters) => {
+      return getters.isLoggedIn ? 'checkout' : 'precheckout';
+    },
   },
 });
