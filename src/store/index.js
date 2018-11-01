@@ -1,11 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { data } from './modules/data';
 
 const uuidv4 = require('uuid/v4');
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  modules: {
+    data,
+  },
   state: {
     currentBox: null,
     currentBoxOptions: null,

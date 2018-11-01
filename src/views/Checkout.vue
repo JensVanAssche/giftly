@@ -70,7 +70,7 @@
               <label for="-1">Geen inpakpapier</label>
             </div>
             <div>
-              <label class="wrappingpaperlabel" v-for="(value, key) in wrappingpaper" :key="key">
+              <label class="wrappingpaperlabel" v-for="(value, key) in this.$store.state.data.wrappingpaper" :key="key">
                 <input type="radio" name="wrappingpaper" :value="key">
                 <img :src="value">
               </label>
@@ -136,16 +136,6 @@ export default {
   data () {
     return {
       checked: false,
-      wrappingpaper: [
-        "https://cdn.bmstores.co.uk/images/hpcProductImage/imgFull/291874-kids-everyday-wrap-animals1.jpg",
-        "https://cdn.notonthehighstreet.com/system/product_images/images/001/238/763/original_recycled-red-chevron-white-wrapping-paper.jpg",
-        "https://cdn.notonthehighstreet.com/system/product_images/images/001/228/606/original_recycled-blue-chevron-wrapping-paper.jpg",
-        "https://www.rexlondon.com/sites/dotcom.pleasetest.co.uk/files/styles/uc_product_full/public/25024%20%28swatch%29.jpg",
-        "https://www.sassandbelle.co.uk/Images/Product/Default/xlarge/WRAP048.jpg",
-        "https://cdn.shopify.com/s/files/1/0794/1765/products/CarpenterHill_WrappingPaper_Astral_Reindeer_Pixel_Snowflake_large.png?v=1508785655",
-        "https://cdn.notonthehighstreet.com/system/product_images/images/001/228/605/original_recycled-white-star-brown-wrapping-paper.jpg",
-        "https://www.sassandbelle.co.uk/Images/Product/Default/xlarge/WRAP066.jpg"
-      ]
     }
   }
 }
