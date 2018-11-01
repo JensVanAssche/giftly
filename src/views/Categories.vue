@@ -76,10 +76,10 @@ export default {
           deliveryTime: '2-3 dagen'
         },
         {
-          name: 'Feestdag: Halloween Editie',
-          info: 'Geen betere manier om geluk te verspreiden! Gevult met Halloween gerelateerde goodies!',
-          detailinfo: "Is het Halloween en moet je een cadeau meenemen naar dat spookachtig feestje? Is het kerstmis en ben je een neef vergeten die je nog nooit eerder hebt gezien? Zoek niet verder dan onze feest-dozen!",
-          img: 'halloween.jpg',
+          name: 'Feestdag: Kerst Editie',
+          info: 'Geen betere manier om geluk te verspreiden! Gevult met Kerst gerelateerde goodies!',
+          detailinfo: "Is het Kerstmis en moet je een cadeau meenemen naar dat gezellig feestje? Of is het dit jaar net iets anders en ben je een neef vergeten die je nog nooit eerder hebt gezien? Zoek niet verder dan onze feest-dozen!",
+          img: 'christmas.jpg',
           deliveryTime: '2-3 dagen'
         }
       ]
