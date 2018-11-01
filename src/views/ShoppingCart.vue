@@ -52,7 +52,7 @@ export default {
       )
     },
     pay() {
-      this.$store.getters.isLoggedIn ? this.$router.push('precheckout') : this.$router.push('checkout')
+      this.$store.getters.isLoggedIn ? this.$router.push('checkout') : this.$router.push('precheckout')
     }
   }
 }
