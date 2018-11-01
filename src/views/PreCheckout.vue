@@ -12,7 +12,7 @@
 				<router-link to="/checkout" class="btn btn-red" @click.native="$store.commit('changeLogin', loginName)">Inloggen</router-link>
 				<hr />
 				<p>of</p>
-				<a href="/checkout" class="btn btn-red">Doorgaan zonder inloggen</a>
+				<router-link to="/checkout" class="btn btn-red">Doorgaan zonder inloggen</router-link>
 			</div>
 			<div class="col-4"></div>
 		</div>
