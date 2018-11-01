@@ -1,6 +1,6 @@
 // Shadow
 .shadow-custom {
-  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 // Background colors
@@ -19,7 +19,7 @@
   transition: 0.2s;
   &:hover {
     color: #fff;
-    background-color: #ff848c;
+    background-color: $brighter-pink;
     text-decoration: none;
     transition: 0.2s;
   }
