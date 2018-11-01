@@ -19,7 +19,7 @@
   transition: 0.2s;
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: #ff848c;
     text-decoration: none;
     transition: 0.2s;
   }
@@ -55,7 +55,8 @@
 }
 .alertcontainer {
   width: 100%;
-  position: absolute !important;
+  position: fixed !important;
+  z-index: 2;
   display: flex;
   justify-content: center;
 }

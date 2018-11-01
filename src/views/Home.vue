@@ -7,9 +7,9 @@
             <p class="hero-slogan m-0">Laat je verrassen</p>
             <p class="hero-text mb-5">Cadeau ideeën zonder dat jij een idee moet hebben</p>
             <div class="button-wrapper mt-4">
-              <a href="/categories" class="btn-red py-3 px-5 shadow-custom hero-button">
+              <router-link to="/categories" class="btn-red py-3 px-5 shadow-custom hero-button">
                 Verras me
-              </a>
+              </router-link>
             </div>
           </div>
           <img src="../assets/img/heroimage.jpg" class="heroimage">
@@ -81,6 +81,18 @@
             </div>
             <div class="col-3"></div>
           </div>
+
+
+          <carousel>
+            <slide>
+              Slide 1 Content
+            </slide>
+            <slide>
+              Slide 2 Content
+            </slide>
+          </carousel>
+
+          
         </div>
       </div>
     </div>
@@ -89,10 +101,14 @@
 
 <script>
 import Slider from "@/components/HomeSlider";
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
   name: 'home',
   components: {
-    Slider
+    Slider,
+    Carousel,
+    Slide
   }
 };
 </script>
