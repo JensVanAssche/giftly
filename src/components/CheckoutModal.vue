@@ -104,7 +104,8 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'showAlert'
+      'showAlert',
+      'clearPrice',
     ]),
     addToCart() {
       let box = this.$store.state.currentBox;
@@ -112,13 +113,14 @@ export default {
         price: this.price,
         ...box
       };
+      this.clearPrice();
       this.$store.commit('addToCart', box);
       this.showAlert({ type: 'success', header: '', message: 'Het item is toegevoegd aan je winkelmandje.' });
     },
     pay() {
       this.addToCart();
       this.$router.push(this.$store.getters.precheckoutOrCheckout);
-    }
+    },
   },
   data() {
     return {

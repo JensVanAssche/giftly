@@ -31,6 +31,9 @@ export default new Vuex.Store({
     updatePrice(state, price) {
       state.price = price;
     },
+    clearPrice: state => {
+      state.price = 10;
+    },
     showAlert(state, { header, message, type }) {
       state.alert.header = header;
       state.alert.message = message;
