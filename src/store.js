@@ -80,5 +80,8 @@ export default new Vuex.Store({
     totalItemsInCart: state => {
       return state.shoppingCart.length;
     },
+    isLoggedIn: state => {
+      return state.loginName ? true : false;
+    }
   },
 });
