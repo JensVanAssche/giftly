@@ -22,6 +22,7 @@
 import Card from "@/components/Card";
 import InfoModal from "@/components/InfoModal";
 import CheckoutModal from "@/components/CheckoutModal";
+import { mapMutations } from "vuex";
 
 export default {
   components: {
@@ -30,7 +31,13 @@ export default {
     CheckoutModal
   },
   methods: {
+    ...mapMutations([
+      'showAlert',
+      'clearCurrentBox',
+    ]),
     selectBox(category, type) {
+      this.clearCurrentBox();
+      
       category = {
         type,
         ...category,
