@@ -15,18 +15,20 @@
               <p class="card-text">{{ category.info }}</p>
             </Card>
             <p class="pb-3">Geschatte levertijd: {{ category.deliveryTime }}</p>
-            <form v-if="category.name == 'Interesses'" class="mb-4">
+            <div v-if="category.name == 'Interesses'" class="mb-4">
               <label>Kies interesse:</label>
               <select v-model="boxSelect.interests" class="form-control">
-                <option v-for="(option, i) in this.$store.getters.getCategoryOptions('Interesses')" v-bind:value="option.value" :key="`interests-${i}`">
+                <option v-for="(option, i) in this.$store.state.data.categories.interests.options" v-bind:value="option.value" :key="`interests-${i}`">
                   {{ option.text }}
                 </option>
               </select>
-            </form>
+            </div>
+            <!-- <category-options-select-box categoryName="this.$store.state.currentBox.name"
+            labelText></category-options-select-box> -->
             <form v-if="category.name == 'Exotisch'" class="mb-4">
               <label>Kies werelddeel:</label>
               <select v-model="boxSelect.exotic" class="form-control">
-                <option v-for="(option, i) in this.$store.getters.getCategoryOptions('Exotisch')" v-bind:value="option.value" :key="`exotic-${i}`">
+                <option v-for="(option, i) in this.$store.state.data.categories.exotic.options" v-bind:value="option.value" :key="`exotic-${i}`">
                   {{ option.text }}
                 </option>
               </select>
@@ -34,7 +36,7 @@
             <form v-if="category.name == 'Liefdadigheid'" class="mb-4">
               <label>Kies goed doel:</label>
               <select v-model="boxSelect.charity" class="form-control">
-                <option v-for="(option, i) in this.$store.getters.getCategoryOptions('Liefdadigheid')" v-bind:value="option.value" :key="`charity-${i}`">
+                <option v-for="(option, i) in this.$store.state.data.categories.charity.options" v-bind:value="option.value" :key="`charity-${i}`">
                   {{ option.text }}
                 </option>
               </select>
@@ -81,6 +83,7 @@
 <script>
 import vueSlider from 'vue-slider-component';
 import Card from "@/components/Card";
+import CategoryOptionsSelectBox from "@/components/Categories/CategoryOptionsSelectBox";
 import { mapMutations } from "vuex";
 
 export default {
@@ -90,7 +93,8 @@ export default {
   },
   components: {
     Card,
-    vueSlider
+    CategoryOptionsSelectBox,
+    vueSlider,
   },
   computed: {
     price: {

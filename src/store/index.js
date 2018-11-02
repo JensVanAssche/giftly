@@ -13,7 +13,7 @@ export default new Vuex.Store({
   state: {
     currentBox: null,
     currentBoxOptions: null,
-    boxOptions: [],
+    // boxOptions: [],
     loginName: null,
     price: 10,
     alert: {

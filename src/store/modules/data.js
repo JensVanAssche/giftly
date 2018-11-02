@@ -1,7 +1,7 @@
 export const data = {
   state: {
-    categories: [
-      {
+    categories: {
+      random: {
         name: 'Willekeurig',
         info: 'Voor zij die niet weten wat te geven!',
         detailinfo:
@@ -9,7 +9,7 @@ export const data = {
         img: 'random_1.png',
         deliveryTime: '2-3 dagen',
       },
-      {
+      interests: {
         name: 'Interesses',
         info: 'Weet je wat ze leuk vinden? Pak dan de deze!',
         detailinfo:
@@ -29,8 +29,9 @@ export const data = {
           { text: 'Fitness', value: 'Fitness' },
           { text: 'Mode', value: 'Mode' },
         ],
+        optionsText: 'Kies je interesse',
       },
-      {
+      exotic: {
         name: 'Exotisch',
         info: 'Wil je iets vanuit een ander land geven?',
         detailinfo:
@@ -45,8 +46,9 @@ export const data = {
           { text: 'Afrika', value: 'Afrika' },
           { text: 'Australië', value: 'Australië' },
         ],
+        optionsText: 'Kies je werelddeel',
       },
-      {
+      charity: {
         name: 'Liefdadigheid',
         info: 'Voor zij met een gouden hart!',
         detailinfo:
@@ -61,8 +63,9 @@ export const data = {
           { text: 'PETA', value: 'PETA' },
           { text: 'Unicef', value: 'Unicef' },
         ],
+        optionsText: 'Kies je goed doel',
       },
-      {
+      local: {
         name: 'Lokaal',
         info: 'Steun lokale handwerkers met deze handgemaakte geschenken!',
         detailinfo:
@@ -70,7 +73,7 @@ export const data = {
         img: 'local.jpg',
         deliveryTime: '2-3 dagen',
       },
-      {
+      experience: {
         name: 'Ervaring',
         info: 'Laat ze avontuur beleven!',
         detailinfo:
@@ -78,7 +81,7 @@ export const data = {
         img: 'experience.jpg',
         deliveryTime: '2-3 dagen',
       },
-      {
+      holiday: {
         name: 'Feestdag: Kerst Editie',
         info:
           'Geen betere manier om geluk te verspreiden! Gevult met Kerst gerelateerde goodies!',
@@ -87,7 +90,7 @@ export const data = {
         img: 'christmas.jpg',
         deliveryTime: '2-3 dagen',
       },
-    ],
+    },
     categoryDefaultOptions: {
       age: [
         { text: 'Alle leeftijden', value: 'Alle leeftijden' },
@@ -143,13 +146,5 @@ export const data = {
           'Wij zijn verplicht om uw pakjes terug te nemen, volgens Europese wet. U zal dan krediet krijgen voor onze winkel.',
       },
     ],
-  },
-  getters: {
-    getCategoryOptions: state => categoryName => {
-      const categoryObject = state.categories.find(item => {
-        return item.name === categoryName;
-      });
-      return categoryObject.options;
-    },
   },
 };
