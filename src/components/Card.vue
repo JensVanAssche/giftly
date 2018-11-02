@@ -1,7 +1,6 @@
 <template>
   <div class="card shadow-sm justify-content-between">
     <div class="img-box">
-      <!--<img v-if="name == 'Feestdag: Halloween Editie'" class="card-img-top" src="/img/box_halloween.png" alt="Card image cap">-->
       <img v-if="boxImg" class="card-img-top" :src="`/img/boxes/${boxImg}`" alt="Card image cap">
       <img v-else class="card-img-top" src="../assets/img/presentBox.png" alt="Card image cap">
     </div>
@@ -14,9 +13,6 @@
 <script>
 export default {
   props: {
-    name: String,
-    info: String,
-    deliveryTime: String,
     boxImg: String,
   }
 }
