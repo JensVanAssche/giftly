@@ -16,6 +16,19 @@ export const data = {
           'Als je deze doos wilt kopen zal je hierna mogen kiezen wat je giftee leuk vindt in het leven! Houden ze van voetbal? Dan zorgen we voor iets in die aard! Of misschien zijn ze een gamer? Wat het ook is we zorgen ervoor dat het cadeautje iets voor hen gaat zijn!',
         img: 'interests.jpg',
         deliveryTime: '2-3 dagen',
+        options: [
+          { text: 'Boeken', value: 'Boeken' },
+          { text: 'Films', value: 'Films' },
+          { text: 'Muziek', value: 'Muziek' },
+          { text: 'Toneel/Theater', value: 'Toneel/Theater' },
+          { text: 'Gaming', value: 'Gaming' },
+          { text: 'Technologie', value: 'Technologie' },
+          { text: 'Eten', value: 'Eten' },
+          { text: 'Reizen', value: 'Reizen' },
+          { text: 'Sport', value: 'Sport' },
+          { text: 'Fitness', value: 'Fitness' },
+          { text: 'Mode', value: 'Mode' },
+        ],
       },
       {
         name: 'Exotisch',
@@ -24,6 +37,14 @@ export const data = {
           'In deze dozen is er altijd iets speciaal! Je zal van talloze landen kunnen kiezen om zo het wat meer te personaliseren! Zo kan je ook een beetje dieper gaan, misschien zijn ze snoepers, of verzamelaars van beeldjes!',
         img: 'exotic.jpg',
         deliveryTime: '5 dagen',
+        options: [
+          { text: 'Europa', value: 'Europa' },
+          { text: 'Noord-Amerika', value: 'Noord-Amerika' },
+          { text: 'Zuid-Amerika', value: 'Zuid-Amerika' },
+          { text: 'Azië', value: 'Azië' },
+          { text: 'Afrika', value: 'Afrika' },
+          { text: 'Australië', value: 'Australië' },
+        ],
       },
       {
         name: 'Liefdadigheid',
@@ -32,6 +53,14 @@ export const data = {
           "Uw geschenk zal gevuld worden met allerlei hartverwarmende goederen die goede doelen ondersteunen! Er is zelfs een optie om aan een goed doel van jou keuze te geven in je giftee's naam!",
         img: 'charity.jpg',
         deliveryTime: '2-3 dagen',
+        options: [
+          { text: 'Artsen Zonder Grenzen', value: 'Artsen Zonder Grenzen' },
+          { text: 'Kom Op Tegen Kanker', value: 'Kom Op Tegen Kanker' },
+          { text: 'Child Focus', value: 'Child Focus' },
+          { text: 'Greenpeace', value: 'Greenpeace' },
+          { text: 'PETA', value: 'PETA' },
+          { text: 'Unicef', value: 'Unicef' },
+        ],
       },
       {
         name: 'Lokaal',
@@ -59,6 +88,22 @@ export const data = {
         deliveryTime: '2-3 dagen',
       },
     ],
+    categoryDefaultOptions: {
+      age: [
+        { text: 'Alle leeftijden', value: 'Alle leeftijden' },
+        { text: '-12', value: '-12' },
+        { text: '12-18', value: '12-18' },
+        { text: '18-25', value: '18-25' },
+        { text: '25-35', value: '25-35' },
+        { text: '35-55', value: '35-55' },
+        { text: '55+', value: '55+' },
+      ],
+      sex: [
+        { text: 'Beide', value: 'Beide' },
+        { text: 'Man', value: 'Man' },
+        { text: 'Vrouw', value: 'Vrouw' },
+      ],
+    },
     wrappingpaper: [
       'https://cdn.bmstores.co.uk/images/hpcProductImage/imgFull/291874-kids-everyday-wrap-animals1.jpg',
       'https://cdn.notonthehighstreet.com/system/product_images/images/001/238/763/original_recycled-red-chevron-white-wrapping-paper.jpg',
@@ -98,5 +143,13 @@ export const data = {
           'Wij zijn verplicht om uw pakjes terug te nemen, volgens Europese wet. U zal dan krediet krijgen voor onze winkel.',
       },
     ],
+  },
+  getters: {
+    getCategoryOptions: state => categoryName => {
+      const categoryObject = state.categories.find(item => {
+        return item.name === categoryName;
+      });
+      return categoryObject.options;
+    },
   },
 };
