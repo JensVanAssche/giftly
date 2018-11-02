@@ -92,8 +92,8 @@
         <h3>Totaal: € {{ totalPrice }}</h3>
         <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
           <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 my-3">
-            <Card :key="i" :name="item.name" :boxImg="item.img" :deliveryTime="item.deliveryTime" class="card">
-              <h5 class="card-title">{{ item.name }}</h5>
+            <Card :key="i" :name="item.name" :boxImg="$store.state.data.categories[item.type].img" class="card">
+              <h5 class="card-title">{{ $store.state.data.categories[item.type].name }}<span v-if="item.option">: {{ item.option }}</span></h5>
             </Card>
           </div>
         </transition-group>

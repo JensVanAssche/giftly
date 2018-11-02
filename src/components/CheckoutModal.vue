@@ -3,68 +3,48 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">{{ category.name }}</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-          <template v-if="$store.state.currentBox">
-            <Card :name="$store.state.currentBox.name" :info="$store.state.currentBox.info" :boxImg="$store.state.currentBox.img">
+          <template v-if="$store.state.currentBox.type">
+            <Card :name="$store.state.data.categories[currentBox.type].name" :info="$store.state.data.categories[currentBox.type].info" :boxImg="$store.state.data.categories[currentBox.type].img">
               <div class="d-flex justify-content-between">
                 <h3 class="card-title">{{ category.name }}</h3>
               </div>
               <p class="card-text">{{ category.info }}</p>
             </Card>
             <p class="pb-3">Geschatte levertijd: {{ category.deliveryTime }}</p>
-            <div v-if="category.name == 'Interesses'" class="mb-4">
-              <label>Kies interesse:</label>
-              <select v-model="boxSelect.interests" class="form-control">
-                <option v-for="(option, i) in this.$store.state.data.categories.interests.options" v-bind:value="option.value" :key="`interests-${i}`">
-                  {{ option.text }}
-                </option>
-              </select>
-            </div>
-            <!-- <category-options-select-box categoryName="this.$store.state.currentBox.name"
-            labelText></category-options-select-box> -->
-            <form v-if="category.name == 'Exotisch'" class="mb-4">
-              <label>Kies werelddeel:</label>
-              <select v-model="boxSelect.exotic" class="form-control">
-                <option v-for="(option, i) in this.$store.state.data.categories.exotic.options" v-bind:value="option.value" :key="`exotic-${i}`">
-                  {{ option.text }}
-                </option>
-              </select>
-            </form>
-            <form v-if="category.name == 'Liefdadigheid'" class="mb-4">
-              <label>Kies goed doel:</label>
-              <select v-model="boxSelect.charity" class="form-control">
-                <option v-for="(option, i) in this.$store.state.data.categories.charity.options" v-bind:value="option.value" :key="`charity-${i}`">
-                  {{ option.text }}
-                </option>
-              </select>
-            </form>
-            <form class="mb-4">
-              <label>Kies geslacht:</label>
-              <select v-model="boxSelect.sex" class="form-control">
-                <option v-for="(option, i) in this.$store.state.data.categoryDefaultOptions.sex" v-bind:value="option.value" :key="`sex-${i}`">
-                  {{ option.text }}
-                </option>
-              </select>
-            </form>
-            <form class="mb-4">
-              <label>Kies leeftijd:</label>
-              <select v-model="boxSelect.age" class="form-control">
-                <option v-for="(option, i) in this.$store.state.data.categoryDefaultOptions.age" v-bind:value="option.value" :key="`age-${i}`">
-                  {{ option.text }}
-                </option>
-              </select>
-            </form>
-            <form class="pb-4">
+
+            <!-- Gets the category specific options -->
+            <category-options-select-box 
+            v-if="this.currentBox.type && $store.state.data.categories[currentBox.type].options" 
+            name="options"
+            :options="$store.state.data.categories[currentBox.type].options"
+            :labelText="$store.state.data.categories[currentBox.type].optionsText"
+            :selection.sync="currentBox.option"></category-options-select-box>
+
+            <!-- Gets the sex options -->
+            <category-options-select-box 
+            name="sex"
+            :options="this.$store.state.data.categoryDefaultOptions.sex"
+            labelText="Kies geslacht"
+            :selection.sync="currentBox.sex"></category-options-select-box>
+            
+            <!-- Gets the age options -->
+            <category-options-select-box 
+            name="age"
+            :options="this.$store.state.data.categoryDefaultOptions.age"
+            labelText="Kies leeftijd"
+            :selection.sync="currentBox.age"></category-options-select-box>
+        
+            <div class="pb-4">
               <div class="form-group">
                 <label>Kies uw prijs:</label>
                 <p>€ <span class="display-3">{{ price }}</span></p>
                 <vueSlider v-model="price" ref="slider" :real-time="true" v-bind="options">
                 </vueSlider>
               </div>
-            </form>
+            </div>
             <div class="row">
               <div class="col">
                 <button type="button" class="btn btn-red mt-2" @click="pay" data-dismiss="modal">Nu kopen</button>
@@ -104,20 +84,23 @@ export default {
       set (value) {
         this.$store.commit('updatePrice', value)
       },
-    }
+    },
+    currentBox() {
+      return this.$store.state.currentBox;
+    },
   },
   methods: {
     ...mapMutations([
       'showAlert',
-      'clearPrice',
+      'clearCurrentBox',
     ]),
     addToCart() {
-      let box = this.$store.state.currentBox;
-      box = {
+      const box = {
         price: this.price,
-        ...box
+        type: this.currentBox.type,
+        option: this.currentBox.option,
       };
-      this.clearPrice();
+      this.clearCurrentBox();
       this.$store.commit('addToCart', box);
       this.showAlert({ type: 'success', header: '', message: 'Het item is toegevoegd aan je winkelmandje.' });
     },
@@ -138,13 +121,6 @@ export default {
         'processStyle': {
           "backgroundColor": "#ff5964"
         }
-      },
-      boxSelect: {
-          interests: 'Boeken',
-          exotic: 'Europa',
-          charity: 'Artsen Zonder Grenzen',
-          age: 'Alle leeftijden',
-          sex: 'Beide'
       },
     }
   }

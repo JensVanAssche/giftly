@@ -11,8 +11,11 @@ export default new Vuex.Store({
     data,
   },
   state: {
-    currentBox: null,
-    currentBoxOptions: null,
+    currentBox: {
+      age: 'Alle leeftijden',
+      sex: 'Beide',
+    },
+    // currentBoxOptions: null,
     // boxOptions: [],
     loginName: null,
     price: 10,
@@ -26,8 +29,11 @@ export default new Vuex.Store({
       : [],
   },
   mutations: {
-    changeBox(state, box) {
-      state.currentBox = box;
+    changeBox(state, { type }) {
+      state.currentBox = {
+        type,
+        ...state.currentBox,
+      };
     },
     changeLogin(state, login) {
       state.loginName = login;
@@ -35,8 +41,12 @@ export default new Vuex.Store({
     updatePrice(state, price) {
       state.price = price;
     },
-    clearPrice: state => {
+    clearCurrentBox: state => {
       state.price = 10;
+      state.currentBox = {
+        age: 'Alle leeftijden',
+        sex: 'Beide',
+      };
     },
     showAlert(state, { header, message, type }) {
       state.alert.header = header;

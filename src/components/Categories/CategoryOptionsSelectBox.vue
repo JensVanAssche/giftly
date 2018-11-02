@@ -1,11 +1,13 @@
 <template>
-  <div v-if="this.$store.getters.getCategoryOptions(categoryName)" class="mb-4">
-    <label>Kies {{ labelText }}:</label>
+  <div class="mb-4">
+    <label>{{ labelText }}:</label>
     <select :value="selection" @input="$emit('update:selection', $event.target.value)" class="form-control">
-      <option v-for="(option, i) in this.$store.getters.getCategoryOptions(categoryName)" v-bind:value="option.value" :key="`${categoryName}-${i}`">
+      <option disabled value="">Maak een keuze</option>
+      <option v-for="(option, i) in options" :value="option.value" :key="`${name}-${i}`">
         {{ option.text }}
       </option>
     </select>
+    <div v-if="error" class="text-danger">{{ errors }}</div>
   </div>
 </template>
 
@@ -13,9 +15,11 @@
 export default {
   name: 'CategoryOptionsSelectBox',
   props: {
-    categoryName: String,
+    name: String,
+    options: Array,
     labelText: String,
     selection: String,
-  }
+    error: String,
+  },
 }
 </script>
