@@ -7,7 +7,7 @@
         {{ option.text }}
       </option>
     </select>
-    <div v-if="error" class="text-danger">{{ errors }}</div>
+    <div v-if="error" class="text-danger">{{ error }}</div>
   </div>
 </template>
 

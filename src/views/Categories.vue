@@ -19,32 +19,29 @@
 </template>
 
 <script>
-import Card from "@/components/Card";
-import InfoModal from "@/components/InfoModal";
-import CheckoutModal from "@/components/CheckoutModal";
-import { mapMutations } from "vuex";
+import Card from '@/components/Card'
+import InfoModal from '@/components/InfoModal'
+import CheckoutModal from '@/components/CheckoutModal'
+import { mapMutations } from 'vuex'
 
 export default {
   components: {
     Card,
     InfoModal,
-    CheckoutModal
+    CheckoutModal,
   },
   methods: {
-    ...mapMutations([
-      'showAlert',
-      'clearCurrentBox',
-    ]),
+    ...mapMutations(['showAlert', 'clearCurrentBox']),
     selectBox(category, type) {
-      this.clearCurrentBox();
-      
+      this.clearCurrentBox()
+
       category = {
         type,
         ...category,
-      };
-      this.$store.commit('changeBox', category);
-    }
-  }
+      }
+      this.$store.commit('changeBox', category)
+    },
+  },
 }
 </script>
 
