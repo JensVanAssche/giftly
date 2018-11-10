@@ -13,15 +13,20 @@
 
 .btn-red {
   border: none;
-  border-radius: 3px !important;
   background-color: $bright-pink;
   color: #fff;
   transition: 0.2s;
   &:hover {
-    color: #fff;
     background-color: $brighter-pink;
     text-decoration: none;
-    transition: 0.2s;
+  }
+}
+.btn-pink {
+  color: #fff;
+  background-color: $brighter-pink;
+  &:hover {
+    background-color: $bright-pink;
+    text-decoration: none;
   }
 }
 .btn-blue {
@@ -75,7 +80,7 @@
       border: none;
       .modal-header {
         border: none;
-        button{
+        button {
           padding-bottom: 0;
         }
       }
