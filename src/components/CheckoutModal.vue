@@ -16,7 +16,7 @@
               </div>
               <p class="card-text">{{ category.info }}</p>
             </Card>
-            <p class="pb-3">Geschatte levertijd: {{ $store.getters.levertijdString(currentBox.type) }}</p>
+            <p class="pb-3">Geschatte levertijd: {{ $store.getters.deliveryTimeString(currentBox.type) }}</p>
             <!-- Gets the category specific options -->
             <category-options-select-box 
               v-if="this.currentBox.type && $store.state.data.categories[currentBox.type].options" 

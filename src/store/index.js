@@ -130,7 +130,7 @@ export default new Vuex.Store({
     precheckoutOrCheckout: (state, getters) => {
       return getters.isLoggedIn ? 'checkout' : 'precheckout'
     },
-    levertijdString: state => type => {
+    deliveryTimeString: state => type => {
       const deliveryTime = state.data.categories[type].deliveryTime
       return `${deliveryTime[0]} tot ${deliveryTime[1]} dagen`
     },
