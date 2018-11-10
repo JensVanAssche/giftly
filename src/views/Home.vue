@@ -7,7 +7,7 @@
             <p class="hero-slogan m-0">Laat je verrassen</p>
             <p class="hero-text mb-5">Cadeau ideeën zonder dat jij een idee moet hebben</p>
             <div class="button-wrapper mt-4">
-              <router-link to="/categories" class="btn-red py-3 px-5 shadow-custom hero-button">
+              <router-link to="/categories" class="btn-red py-3 px-5 btn-lg">
                 Verras me
               </router-link>
             </div>
@@ -58,7 +58,7 @@
           </div>
           <div class="row">
             <div class="col d-flex justify-content-center">
-              <a href="/faq" class="btn-red py-3 px-5 shadow-custom btn-lg">
+              <a href="/faq" class="btn-red py-3 px-5 btn-lg">
                 Meer info
               </a>
             </div>

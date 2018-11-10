@@ -51,17 +51,14 @@ h3, h4, h5, h6 {
   }
   .hero-slogan {
     color: $bright-pink;
-    font-family: $primary-font;
+    font-family: $logo-font;
     font-size: $hero-slogan-text-size;
     line-height: $hero-slogan-text-line-height;
-    font-weight: 600;
+    font-weight: 100;
     @include media-breakpoint-down(sm) {
       font-size: $hero-slogan-text-size-mobile;
       line-height: $hero-slogan-text-line-height-mobile;
     }
-  }
-  .hero-button {
-    font-size: 1.3em;
   }
 }
 
@@ -103,7 +100,7 @@ nav {
 
 .categories {
   .card {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
 }
 
@@ -115,7 +112,7 @@ nav {
   list-style-type: none;
   .lead {
     font-size: 2.5em;
-    color: grey;
+    color: gray;
   }
 }
 

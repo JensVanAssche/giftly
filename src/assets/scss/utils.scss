@@ -24,6 +24,18 @@
     transition: 0.2s;
   }
 }
+.btn-ghost-red {
+  border: 3px $bright-pink solid;
+  border-radius: 3px !important;
+  color: $bright-pink;
+  transition: 0.2s;
+  &:hover {
+    background-color: $bright-pink;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+}
 .btn-blue {
   background-color: $dark-blue;
   color: #fff;
@@ -37,9 +49,11 @@
     color: $bright-pink;
   }
 }
-
-.text-grey {
-  color: grey;
+.text-gray {
+  color: gray;
+}
+.text-black {
+  color: black;
 }
 .alertcontainer {
   width: 100%;
@@ -51,6 +65,7 @@
 .alert {
   z-index: 5;
   margin: 0 !important;
+  p { margin-bottom: 10px; }
 }
 
 // Modals
@@ -73,14 +88,8 @@
     .modal-content {
       border-radius: 0;
       border: none;
-      .modal-header {
-        border: none;
-        button{
-          padding-bottom: 0;
-        }
-      }
       .modal-body {
-        height: calc(100vh - 40px);
+        height: 100vh;
         overflow-y: scroll;
         padding: 15px 15px;
       }

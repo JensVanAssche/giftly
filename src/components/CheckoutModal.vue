@@ -2,10 +2,10 @@
   <div class="modal fade right" :id="`checkoutModal${i}`" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
         <div class="modal-body">
+          <div class="d-flex justify-content-end">
+            <p class="close" data-dismiss="modal">&times;</p>
+          </div>
           <template v-if="$store.state.currentBox.type">
             <Card :name="$store.state.data.categories[currentBox.type].name" :info="$store.state.data.categories[currentBox.type].info" :boxImg="$store.state.data.categories[currentBox.type].img">
               <div class="d-flex justify-content-between">

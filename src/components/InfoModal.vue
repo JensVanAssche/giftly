@@ -13,7 +13,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-red" data-toggle="modal" data-dismiss="modal" :data-target="`#checkoutModal${i}`" @click="$store.commit('changeBox', category)">Ik wil deze</button>
-        <button type="button" class="btn btn-blue" data-dismiss="modal">Terug</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Terug</button>
       </div>
     </div>
   </div>
