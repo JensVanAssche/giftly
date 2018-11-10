@@ -1,7 +1,7 @@
 <template>
   <div class="checkout container">
     <h1 class="page-title">Betalen</h1>
-    <div class="row">
+    <div v-if="shoppingCartList.length > 0" class="row">
       <div class="col-md-6">
         <form>
           <template v-if="!isLoggedIn">
@@ -82,7 +82,7 @@
               <label for="accountcheck">Maak account aan met deze gegevens</label>
             </div>
           </div>
-          <button type="button" class="btn btn-red mb-2" @click="pay" data-dismiss="modal">Nu Betalen</button>
+          <button type="button" class="btn btn-red mb-2" @click="pay">Nu Betalen</button>
         </form>
       </div>
       <div class="col-md-3"></div>
@@ -105,6 +105,10 @@
         <p>Geschatte levertijd: 2-3 dagen</p>
       </div>
     </div>
+    <div v-else class="text-center">
+      <p>Niks is gratis. Daar hoef je dus ook niet voor te betalen.</p>
+      <p><router-link to="/categories" class="btn btn-red">Kies iets leuks uit waar je wel voor kan betalen</router-link></p>
+    </div>
   </div>
 </template>
 
@@ -121,7 +125,7 @@ export default {
     DeleteButton,
   },
   computed: {
-    ...mapState(['shoppingCart']),
+    ...mapState(['shoppingCart', 'shoppingCartList']),
     ...mapGetters(['totalPrice', 'isLoggedIn']),
   },
   methods: {
