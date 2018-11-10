@@ -78,6 +78,7 @@ export default new Vuex.Store({
     },
     clearCart(state) {
       state.shoppingCart = {}
+      state.shoppingCartList = []
       localStorage.removeItem('shoppingCart')
       localStorage.removeItem('shoppingCartList')
     },
