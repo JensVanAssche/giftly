@@ -132,6 +132,8 @@ export default {
           price: this.price,
           type: this.currentBox.type,
           option: this.currentBox.option,
+          sex: this.currentBox.sex,
+          age: this.currentBox.age,
         }
         this.clearCurrentBox()
         this.$store.commit('addToCart', box)
