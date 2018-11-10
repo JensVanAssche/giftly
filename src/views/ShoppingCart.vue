@@ -66,6 +66,5 @@ $deleteButtonSize: 48px;
   top: -($deleteButtonSize / 4);
   right: -($deleteButtonSize / 4);
   border-radius: 100%;
-  font-weight: black;
 }
 </style>
