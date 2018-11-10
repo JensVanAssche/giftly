@@ -22,6 +22,9 @@
       </div>
       <div class="col-2"></div>
     </div>
+    <div v-if="shoppingCart.length === 0" class="text-center">
+      Je winkelwagen is momenteel nog leeg... Kijk gerust rond in onze <router-link to="/categories" class="text-red">Categorieën</router-link>
+    </div>
   </div>
 </template>
 
