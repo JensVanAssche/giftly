@@ -9,13 +9,16 @@
         {{ item.answer }}
       </li>
     </ul>
+    <div class="mt-4 d-flex justify-content-center">
+      <router-link to="/categories" class="btn-red py-3 px-5 btn-lg">
+        Ik weet genoeg, laat me een pakje kiezen!
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>
