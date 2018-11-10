@@ -15,8 +15,6 @@ export default new Vuex.Store({
       age: 'Alle leeftijden',
       sex: 'Beide',
     },
-    // currentBoxOptions: null,
-    // boxOptions: [],
     loginName: null,
     price: 10,
     alert: {
@@ -131,6 +129,10 @@ export default new Vuex.Store({
     },
     precheckoutOrCheckout: (state, getters) => {
       return getters.isLoggedIn ? 'checkout' : 'precheckout'
+    },
+    levertijdString: state => type => {
+      const deliveryTime = state.data.categories[type].deliveryTime
+      return `${deliveryTime[0]} tot ${deliveryTime[1]} dagen`
     },
   },
 })

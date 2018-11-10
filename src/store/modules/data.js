@@ -7,7 +7,7 @@ export const data = {
         detailinfo:
           'Iets voor wanneer je het echt niet weet! Afhankelijk van jouw prijsklasse zullen we je cadeautje maken zodat het voor iedereen wat past! We gaan eventjes in ons magazijn om alle soorten leuks te verzamelen!',
         img: 'random_1.png',
-        deliveryTime: '2-3 dagen',
+        deliveryTime: [2, 3],
       },
       interests: {
         name: 'Interesses',
@@ -15,7 +15,7 @@ export const data = {
         detailinfo:
           'Als je deze doos wilt kopen zal je hierna mogen kiezen wat je giftee leuk vindt in het leven! Houden ze van voetbal? Dan zorgen we voor iets in die aard! Of misschien zijn ze een gamer? Wat het ook is we zorgen ervoor dat het cadeautje iets voor hen gaat zijn!',
         img: 'interests.jpg',
-        deliveryTime: '2-3 dagen',
+        deliveryTime: [2, 3],
         options: [
           { text: 'Boeken', value: 'Boeken' },
           { text: 'Films', value: 'Films' },
@@ -37,7 +37,7 @@ export const data = {
         detailinfo:
           'In deze dozen is er altijd iets speciaal! Je zal van talloze landen kunnen kiezen om zo het wat meer te personaliseren! Zo kan je ook een beetje dieper gaan, misschien zijn ze snoepers, of verzamelaars van beeldjes!',
         img: 'exotic.jpg',
-        deliveryTime: '5 dagen',
+        deliveryTime: [5, 7],
         options: [
           { text: 'Europa', value: 'Europa' },
           { text: 'Noord-Amerika', value: 'Noord-Amerika' },
@@ -54,7 +54,7 @@ export const data = {
         detailinfo:
           "Uw geschenk zal gevuld worden met allerlei hartverwarmende goederen die goede doelen ondersteunen! Er is zelfs een optie om aan een goed doel van jou keuze te geven in je giftee's naam!",
         img: 'charity.jpg',
-        deliveryTime: '2-3 dagen',
+        deliveryTime: [2, 3],
         options: [
           { text: 'Artsen Zonder Grenzen', value: 'Artsen Zonder Grenzen' },
           { text: 'Kom Op Tegen Kanker', value: 'Kom Op Tegen Kanker' },
@@ -71,7 +71,7 @@ export const data = {
         detailinfo:
           'We hebben contact gelegd met meerdere artisinale kunstenaars en handwerkers! Zo maken zij voor ons en u geweldige en leuke dingen om weg te geven! Op deze manier kunt u uw lokale winkels ondersteunen en ontdekken wat zij bieden!',
         img: 'local.jpg',
-        deliveryTime: '2-3 dagen',
+        deliveryTime: [2, 3],
       },
       experience: {
         name: 'Ervaring',
@@ -79,7 +79,7 @@ export const data = {
         detailinfo:
           'Wil je dat je giftee plezier heeft in plaats van ze een artikel te geven? Zoek niet verder! Wij bieden meerdere ervaringspakketten voor uw giftee om van te genieten! Variërend van bergbeklimmen tot een ontspannende spa-dag!',
         img: 'experience.jpg',
-        deliveryTime: '2-3 dagen',
+        deliveryTime: [2, 3],
       },
       holiday: {
         name: 'Feestdag: Kerst Editie',
@@ -88,7 +88,7 @@ export const data = {
         detailinfo:
           'Is het Kerstmis en moet je een cadeau meenemen naar dat gezellig feestje? Of is het dit jaar net iets anders en ben je een neef vergeten die je nog nooit eerder hebt gezien? Zoek niet verder dan onze feest-dozen!',
         img: 'christmas.jpg',
-        deliveryTime: '2-3 dagen',
+        deliveryTime: [2, 3],
       },
     },
     categoryDefaultOptions: {
@@ -147,4 +147,4 @@ export const data = {
       },
     ],
   },
-};
+}
