@@ -5,7 +5,11 @@
       <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
         <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2">
           <Card :key="i" :boxImg="$store.state.data.categories[item.type].img" class="card">
-            <CartDeleteButton :uuid="item.uuid" />
+            <DeleteButton 
+              @delete="deleteFromCart(item.uuid)" 
+              rounded
+              topRight
+            />
             <h5 class="card-title">{{ $store.state.data.categories[item.type].name }}<span v-if="item.option">: {{ item.option }}</span></h5>
             <p>€ {{ item.price }}</p>
           </Card>
@@ -30,20 +34,20 @@
 
 <script>
 import Card from '@/components/Card'
-import CartDeleteButton from '@/components/Cart/CartDeleteButton'
+import DeleteButton from '@/components/DeleteButton'
 import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'ShoppingCart',
   components: {
     Card,
-    CartDeleteButton,
+    DeleteButton,
   },
   computed: {
     ...mapState(['shoppingCart', 'shoppingCartList']),
   },
   methods: {
-    ...mapMutations(['clearCart', 'showAlert']),
+    ...mapMutations(['clearCart', 'showAlert', 'deleteFromCart']),
     clear() {
       this.clearCart()
       this.showAlert({
