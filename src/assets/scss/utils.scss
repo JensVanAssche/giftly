@@ -13,15 +13,21 @@
 
 .btn-red {
   border: none;
-  border-radius: 3px !important;
   background-color: $bright-pink;
   color: #fff;
   transition: 0.2s;
   &:hover {
-    color: #fff;
     background-color: $brighter-pink;
+    color: #fff;
     text-decoration: none;
-    transition: 0.2s;
+  }
+}
+.btn-pink {
+  color: #fff;
+  background-color: $brighter-pink;
+  &:hover {
+    background-color: $bright-pink;
+    text-decoration: none;
   }
 }
 .btn-ghost-red {
@@ -88,6 +94,9 @@
     .modal-content {
       border-radius: 0;
       border: none;
+      .modal-header {
+        border: none;
+      }
       .modal-body {
         height: 100vh;
         overflow-y: scroll;

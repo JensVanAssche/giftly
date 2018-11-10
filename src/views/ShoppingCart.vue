@@ -5,6 +5,7 @@
       <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
         <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2">
           <Card :key="i" :boxImg="$store.state.data.categories[item.type].img" class="card">
+            <button class="btn btn-pink deleteButton" @click="deleteFromCart(item.uuid)"><i class="fas fa-times fa-lg"></i></button>
             <h5 class="card-title">{{ $store.state.data.categories[item.type].name }}<span v-if="item.option">: {{ item.option }}</span></h5>
             <p>€ {{ item.price }}</p>
           </Card>
@@ -21,38 +22,49 @@
       </div>
       <div class="col-2"></div>
     </div>
+    <div v-if="shoppingCart.length === 0" class="text-center">
+      Je winkelwagen is momenteel nog leeg... Kijk gerust rond in onze <router-link to="/categories" class="text-red">Categorieën</router-link>
+    </div>
   </div>
 </template>
 
 <script>
-import Card from "@/components/Card";
-import { mapState, mapMutations } from "vuex";
+import Card from '@/components/Card'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'ShoppingCart',
   components: {
-    Card
+    Card,
   },
   computed: {
-    ...mapState([
-        'shoppingCart'
-      ])
+    ...mapState(['shoppingCart']),
   },
   methods: {
-    ...mapMutations([
-      'clearCart', 
-      'showAlert'
-    ]),
+    ...mapMutations(['clearCart', 'showAlert', 'deleteFromCart']),
     clear() {
-      this.clearCart();
-      this.showAlert(
-        { type: 'success',  message: 'Alle producten zijn uit de winkelwagen verwijderd.'
-        }
-      )
+      this.clearCart()
+      this.showAlert({
+        type: 'success',
+        message: 'Alle producten zijn uit de winkelwagen verwijderd.',
+      })
     },
     pay() {
-      this.$router.push(this.$store.getters.precheckoutOrCheckout);
-    }
-  }
+      this.$router.push(this.$store.getters.precheckoutOrCheckout)
+    },
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+$deleteButtonSize: 48px;
+
+.deleteButton {
+  width: $deleteButtonSize;
+  height: $deleteButtonSize;
+  position: absolute;
+  top: -($deleteButtonSize / 4);
+  right: -($deleteButtonSize / 4);
+  border-radius: 100%;
+}
+</style>
