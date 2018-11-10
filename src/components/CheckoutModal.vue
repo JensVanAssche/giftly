@@ -141,6 +141,7 @@ export default {
           message: 'Het item is toegevoegd aan je winkelmandje.',
         })
         this.closeModal()
+        return true
       } else return false
     },
     pay() {
