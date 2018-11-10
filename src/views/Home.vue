@@ -64,38 +64,90 @@
             </div>
           </div>
         </div>
-        <div class="col-12">
+        <div class="col-12 mb-5">
           <h3 class="text-center mb-4">
             Lees wat anderen te zeggen hebben over Giftly
           </h3>
           <div class="row">
-            <div class="col-3"></div>
+            <div class="col-3">
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <i class="fas fa-chevron-left"></i>
+                <span class="sr-only">Previous</span>
+              </a>
+            </div>
             <div class="col-6">
-              <div class="card shadow-sm p-3 mb-4">
-                <div class="d-flex mb-3">
-                  <img src="../assets/img/profo_jens.jpg" class="profo mr-3">
-                  <h2>Jens zegt:</h2>
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="card shadow-sm p-3 mb-4">
+                      <div class="d-flex mb-3">
+                        <img src="../assets/img/profo_jens.jpg" class="profo mr-3">
+                        <h2>Jens zegt:</h2>
+                      </div>
+                      <p class="testimonial_quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="card shadow-sm p-3 mb-4">
+                      <div class="d-flex mb-3">
+                        <img src="../assets/img/profo_jordy.jpg" class="profo mr-3">
+                        <h2>Jordy zegt:</h2>
+                      </div>
+                      <p class="testimonial_quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="card shadow-sm p-3 mb-4">
+                      <div class="d-flex mb-3">
+                        <img src="../assets/img/profo_tymo.jpg" class="profo mr-3">
+                        <h2>Tymo zegt:</h2>
+                      </div>
+                      <p class="testimonial_quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="testimonial_quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
               </div>
             </div>
-            <div class="col-3"></div>
+            <div class="col-3">
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <i class="fas fa-chevron-right"></i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
           </div>
-
-
-          <carousel>
-            <slide>
-              Slide 1 Content
-            </slide>
-            <slide>
-              Slide 2 Content
-            </slide>
-          </carousel>
-
-          
         </div>
       </div>
     </div>
+    <footer>
+      <h1 class="footer-logo">Giftly</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <h3>Navigeer</h3>
+            <ul>
+              <li><a href="/categories">Categorieën</a></li>
+              <li><a href="/faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <h3>Contacteer Ons</h3>
+            <ul>
+              <li><i class="fas fa-phone pr-2"></i> 0470998575</li>
+              <li><i class="fas fa-envelope pr-2"></i> Email: info@giftly.com</li>
+              <li><i class="fas fa-home pr-2"></i> Salesianenlaan 92,<br />Hoboken 2660</li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <h3>Sociaal</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </section>
 </template>
 
