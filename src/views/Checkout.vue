@@ -51,13 +51,6 @@
               <input v-if="checked == true" type="date" class="form-control" id="inputDate">
             </div>
           </div>
-          <!-- <div v-if="$store.state.currentBox.name == 'Liefdadigheid'">
-            <h5>Liefdadigheid opties</h5>
-            <div class="form-group">
-              <label for="nameRecepient">Naam v/d ontvanger</label>
-              <input type="text" name="" class="form-control" id="nameRecepient">
-            </div>
-          </div> -->
           <h5>Paketje aanpassen</h5>
           <div class="form-group">
             <label>Tekstje bij uw pakje: (laat leeg om geen tekstje toe te voegen)</label>

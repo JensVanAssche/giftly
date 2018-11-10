@@ -49,6 +49,12 @@
                 </vueSlider>
               </div>
             </div>
+            <div v-if="currentBox.type == 'charity'">
+              <div class="form-group">
+                <label for="nameRecepient">Naam v/d ontvanger</label>
+                <input type="text" name="nameRecepient" class="form-control" v-model="currentBox.recipient">
+              </div>
+            </div>
             <!-- Checkout Buttons -->
             <div class="row">
               <div class="col">
@@ -122,6 +128,7 @@ export default {
             'Je moet een specifieke optie kiezen om verder te gaan.'
           return false
         }
+        this.optionsError = ''
         return true
       }
       return true
@@ -130,10 +137,7 @@ export default {
       if (this.checkOption()) {
         const box = {
           price: this.price,
-          type: this.currentBox.type,
-          option: this.currentBox.option,
-          sex: this.currentBox.sex,
-          age: this.currentBox.age,
+          ...this.currentBox,
         }
         this.clearCurrentBox()
         this.$store.commit('addToCart', box)
