@@ -47,6 +47,17 @@
   color: #fff;
 }
 
+.btn-icon {
+  width: $btn-icon-size;
+  height: $btn-icon-size;
+  border-radius: 100%;
+}
+.btn-icon-top-right {
+  position: absolute;
+  top: -($btn-icon-size / 4);
+  right: -($btn-icon-size / 4);
+}
+
 // Text
 
 .text-red {
@@ -74,7 +85,9 @@
 .alert {
   z-index: 5;
   margin: 0 !important;
-  p { margin-bottom: 10px; }
+  p {
+    margin-bottom: 10px;
+  }
 }
 
 // Modals

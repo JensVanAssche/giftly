@@ -1,8 +1,8 @@
-@import "variables";
-@import "fonts";
-@import "utils";
-@import "overwrite";
-@import "~bootstrap/scss/bootstrap";
+@import 'variables';
+@import 'fonts';
+@import '~bootstrap/scss/bootstrap';
+@import 'utils';
+@import 'overwrite';
 
 body {
   overflow-y: scroll;
@@ -12,11 +12,15 @@ body {
   //font-family: primary_font;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: $bright-pink;
   font-weight: 400;
 }
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   color: gray;
   font-weight: 100;
 }
@@ -87,10 +91,10 @@ nav {
 }
 
 .header-logo {
-    font-size: $logo-font-size;
-    transition: 0.5s;
-    font-family: $logo-font;
-    line-height: 1rem;
+  font-size: $logo-font-size;
+  transition: 0.5s;
+  font-family: $logo-font;
+  line-height: 1rem;
 }
 
 .big-icon {
@@ -105,7 +109,10 @@ nav {
 }
 
 .checkout {
-  h3, h4 { margin-top: 20px; }
+  h3,
+  h4 {
+    margin-top: 20px;
+  }
 }
 
 .faq ul {
@@ -125,16 +132,24 @@ nav {
 .carousel-control-next {
   color: black;
   left: 0 !important;
-  &:focus { color: black; }
-  &:hover { color: $bright-pink; }
+  &:focus {
+    color: black;
+  }
+  &:hover {
+    color: $bright-pink;
+  }
 }
 
 .carousel-control-prev {
   color: black;
   left: auto;
   right: 0 !important;
-  &:focus { color: inherit; }
-  &:hover { color: $bright-pink; }
+  &:focus {
+    color: inherit;
+  }
+  &:hover {
+    color: $bright-pink;
+  }
 }
 
 footer {
@@ -164,6 +179,8 @@ footer {
 
   a {
     color: white;
-    &:hover { color: white; }
+    &:hover {
+      color: white;
+    }
   }
 }

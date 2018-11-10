@@ -26,6 +26,9 @@ export default new Vuex.Store({
     },
     shoppingCart: localStorage.getItem('shoppingCart')
       ? JSON.parse(localStorage.getItem('shoppingCart'))
+      : {},
+    shoppingCartList: localStorage.getItem('shoppingCartList')
+      ? JSON.parse(localStorage.getItem('shoppingCartList'))
       : [],
   },
   mutations: {
@@ -65,20 +68,30 @@ export default new Vuex.Store({
       let uuid = uuidv4()
       box = { uuid, ...box }
 
-      state.shoppingCart.push(box)
+      Vue.set(state.shoppingCart, uuid, box)
+      state.shoppingCartList.push(uuid)
       localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
+      localStorage.setItem(
+        'shoppingCartList',
+        JSON.stringify(state.shoppingCartList),
+      )
     },
     clearCart(state) {
-      state.shoppingCart = []
+      state.shoppingCart = {}
       localStorage.removeItem('shoppingCart')
+      localStorage.removeItem('shoppingCartList')
     },
     deleteFromCart(state, uuid) {
-      const updatedCart = state.shoppingCart.filter(item => {
-        return item.uuid !== uuid
+      Vue.delete(state.shoppingCart, uuid)
+      state.shoppingCartList = state.shoppingCartList.filter(item => {
+        return item !== uuid
       })
 
-      state.shoppingCart = updatedCart
-      localStorage.setItem('shoppingCart', JSON.stringify(updatedCart))
+      localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
+      localStorage.setItem(
+        'shoppingCartList',
+        JSON.stringify(state.shoppingCartList),
+      )
     },
   },
   actions: {
@@ -95,18 +108,22 @@ export default new Vuex.Store({
       }
       return true
     },
-    // Calculates the price of all boxes in the shoppingCart
-    totalPrice: state => {
+    shoppingCartSet: state =>
+      state.shoppingCart
+        ? state.shoppingCartList.map(id => state.shoppingCart[id])
+        : false,
+    totalPrice: (state, getters) => {
       let price = 0
 
-      state.shoppingCart.map(box => {
-        price += box.price
-      })
+      if (state.shoppingCartList)
+        getters.shoppingCartSet.map(box => {
+          price += box.price
+        })
 
       return price
     },
     totalItemsInCart: state => {
-      return state.shoppingCart.length
+      return state.shoppingCartList.length
     },
     isLoggedIn: state => {
       return state.loginName ? true : false

@@ -93,6 +93,7 @@
         <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
           <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 my-3">
             <Card :key="i" :name="item.name" :boxImg="$store.state.data.categories[item.type].img" class="card">
+              <CartDeleteButton :uuid="item.uuid" />
               <h5 class="card-title m-0">{{ $store.state.data.categories[item.type].name }}<span v-if="item.option">: {{ item.option }}</span></h5>
             </Card>
           </div>
@@ -104,40 +105,39 @@
 </template>
 
 <script>
-import Card from "@/components/Card";
-import PayModal from "@/components/PayModal";
-import { mapState, mapGetters, mapMutations } from "vuex";
+import Card from '@/components/Card'
+import PayModal from '@/components/PayModal'
+import CartDeleteButton from '@/components/Cart/CartDeleteButton'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
   components: {
     PayModal,
-    Card
+    Card,
+    CartDeleteButton,
   },
   computed: {
-    ...mapState([
-        'shoppingCart',
-      ]),
-    ...mapGetters([
-      'totalPrice',
-      'isLoggedIn',
-    ])
+    ...mapState(['shoppingCart']),
+    ...mapGetters(['totalPrice', 'isLoggedIn']),
   },
   methods: {
-    ...mapMutations([
-      'clearCart', 
-      'showAlert'
-    ]),
+    ...mapMutations(['clearCart', 'showAlert']),
     pay() {
-      this.clearCart();
+      this.clearCart()
       this.$router.push({ name: 'home' })
-      this.showAlert({ type: 'success', header: 'Bedankt.', message: 'Bedankt om bij ons te kopen. Je zal binnenkort een e-mail ontvangen met verdere instructies! Nog veel plezier met het cadeau.' });
-    }
+      this.showAlert({
+        type: 'success',
+        header: 'Bedankt.',
+        message:
+          'Bedankt om bij ons te kopen. Je zal binnenkort een e-mail ontvangen met verdere instructies! Nog veel plezier met het cadeau.',
+      })
+    },
   },
-  data () {
+  data() {
     return {
       checked: false,
     }
-  }
+  },
 }
 </script>
 
