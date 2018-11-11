@@ -82,6 +82,7 @@
       <!-- Current packages in the shopping cart  -->
       <div class="col-md-3">
         <h2>Jouw bestelling:</h2>
+        <p>Geschatte levertijd: {{ shoppingCartDeliveryTimeString }}</p>
         <h3>Totaal: € {{ totalPrice }}</h3>
         <transition-group name="rotateDownRight" tag="div" class="row justify-content-around">
           <div v-for="(item, i) in shoppingCart" :key="i" class="col-12 my-3">
@@ -95,7 +96,6 @@
             </Card>
           </div>
         </transition-group>
-        <p>Geschatte levertijd: 2-3 dagen</p>
       </div>
     </div>
     <div v-else class="text-center">
@@ -119,7 +119,11 @@ export default {
   },
   computed: {
     ...mapState(['shoppingCart', 'shoppingCartList']),
-    ...mapGetters(['totalPrice', 'isLoggedIn']),
+    ...mapGetters([
+      'totalPrice',
+      'isLoggedIn',
+      'shoppingCartDeliveryTimeString',
+    ]),
   },
   methods: {
     ...mapMutations(['clearCart', 'showAlert']),

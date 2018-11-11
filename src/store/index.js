@@ -28,6 +28,9 @@ export default new Vuex.Store({
     shoppingCartList: localStorage.getItem('shoppingCartList')
       ? JSON.parse(localStorage.getItem('shoppingCartList'))
       : [],
+    shoppingCartDeliveryTime: localStorage.getItem('shoppingCartDeliveryTime')
+      ? JSON.parse(localStorage.getItem('shoppingCartDeliveryTime'))
+      : [0, 0],
   },
   mutations: {
     changeBox(state, { type }) {
@@ -62,12 +65,33 @@ export default new Vuex.Store({
     changeBoxOptions(state, options) {
       state.currentBoxOptions = options
     },
+    updateShoppingCartDeliveryTime(state, deliveryTime) {
+      let updated = false
+      deliveryTime.forEach((newTime, index) => {
+        if (newTime > state.shoppingCartDeliveryTime[index]) {
+          state.shoppingCartDeliveryTime[index] = newTime
+          updated = true
+        } else return false
+      })
+
+      if (updated)
+        localStorage.setItem(
+          'shoppingCartDeliveryTime',
+          JSON.stringify(state.shoppingCartDeliveryTime),
+        )
+    },
     addToCart(state, box) {
+      this.commit(
+        'updateShoppingCartDeliveryTime',
+        state.data.categories[box.type].deliveryTime,
+      )
+
       let uuid = uuidv4()
       box = { uuid, ...box }
 
       Vue.set(state.shoppingCart, uuid, box)
       state.shoppingCartList.push(uuid)
+
       localStorage.setItem('shoppingCart', JSON.stringify(state.shoppingCart))
       localStorage.setItem(
         'shoppingCartList',
@@ -77,8 +101,10 @@ export default new Vuex.Store({
     clearCart(state) {
       state.shoppingCart = {}
       state.shoppingCartList = []
+      state.shoppingCartDeliveryTime = [0, 0]
       localStorage.removeItem('shoppingCart')
       localStorage.removeItem('shoppingCartList')
+      localStorage.removeItem('shoppingCartDeliveryTime')
     },
     deleteFromCart(state, uuid) {
       Vue.delete(state.shoppingCart, uuid)
@@ -133,6 +159,11 @@ export default new Vuex.Store({
     deliveryTimeString: state => type => {
       const deliveryTime = state.data.categories[type].deliveryTime
       return `${deliveryTime[0]} tot ${deliveryTime[1]} dagen`
+    },
+    shoppingCartDeliveryTimeString: state => {
+      return `${state.shoppingCartDeliveryTime[0]} tot ${
+        state.shoppingCartDeliveryTime[1]
+      } dagen`
     },
   },
 })
