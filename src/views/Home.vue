@@ -78,31 +78,13 @@
             <div class="col-6">
               <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
+                  <div v-for="(testimonial, key, i) in this.$store.state.data.testimonials" :key="i" :class="[(key === 0) ? 'carousel-item active' : 'carousel-item']">
                     <div class="card shadow-sm p-3 mb-4">
                       <div class="d-flex mb-3">
-                        <img src="../assets/img/profo_jens.jpg" class="profo mr-3">
-                        <h2>Jens zegt:</h2>
+                        <img :src="`/img/testimonials/${testimonial.img}`" class="profo mr-3">
+                        <h2>{{ testimonial.name }} zegt:</h2>
                       </div>
-                      <p class="testimonial_quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="card shadow-sm p-3 mb-4">
-                      <div class="d-flex mb-3">
-                        <img src="../assets/img/profo_jordy.jpg" class="profo mr-3">
-                        <h2>Jordy zegt:</h2>
-                      </div>
-                      <p class="testimonial_quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="card shadow-sm p-3 mb-4">
-                      <div class="d-flex mb-3">
-                        <img src="../assets/img/profo_tymo.jpg" class="profo mr-3">
-                        <h2>Tymo zegt:</h2>
-                      </div>
-                      <p class="testimonial_quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                      <p class="testimonial_quote">{{ testimonial.text }}</p>
                     </div>
                   </div>
                 </div>
