@@ -9,21 +9,21 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="firstname">Voornaam</label>
-                <input type="text" class="form-control" id="firstname" value="Jerrie">
+                <input type="text" class="form-control" id="firstname" v-model="form.firstname">
               </div>
               <div class="form-group col-md-6">
                 <label for="lastname">Achternaam</label>
-                <input type="text" class="form-control" id="lastname" value="Pererrie">
+                <input type="text" class="form-control" id="lastname" v-model="form.name">
               </div>
             </div>
             <div class="form-row pb-4">
               <div class="form-group col-md-6">
                 <label for="inputEmail4">E-mail</label>
-                <input type="email" class="form-control" id="inputEmail4" value="info@giftly.com">
+                <input type="email" class="form-control" id="inputEmail4" v-model="form.email">
               </div>
               <div class="form-group col-md-6">
                 <label for="phonenumber">Telefoonnummer</label>
-                <input type="text" class="form-control" id="phonenumber" value="0470998575">
+                <input type="text" class="form-control" id="phonenumber" v-model="form.phone">
               </div>
             </div>
           </template>
@@ -31,16 +31,16 @@
           <h5>Leveradres</h5>
           <div class="form-group">
             <label for="inputAddress">Adres</label>
-            <input type="text" class="form-control" id="inputAddress" value="Salesianenlaan 92">
+            <input type="text" class="form-control" id="inputAddress" v-model="form.street">
           </div>
           <div class="form-row pb-4">
             <div class="form-group col-md-6">
               <label for="inputCity">Stad</label>
-              <input type="text" class="form-control" id="inputCity" value="Hoboken">
+              <input type="text" class="form-control" id="inputCity" v-model="form.city">
             </div>
             <div class="form-group col-md-6">
               <label for="inputZip">Postcode</label>
-              <input type="text" class="form-control" id="inputZip" value="2660">
+              <input type="text" class="form-control" id="inputZip" v-model="form.postal">
             </div>
           </div>
           <h5>Levertijd</h5>
@@ -48,10 +48,11 @@
             <div class="form-group">
               <input type="checkbox" id="deliveryCheck" class="mx-2" v-model="checked">
               <label for="deliveryCheck">Kies aangepaste levertijd</label>
-              <input v-if="checked == true" type="date" class="form-control" id="inputDate">
+              <input v-if="checked" type="date" class="form-control" id="inputDate" :min="minDeliveryDate" v-model="form.deliveryDate" :class="{'is-invalid': formErrors.deliveryDate}">
+              <span v-if="formErrors.deliveryDate" class="text-danger">{{ formErrors.deliveryDate }}</span>
             </div>
           </div>
-          <h5>Paketje aanpassen</h5>
+          <h5>Pakketje aanpassen</h5>
           <div class="form-group">
             <label>Tekstje bij uw pakje: (laat leeg om geen tekstje toe te voegen)</label>
             <textarea class="form-control" rows="4"></textarea>
@@ -111,6 +112,7 @@ import DeleteButton from '@/components/DeleteButton'
 import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
+  name: 'Checkout',
   components: {
     Card,
     DeleteButton,
@@ -122,11 +124,23 @@ export default {
       'isLoggedIn',
       'deliveryTimeString',
       'calculateShoppingCartDeliveryDate',
+      'minDeliveryDate',
     ]),
   },
   methods: {
     ...mapMutations(['clearCart', 'showAlert']),
     pay() {
+      if (this.form.deliveryDate) {
+        if (this.form.deliveryDate < this.minDeliveryDate) {
+          this.showAlert({
+            type: 'danger',
+            header: 'Fout in het formulier',
+            message: 'Je kan geen datum voor de eerste leverdag kiezen.',
+          })
+          this.formErrors.deliveryDate = 'Kies een juiste datum.'
+          return false
+        }
+      }
       this.clearCart()
       this.$router.push({ name: 'home' })
       this.showAlert({
@@ -140,6 +154,10 @@ export default {
   data() {
     return {
       checked: false,
+      form: {},
+      formErrors: {
+        deliveryDate: '',
+      },
     }
   },
 }
