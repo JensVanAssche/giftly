@@ -1,5 +1,5 @@
 <template>
-  <div class="checkout container">
+  <div class="checkout container mb-5">
     <h1 class="page-title">Betalen</h1>
     <div v-if="shoppingCartList.length > 0" class="row">
       <div class="col-md-6">
