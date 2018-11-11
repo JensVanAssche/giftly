@@ -16,7 +16,7 @@
               </div>
               <p class="card-text">{{ category.info }}</p>
             </Card>
-            <p class="pb-3">Geschatte levertijd: {{ $store.getters.deliveryTimeString(currentBox.type) }}</p>
+            <p class="pb-3">Geschatte levertijd: {{ deliveryTimeString(categoryDeliveryTime(currentBox.type)) }}</p>
             <!-- Gets the category specific options -->
             <category-options-select-box 
               v-if="this.currentBox.type && $store.state.data.categories[currentBox.type].options" 
@@ -75,7 +75,7 @@
 import vueSlider from 'vue-slider-component'
 import Card from '@/components/Card'
 import CategoryOptionsSelectBox from '@/components/Categories/CategoryOptionsSelectBox'
-import { mapMutations } from 'vuex'
+import { mapMutations, mapGetters } from 'vuex'
 
 export default {
   props: {
@@ -104,6 +104,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['deliveryTimeString', 'categoryDeliveryTime']),
     price: {
       get() {
         return this.$store.state.price
