@@ -150,17 +150,17 @@ export const data = {
       {
         name: 'Jens',
         img: 'profo_jens.jpg',
-        text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+        text: 'Cadeau\'s geven is inderdaad nog nooit zo simpel geweest! Je kiest gewoon een categorie en je weet automatisch dat je iets leuk gaat krijgen. De pakjes komen ook snel aan gelukkig. Ik ga deze website nog zeker in de toekomst gebruiken.',
       },
       {
         name: 'Jordy',
         img: 'profo_jordy.jpg',
-        text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+        text: 'Eerst was ik wat sceptisch van het aanbod van Giftly. Maar na een aantal cadeau\'s voor me zelf te hebben gekocht ben ik wel overtuigd. Het aanbod is gevarieerd genoeg en het is altijd een verrassing wat je gaat aankrijgen. Ik heb genoeg vertrouwen in Giftly om cadeau\'s voor anderen te gaan kopen.',
       },
       {
         name: 'Tymo',
         img: 'profo_tymo.jpg',
-        text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+        text: 'Ik heb afgelopen maand voor mijn verjaardag een pakje van Giftly gekregen en ik was aangenaam verrast! Ik heb nog niet eerder van deze service gehoord maar het probleem dat het oplost is een probleem dat iedereen heeft. Ik gebruik het nu ook voor mijn last minute cadeau aankopen en heb nog geen spijt!',
       },
     ],
   },

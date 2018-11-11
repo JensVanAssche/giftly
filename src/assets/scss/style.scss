@@ -129,6 +129,12 @@ nav {
   border-radius: 50%;
 }
 
+.carousel {
+  .carousel-item .card {
+    min-height: 260px;
+  }
+}
+
 .carousel-control-next {
   color: black;
   left: 0 !important;
