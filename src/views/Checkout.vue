@@ -107,13 +107,11 @@
 
 <script>
 import Card from '@/components/Card'
-import PayModal from '@/components/PayModal'
 import DeleteButton from '@/components/DeleteButton'
 import { mapState, mapGetters, mapMutations } from 'vuex'
 
 export default {
   components: {
-    PayModal,
     Card,
     DeleteButton,
   },

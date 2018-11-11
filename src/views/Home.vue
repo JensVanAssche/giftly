@@ -152,21 +152,19 @@
 </template>
 
 <script>
-import Slider from "@/components/HomeSlider";
-import { Carousel, Slide } from 'vue-carousel';
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   name: 'home',
   components: {
-    Slider,
     Carousel,
-    Slide
-  }
-};
+    Slide,
+  },
+}
 </script>
 
 <style lang="scss" scoped>
-.btn{
+.btn {
   display: block;
   margin-left: auto;
   margin-right: auto;
