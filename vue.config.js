@@ -1,8 +1,8 @@
 module.exports = {
   pwa: {
-    name: "Giftly",
-    themeColor: "#35A7FF",
-    appleMobileWebAppCapable: "yes",
-    appleMobileWebAppStatusBarStyle: "#35A7FF",
+    name: 'Giftly',
+    themeColor: '#ff5964',
+    appleMobileWebAppCapable: 'yes',
+    appleMobileWebAppStatusBarStyle: '#ff5964',
   },
-};
+}
